@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/srv/http/sixthworldsprawl.com/env"
+VIRTUAL_ENV="/home/rocin/Git/sixthworldsprawl.com/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -30,7 +30,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/srv/http/sixthworldsprawl.com/env"
+set -gx VIRTUAL_ENV "/home/rocin/Git/sixthworldsprawl.com/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
