@@ -4,10 +4,13 @@ from flask_login import UserMixin
 db = SQLAlchemy()
 
 
-class User(UserMixin, db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+class User(db.Model, UserMixin):
+    userid = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30))
     password = db.Column(db.String(102))
+
+    def get_id(self):
+        return self.userid
 
 
 # class Request(db.Model):

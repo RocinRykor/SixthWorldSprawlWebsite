@@ -1,0 +1,22 @@
+{% extends "partials/base.html" %}
+
+{% block main %}
+
+<h1>Please login</h1>
+<form class="wtform" action="/login/" method="POST">
+    {{form.csrf_token}}
+    <div class="wtform_field">
+        {{form.name.label}}
+        {{form.name}}
+    </div>
+    <div class="wtform_field">
+        {{form.password.label}}
+        {{form.password}}
+    </div>
+    <div class="wtform_field">
+        {{form.submit}}
+    </div>
+</form>
+<h5>Also, azzie roxx</h5>
+
+{% endblock %}

@@ -4,6 +4,7 @@ from flask_login import LoginManager
 from flask_migrate import Migrate
 from routes.general import general
 from routes.admin import admin
+from routes.auth import auth
 import models
 # from flask_statistics import Statistics
 
@@ -40,6 +41,7 @@ def build_app():
     app.config.from_object(Config())
     app.register_blueprint(general)
     app.register_blueprint(admin)
+    app.register_blueprint(auth)
     db.init_app(app)
     migrate.init_app(app, db)
     login_manager.init_app(app, db)
