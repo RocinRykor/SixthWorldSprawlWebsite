@@ -1,6 +1,9 @@
 if [ ! -d migrations ]; then
-    FLASK_APP=rrprojects flask db init
+    FLASK_APP=sixthworldsprawl flask db init
 fi
 
-FLASK_APP=rrprojects flask db migrate
-FLASK_APP=rrprojects flask db upgrade
+echo "Flask migrate message: "
+read message
+
+FLASK_APP=sixthworldsprawl flask db migrate --message "$message"
+FLASK_APP=sixthworldsprawl flask db upgrade
