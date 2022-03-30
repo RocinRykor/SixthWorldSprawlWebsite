@@ -12,6 +12,7 @@ html {
   align-items: center;
 }
 
+
 body {
   box-sizing: border-box;
   width: 80%;
@@ -63,5 +64,4 @@ body {
 .main_title {
     text-align: center;
     margin: auto;
-    /*text-shadow: 3px 3px 5px gold;*/
 }
