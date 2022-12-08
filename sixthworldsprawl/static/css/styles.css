@@ -107,9 +107,9 @@ a:hover {
 }
 
 .navlink:hover {
-  border-top: 2px solid var(--primary-accent);
-  color: var(--light);
-  background: none;
+    border-top: 2px solid var(--primary-accent);
+    color: var(--light);
+    background: none;
 }
 
 /* 11 || Misc. */
@@ -299,4 +299,39 @@ a:hover {
     h1 {
         font-size: 22px;
     }
+}
+
+.main-character-list {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+.character-list-item__player-block {
+    background-color: gray;
+
+    border: 3px solid black;
+    border-radius: 25px;
+    color: white;
+
+    margin: 5px;
+
+    text-align: Center;
+    text-decoration: none;
+    display: inline-box;
+}
+
+.player-block__character-card-list {
+    padding: 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 0px 25px 0px 25px;
+
+    padding: 25px;
+
+    text-align: center;
 }
