@@ -335,3 +335,9 @@ a:hover {
 
     text-align: center;
 }
+
+.character-card {
+    background-color: var(--dark);
+    border-radius: 15px;
+    margin: 5px;
+}
