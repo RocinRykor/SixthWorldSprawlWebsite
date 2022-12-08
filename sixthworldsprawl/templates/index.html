@@ -1,9 +1,5 @@
-{% extends "partials/base.html" %}
-
-{% block main %}
+<!DOCTYPE html>
+{% extends "partials/base.html" %} {% block main %}
 
 <h2>This is the main block on the Example page</h2>
-{{current_user.name}}
-{{current_user.password}}
-
-{% endblock %}
+{{current_user.name}} {{current_user.password}} {% endblock %}
