@@ -1,12 +1,12 @@
 /* 1 || Universal*/
 :root {
-    /* Steel Blue Pallete */
-    --dark: #1b3246;
-    --medium: #4682b4;
-    --light: #b2cce1;
+    /* Cyberpunk Neon Pallete */
+    --dark: #091833;
+    --medium: #133e7c;
+    --light: #0abdc6;
 
-    --primary-accent: #b4af46;
-    --secondary-accent: #b4464b;
+    --primary-accent: #ea00d9;
+    --secondary-accent: #711c91;
 }
 
 * {
@@ -104,6 +104,12 @@ a {
 a:hover {
     background: var(--primary-accent);
     color: black;
+}
+
+.navlink:hover {
+  border-top: 2px solid var(--primary-accent);
+  color: var(--light);
+  background: none;
 }
 
 /* 11 || Misc. */
