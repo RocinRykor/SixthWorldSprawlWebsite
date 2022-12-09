@@ -1,14 +1,14 @@
 from flask import request, Blueprint
 from flask_login import login_required
-from sixthworldsprawl.routes.api.character import characters_api
+from sixthworldsprawl.routes.api.characters import characters_api
 
 characters_api = Blueprint("characters_api", "__name__", url_prefix="/api/character")
 
 @characters_api.app_errorhandler(404)
-    def not_found_error(e):
-        return {"error" : "Endpoint Not Found",
-        "status" : 404,
-        "message" : "The requested endpoint does not exist"}, 404
+def not_found_error(e):
+    return {"error" : "Endpoint Not Found",
+    "status" : 404,
+    "message" : "The requested endpoint does not exist"}, 404
 
 @login_required
 @characters_api.route("/create/", methods=["POST"])
@@ -62,7 +62,7 @@ def edit_character(quote_id):
     character = characters_api.edit_character(character_id, request.json)
     return character.jsonify(), 200
 
-@character_api.route("/get/<int:character_id>", methods=["GET"])
+@characters_api.route("/get/<int:character_id>", methods=["GET"])
 def get_character(character_id):
     character = characters_api.get_qutoe(character_id)
     
@@ -70,7 +70,7 @@ def get_character(character_id):
         return {"message": "character not found", "error": 404}, 200
     return character.jsonify()
 
-@character_api.route("/", methods=["GET"])
-@character_api.route("/random/", methods=["GET"])
+@characters_api.route("/", methods=["GET"])
+@characters_api.route("/random/", methods=["GET"])
 def random_character():
     return characters_api.random_character().jsonify(), 200

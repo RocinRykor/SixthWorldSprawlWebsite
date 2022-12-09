@@ -52,7 +52,7 @@ def build_app():
         from .routes.general import general
         from .routes.admin import admin
         from .routes.auth import auth
-        from .routes.api.character.character_api_routes import characters_api
+        from .routes.api.characters.character_api_routes import characters_api
 
         app.register_blueprint(general)
         app.register_blueprint(admin)
