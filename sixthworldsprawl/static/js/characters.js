@@ -1,5 +1,5 @@
 let playerRepository = function () {
-    const characterFile = '../staic/json/SR3E_active_skills.json';
+    const characterFile = '../static/json/characters.json';
     let playerList = [];
 
     function loadList() {
