@@ -51,11 +51,13 @@ def build_app():
     with app.app_context():
         from .routes.general import general
         from .routes.admin import admin
-        from .routes.auth import auth 
+        from .routes.auth import auth
+        from .routes.api.character.character_api_routes import characters_api
 
         app.register_blueprint(general)
         app.register_blueprint(admin)
         app.register_blueprint(auth)
+        app.register_blueprint(characters_api)
 
         print("Creating")
         db.create_all()
