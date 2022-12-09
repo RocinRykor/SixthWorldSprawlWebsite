@@ -18,8 +18,8 @@ class User(db.Model, UserMixin):
     authenticated = db.Column(db.Boolean, default=False)
     password_hash = db.Column(db.String(128))
     email = db.Column(db.String(256), nullable=False)
-    first_name = db.Column(db.String(64))
-    last_name = db.Column(db.String(64))
+    first_name = db.Column(db.String(32))
+    last_name = db.Column(db.String(32))
     is_admin = db.Column(db.Boolean, default=False)
     
     def is_authenticated(self):
@@ -100,7 +100,7 @@ class Player(db.Model):
     | bio:          A short decription of the player
     """
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(64))
+    name = db.Column(db.String(32))
     bio = db.Column(db.String(2048))
     characters = db.relationship('Character', backref='player', lazy=True)
 
@@ -115,11 +115,28 @@ class Character(db.Model):
     """
     id = db.Column(db.Integer, primary_key=True)
     player_id = db.Column(db.Integer, db.ForeignKey('player.id'))
-    name = db.Column(db.String(64))
+    name = db.Column(db.String(32))
     bio = db.Column(db.String(2048))
-    race = db.Column(db.String(64))
-    gender = db.Column(db.String(64))
+    race = db.Column(db.String(32))
+    gender = db.Column(db.String(32))
     status = db.Column(db.String(64))
+
+    def jsonify(self):
+        """
+        Returns the character as a JSON object
+
+        -> JSON Object
+        """
+        
+        return {
+            "id": self.id,
+            "player_id": self.player_id,
+            "name": self.name,
+            "bio": self.bio,
+            "race": self.race,
+            "gender": self.gender,
+            "status": self.status,
+        }
 
 # class Request(db.Model):
 #     __tablename__ = "request"
