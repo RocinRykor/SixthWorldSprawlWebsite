@@ -93,6 +93,33 @@ class User(db.Model, UserMixin):
             return True
         return False
 
+class Player(db.Model):
+    """
+    | id:            The primary key for the player
+    | name:         A string containing the user's online handle
+    | bio:          A short decription of the player
+    """
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64))
+    bio = db.Column(db.String(2048))
+    characters = db.relationship('Character', backref='player', lazy=True)
+
+class Character(db.Model):
+    """
+    | id:            The primary key for the player
+    | name:         A string containing the character's name
+    | bio:          A short decription of the player
+    | race:         Character Race
+    | gender:       Character's gender
+    | status:       A short decription of the character's in-game status
+    """
+    id = db.Column(db.Integer, primary_key=True)
+    player_id = db.Column(db.Integer, db.ForeignKey('player.id'))
+    name = db.Column(db.String(64))
+    bio = db.Column(db.String(2048))
+    race = db.Column(db.String(64))
+    gender = db.Column(db.String(64))
+    status = db.Column(db.String(64))
 
 # class Request(db.Model):
 #     __tablename__ = "request"
