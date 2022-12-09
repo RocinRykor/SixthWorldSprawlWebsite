@@ -1,15 +1,19 @@
-from config import Config
+from .config import Config
+from . import models
 from flask import Flask, redirect
 from flask_login import LoginManager
 from flask_migrate import Migrate
-from routes.general import general
-from routes.admin import admin
-from routes.auth import auth
-import models
+#from .routes.general import general
+#from .routes.admin import admin
+#from .routes.auth import auth
 # from flask_statistics import Statistics
 
 
 db = models.db
+
+User = models.User
+Player = models.Player
+Character = models.Character
 
 migrate = Migrate()
 login_manager = LoginManager()
@@ -39,13 +43,23 @@ def build_app():
 
     app = Flask(__name__)
     app.config.from_object(Config())
-    app.register_blueprint(general)
-    app.register_blueprint(admin)
-    app.register_blueprint(auth)
     db.init_app(app)
     migrate.init_app(app, db)
     login_manager.init_app(app, db)
     # statistics.init_app(app, db, Request, check_user)
+
+    with app.app_context():
+        from .routes.general import general
+        from .routes.admin import admin
+        from .routes.auth import auth 
+
+        app.register_blueprint(general)
+        app.register_blueprint(admin)
+        app.register_blueprint(auth)
+
+        print("Creating")
+        db.create_all()
+        print("done")
 
     return app
 
