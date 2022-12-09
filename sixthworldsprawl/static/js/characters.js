@@ -1,6 +1,6 @@
-let playerRepository = function () {
+const playerRepository = function () {
     const characterFile = '../static/json/characters.json';
-    let playerList = [];
+    const playerList = [];
 
     function loadList() {
         return fetch(characterFile)
@@ -23,8 +23,8 @@ let playerRepository = function () {
     }
 
     return {
-        add: add,
-        loadList: loadList,
+        add,
+        loadList,
     };
 }();
 

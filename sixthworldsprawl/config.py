@@ -9,7 +9,7 @@ DB_USER = 'sixthworldsprawl'
 
 
 class Config():
-    SECRET_KEY = "for_the_love_of_quixler_zura_megacorp_changeme...maybe"
+    SECRET_KEY = "#CHANGED_AND_REDACTED#"
     SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{DB_USER}:{SECRET_KEY}@' \
                               f'localhost/{DB_NAME}'
     SQLALCHEMY_TRACK_MODIFICATION = False
