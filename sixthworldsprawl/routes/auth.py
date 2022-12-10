@@ -1,7 +1,5 @@
 from flask_login import login_user, current_user
 from flask import render_template, redirect, Blueprint, request, session, flash
-from utils import get_redirect, flash_form_errors
-from descriptions import descriptions
 from werkzeug.security import check_password_hash
 from sixthworldsprawl.forms import LoginForm, UserForm
 from sixthworldsprawl.utils import flash_form_errors

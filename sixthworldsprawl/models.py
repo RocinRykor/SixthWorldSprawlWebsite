@@ -11,12 +11,12 @@ class User(db.Model, UserMixin):
     | authenticated: Whether or not the user has logged in.
     | password:      A password hashed with werkzeug.generate_password_hash
     | email:         A string containing the user's email address
-    | name:     A string containing the user's first name
+    | username:          A string containing the user's first name
     | is_admin:      A boolean determining whether or not the user is an admin
     """
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(32))
+    usernamename = db.Column(db.String(32))
     password_hash = db.Column(db.String(128))
     is_admin = db.Column(db.Boolean, default=False)
     authenticated = db.Column(db.Boolean, default=False)
