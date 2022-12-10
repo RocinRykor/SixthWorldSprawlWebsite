@@ -36,57 +36,8 @@ class User(db.Model, UserMixin):
         return self.id
 
     def set_password(self, to_set):
-        self.password = generate_password_hash(to_set, method='pbkdf2:sha256',
+        self.password_hash = generate_password_hash(to_set, method='pbkdf2:sha256',
                                                salt_length=24)
-
-    def hash_password(self, password):
-        """
-        Hashes the password passed in and returns it to the caller.
-
-        | Parameters:
-        |     password: unhashed, cleartext string
-
-        | Returns:
-        |     password: Hashed password
-        """
-
-        password = generate_password_hash(password, method='pbkdf2:sha256',
-                                          salt_length=16)
-
-        return password
-
-    @password.setter
-    def password(self, password):
-        """
-        Updates the password on the user model.
-
-        | Parameters:
-        |     password: unhashed, cleartext string
-
-        | Returns:
-        |     None
-        """
-
-        # password = self.hash_password(password)
-        self.password_hash = self.hash_password(password)
-
-    def check_password(self, password):
-        """
-        Checks to see if the password provided matches the current password
-        for the user.
-
-        Parameters:
-
-            password: unhashed, cleartext string
-
-        Returns:
-
-            None
-        """
-
-        if check_password_hash(self.password_hash, password):
-            return True
-        return False
 
 class Player(db.Model):
     """

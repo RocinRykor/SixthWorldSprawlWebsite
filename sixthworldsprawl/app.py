@@ -23,7 +23,7 @@ login_manager = LoginManager()
 
 @login_manager.user_loader
 def load_user(user_id):
-    return models.User.query.filter_by(userid=user_id).first()
+    return models.User.query.filter_by(id=user_id).first()
 
 
 @login_manager.unauthorized_handler

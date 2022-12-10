@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% extends "partials/base.html" %} {% block main %}
 
-<form action="{{url_for('auth.finish_setup')}}" id="setup" name="setup" method="post">
+<form action="{{url_for('auth.finish_signup')}}" id="setup" name="setup" method="post">
     {{form.csrf_token}}
     <div class="wtform_field">
         {{form.name.label}}

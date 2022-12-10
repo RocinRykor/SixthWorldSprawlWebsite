@@ -26,11 +26,11 @@ def login():
                                form=form)
 
     # Get the form data
-    name = form.username.data
+    username = form.username.data
     password = form.password.data
 
     # Try select a user
-    user = User.query.filter_by(name=name).first()
+    user = User.query.filter_by(username=username).first()
     if not user:
         flash("Invalid user or password.", "error")
         return render_template("login.html", title="SixthWorldSprawl Login",
@@ -40,11 +40,9 @@ def login():
     if check_password_hash(user.password, password):
         login_user(user, remember=True)
         user.authenticated = True
-        session['username'] = user.name
-        session['per_page'] = user.quotes_per_page
+        session['username'] = user.username
         session['id'] = user.id
         session['is_admin'] = user.is_admin
-        flash(f"Welcome {user.name}", "informational")
         return render_template("welcome.html", title="Congrats")
 
     flash("Invalid user or password.", "error")
@@ -71,20 +69,20 @@ def logout():
     return redirect("/")
 
 
-@auth.route("/setup/")
-def setup():
+@auth.route("/signup/")
+def signup():
     user = User.query.filter_by(id=1).first()
     if user:
         return redirect("auth.display_login")
     
     form = UserForm()
-    return render_template("setup.html", form=form)
+    return render_template("signup.html", form=form)
 
 
-@auth.route("/setup/", methods=['POST'])
-def finish_setup():
+@auth.route("/signup/", methods=['POST'])
+def finish_signup():
     form = UserForm(request.form)
-    name = form.name.data
+    username = form.name.data
     password = form.password.data
     confirmation = form.confirmation.data
 
@@ -92,7 +90,7 @@ def finish_setup():
         flash("Password does not match confirmation", "error")
         return render_template("setup.html", form=form)
     
-    user = User(name=name, is_admin=True)
+    user = User(username=username, is_admin=True)
     user.set_password(password)
 
     db.session.add(user)
