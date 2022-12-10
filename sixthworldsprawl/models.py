@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
+from werkzeug.security import generate_password_hash
 
 db = SQLAlchemy()
 
@@ -13,13 +14,13 @@ class User(db.Model, UserMixin):
     | name:     A string containing the user's first name
     | is_admin:      A boolean determining whether or not the user is an admin
     """
+
     id = db.Column(db.Integer, primary_key=True)
-    authenticated = db.Column(db.Boolean, default=False)
-    password_hash = db.Column(db.String(128))
-    email = db.Column(db.String(256), nullable=False)
     name = db.Column(db.String(32))
+    password_hash = db.Column(db.String(128))
     is_admin = db.Column(db.Boolean, default=False)
-    
+    authenticated = db.Column(db.Boolean, default=False)
+
     def is_authenticated(self):
         return self.authenticated
 
@@ -28,19 +29,15 @@ class User(db.Model, UserMixin):
         return True
 
     @property
-    def is_anonymous(self):
-        return False
-
-    @property
-    def full_name(self):
-        return f"{self.first_name} {self.last_name}"
-
-    @property
     def password(self):
         return self.password_hash
 
     def get_id(self):
         return self.id
+
+    def set_password(self, to_set):
+        self.password = generate_password_hash(to_set, method='pbkdf2:sha256',
+                                               salt_length=24)
 
     def hash_password(self, password):
         """

@@ -1,7 +1,11 @@
-from flask import Blueprint, redirect, render_template, request, flash
-from flask_login import current_user, login_required
+from flask_login import login_user, current_user
+from flask import render_template, redirect, Blueprint, request, session, flash
+from utils import get_redirect, flash_form_errors
+from descriptions import descriptions
+from werkzeug.security import check_password_hash
 from sixthworldsprawl.forms import LoginForm, UserForm
 from sixthworldsprawl.utils import flash_form_errors
+from sixthworldsprawl.app import db
 from sixthworldsprawl import models
 from werkzeug.security import check_password_hash
 from flask_login import login_user, logout_user
@@ -43,7 +47,7 @@ def login():
         session['id'] = user.id
         session['is_admin'] = user.is_admin
         flash(f"Welcome {user.name}", "informational")
-        return redirect(get_redirect())
+        return render_template("welcome.html", title="Congrats")
 
     flash("Invalid user or password.", "error")
     return render_template("login.html", title="Invalid Login",
