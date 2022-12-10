@@ -16,7 +16,7 @@ class User(db.Model, UserMixin):
     """
 
     id = db.Column(db.Integer, primary_key=True)
-    usernamename = db.Column(db.String(32))
+    username = db.Column(db.String(32))
     password_hash = db.Column(db.String(128))
     is_admin = db.Column(db.Boolean, default=False)
     authenticated = db.Column(db.Boolean, default=False)
