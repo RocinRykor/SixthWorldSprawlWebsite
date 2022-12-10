@@ -13,7 +13,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField("Login")
 
 class UserForm(FlaskForm):
-    name = StringField("Username", validators=[InputRequired(),
+    name = StringField("Display", validators=[InputRequired(),
                                                Length(max=30)])
     password = PasswordField("Password", validators=[InputRequired(),
                                                      Length(min=12)])
@@ -24,4 +24,9 @@ class UserForm(FlaskForm):
                                 EqualTo("password",
                                 message="Must match password")])
     is_admin = BooleanField("Admin?")
-    submit = SubmitField("EditUser")
+    submit = SubmitField("Sign Up")
+
+class EditUserForm(FlaskForm):
+    name = StringField("Display", validators=[InputRequired(),
+                                               Length(max=30)])
+    submit = SubmitField("Change Display Name")

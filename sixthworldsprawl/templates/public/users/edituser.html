@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-{% extends "partials/base.html" %} {% block main %}
+{% extends "public/partials/base.html" %} {% block main %}
 
-<form action="/login/" id="login" name="login" method="post">
+<form action="/user/edit/" id="edituser" name="edituser" method="post">
     {{form.csrf_token}}
     <div class="wtform_field">
-        <p>{{form.username.label}}</p>
-        {{form.username}}
+        <p>{{form.name.label}}</p>
+        {{form.name}}
     </div>
-    <div class="wtform_field">
-        <p>{{form.password.label}}</p>
-        {{form.password}}
-    </div>
-
         {{form.submit}}
 </form>
-
 
 {% endblock %}
