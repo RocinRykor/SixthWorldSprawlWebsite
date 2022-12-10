@@ -4,15 +4,17 @@ from werkzeug.security import generate_password_hash
 
 db = SQLAlchemy()
 
-
 class User(db.Model, UserMixin):
     """
     | id:            The primary key for the user
-    | authenticated: Whether or not the user has logged in.
+    | username:      A string containing the user's login name
     | password:      A password hashed with werkzeug.generate_password_hash
     | email:         A string containing the user's email address
-    | username:          A string containing the user's first name
     | is_admin:      A boolean determining whether or not the user is an admin
+    | authenticated: Whether or not the user has logged in.
+    | display_name:  The name that will show up for the user in situations like player info
+    | bio:           User's customizable bio
+    | characters:    Links a user to their characters
     """
 
     id = db.Column(db.Integer, primary_key=True)
@@ -20,6 +22,8 @@ class User(db.Model, UserMixin):
     password_hash = db.Column(db.String(128))
     is_admin = db.Column(db.Boolean, default=False)
     authenticated = db.Column(db.Boolean, default=False)
+    display_name = db.Column(db.String(32))
+    characters = db.relationship('Character', backref='user', lazy=True)
 
     def is_authenticated(self):
         return self.authenticated
@@ -39,20 +43,10 @@ class User(db.Model, UserMixin):
         self.password_hash = generate_password_hash(to_set, method='pbkdf2:sha256',
                                                salt_length=24)
 
-class Player(db.Model):
-    """
-    | id:            The primary key for the player
-    | name:         A string containing the user's online handle
-    | bio:          A short decription of the player
-    """
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(32))
-    bio = db.Column(db.String(2048))
-    characters = db.relationship('Character', backref='player', lazy=True)
-
 class Character(db.Model):
     """
-    | id:            The primary key for the player
+    | id:           The primary key for the player
+    | player_id:    Link to an existing user
     | name:         A string containing the character's name
     | bio:          A short decription of the player
     | race:         Character Race
@@ -60,7 +54,7 @@ class Character(db.Model):
     | status:       A short decription of the character's in-game status
     """
     id = db.Column(db.Integer, primary_key=True)
-    player_id = db.Column(db.Integer, db.ForeignKey('player.id'))
+    player_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     name = db.Column(db.String(32))
     bio = db.Column(db.String(2048))
     race = db.Column(db.String(32))

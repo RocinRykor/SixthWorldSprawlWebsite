@@ -3,6 +3,10 @@
 
 <h1>Meet the cast and crew!</h1>
 
+{% if current_user.is_admin %}
+<a href="/character/create">Submit New Character</a>
+{% endif %}
+
 <div class="main-character-list">
     <div class="character-list-item__player-block">
         <p class="player-block__title">Rocin</p>

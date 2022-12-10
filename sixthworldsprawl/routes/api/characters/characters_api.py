@@ -2,7 +2,6 @@ from sixthworldsprawl.app import db, Character
 from flask_login import current_user
 from sqlalchemy import func
 
-
 def create_character(character_json):
     """
     Creates a Character from the JSON data passed in

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 {% extends "partials/base.html" %} {% block main %}
 
-<h2>This is the main block on the Example page</h2>
+<h1>Welcome, 
+    {% if current_user.is_authenticated %} {{current_user.username}}{% else %} Chummer! {% endif %}, to the Sixth-World!</h1>
+<p>To get started, check the navigation links up top!</p>
 
-{{current_user.name}} {{current_user.password}} {% endblock %}
+<h2></h2>
+
+{% endblock %}
