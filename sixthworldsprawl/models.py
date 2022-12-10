@@ -10,16 +10,14 @@ class User(db.Model, UserMixin):
     | authenticated: Whether or not the user has logged in.
     | password:      A password hashed with werkzeug.generate_password_hash
     | email:         A string containing the user's email address
-    | first_name:     A string containing the user's first name
-    | last_name:     A string containing the user's last name
+    | name:     A string containing the user's first name
     | is_admin:      A boolean determining whether or not the user is an admin
     """
     id = db.Column(db.Integer, primary_key=True)
     authenticated = db.Column(db.Boolean, default=False)
     password_hash = db.Column(db.String(128))
     email = db.Column(db.String(256), nullable=False)
-    first_name = db.Column(db.String(32))
-    last_name = db.Column(db.String(32))
+    name = db.Column(db.String(32))
     is_admin = db.Column(db.Boolean, default=False)
     
     def is_authenticated(self):
@@ -127,7 +125,7 @@ class Character(db.Model):
 
         -> JSON Object
         """
-        
+
         return {
             "id": self.id,
             "player_id": self.player_id,

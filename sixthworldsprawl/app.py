@@ -11,6 +11,7 @@ from flask_migrate import Migrate
 
 db = models.db
 
+# Create any items that will be used in the app
 User = models.User
 Player = models.Player
 Character = models.Character

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "partials/base.html" %} {% block main %}
+
+<form action="/login/" id="login" name="login" method="post">
+    {{form.csrf_token}}
+    <div class="wtform_field">
+        <p>{{form.username.label}}</p>
+        {{form.username}}
+    </div>
+    <div class="wtform_field">
+        <p>{{form.password.label}}</p>
+        {{form.password}}
+    </div>
+
+        {{form.submit}}
+</form>
+
+<a href="/signup">Not Registed? Sign Up</a>
+{% endblock %}

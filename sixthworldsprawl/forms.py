@@ -1,11 +1,27 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField
-# from wtforms import BooleanField
-from wtforms.validators import InputRequired, Length
+from wtforms import StringField, TextAreaField, SubmitField, PasswordField
+from wtforms import BooleanField
+from wtforms.validators import InputRequired, Length, EqualTo
+from wtforms.widgets import TextArea
 
 
 class LoginForm(FlaskForm):
-    name = StringField("Name", validators=[InputRequired(), Length(max=30)])
+    username = StringField("Username", validators=[InputRequired(),
+                                                   Length(max=30)])
     password = PasswordField("Password", validators=[InputRequired(),
                                                      Length(min=12)])
     submit = SubmitField("Login")
+
+class UserForm(FlaskForm):
+    name = StringField("Username", validators=[InputRequired(),
+                                               Length(max=30)])
+    password = PasswordField("Password", validators=[InputRequired(),
+                                                     Length(min=12)])
+    confirmation = PasswordField(
+                    "Password Confirmation",
+                    validators=[InputRequired(),
+                                Length(min=12),
+                                EqualTo("password",
+                                message="Must match password")])
+    is_admin = BooleanField("Admin?")
+    submit = SubmitField("EditUser")

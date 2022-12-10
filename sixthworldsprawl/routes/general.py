@@ -9,6 +9,8 @@ def custom_error_page(e):
     return render_template("error.html", title="404 - Page Not Found!")
 
 @general.route("/")
+@general.route("/index")
+@general.route("/home")
 def index():
     return render_template("index.html", title="Sixth World Sprawl")
 
