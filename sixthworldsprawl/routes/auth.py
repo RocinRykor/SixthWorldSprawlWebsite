@@ -40,9 +40,6 @@ def login():
     if check_password_hash(user.password, password):
         login_user(user, remember=True)
         user.authenticated = True
-        session['username'] = user.username
-        session['id'] = user.id
-        session['is_admin'] = user.is_admin
         return render_template("welcome.html", title="Congrats")
 
     flash("Invalid user or password.", "error")
@@ -61,9 +58,6 @@ def display_login():
 def logout():
     try:
         current_user.authenticated = False
-        session.pop('username')
-        session.pop('id')
-        session.pop('is_admin')
     except KeyError:
         return redirect("/login/")
     return redirect("/")
