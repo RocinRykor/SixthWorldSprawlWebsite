@@ -32,13 +32,25 @@
             </li>
             {% if current_user.is_authenticated %}
             <li role="presentation">
-                <a
-                    href="/logout/"
-                    class="navlink"
-                    role="menuitem"
-                    title="Log Out"
-                    >Log Out</a
-                >
+                <div class="dropdown">
+                    <button class="button-dropdown">User &gt;</button>
+                    <div class="dropdown-content">
+                        <a
+                            href="/edituser/"
+                            class="navlink"
+                            role="menuitem"
+                            title="Edit User Details"
+                            >Edit User</a
+                        >
+                        <a
+                            href="/logout/"
+                            class="navlink"
+                            role="menuitem"
+                            title="Logout User"
+                            >Logout</a
+                        >
+                    </div>
+                </div>
             </li>
             {% else %}
             <li role="presentation">

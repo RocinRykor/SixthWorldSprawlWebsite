@@ -6,18 +6,18 @@ general = Blueprint("general", __name__)
 
 @general.app_errorhandler(404)
 def custom_error_page(e):
-    return render_template("error.html", title="404 - Page Not Found!")
+    return render_template("public/error.html", title="404 - Page Not Found!")
 
 @general.route("/")
 @general.route("/index")
 @general.route("/home")
 def index():
-    return render_template("index.html", title="Sixth World Sprawl")
+    return render_template("public/index.html", title="Sixth World Sprawl")
 
 @general.route("/characters")
 def characters():
-    return render_template("characters.html", title="Meet The Runners")
+    return render_template("public/characters/characters.html", title="Meet The Runners")
 
 @general.route("/roller")
 def roller():
-    return render_template("diceroller.html", title="Dice Roller")
+    return render_template("public/rollers/diceroller.html", title="Dice Roller")

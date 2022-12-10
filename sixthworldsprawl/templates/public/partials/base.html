@@ -27,12 +27,12 @@
             href="{{url_for('static', filename='css/styles.css')}}" />
     </head>
 
-    {% include "partials/header.html" %}
+    {% include "public/partials/header.html" %}
 
     <body>
         <div class="content">
             <main>{% block main %} {% endblock %}</main>
         </div>
-        {% include "partials/footer.html" %}
+        {% include "public/partials/footer.html" %}
     </body>
 </html>

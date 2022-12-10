@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% extends "partials/base.html" %} {% block main %}
+{% extends "public/partials/base.html" %} {% block main %}
 
 <form action="{{url_for('auth.finish_signup')}}" id="setup" name="setup" method="post">
     {{form.csrf_token}}
