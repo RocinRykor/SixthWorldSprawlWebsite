@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash
+from sixthworldsprawl.utils import character_utils
 
 db = SQLAlchemy()
 
@@ -13,7 +14,6 @@ class User(db.Model, UserMixin):
     | is_admin:      A boolean determining whether or not the user is an admin
     | authenticated: Whether or not the user has logged in.
     | display_name:  The name that will show up for the user in situations like player info
-    | bio:           User's customizable bio
     | characters:    Links a user to their characters
     """
 
@@ -43,6 +43,20 @@ class User(db.Model, UserMixin):
         self.password_hash = generate_password_hash(to_set, method='pbkdf2:sha256',
                                                salt_length=24)
 
+    def jsonify(self):
+        """
+        Returns the user as a JSON object
+
+        -> JSON Object
+        """
+
+        return {
+            "id": self.id,
+            "username": self.username,
+            "display_name": self.display_name,
+            "characters": [character.jsonify() for character in self.characters],
+        }
+
 class Character(db.Model):
     """
     | id:           The primary key for the player
@@ -61,6 +75,9 @@ class Character(db.Model):
     gender = db.Column(db.String(32))
     status = db.Column(db.String(64))
 
+    def get_img_url(self):
+        return character_utils.set_img(self.race, self.gender)
+
     def jsonify(self):
         """
         Returns the character as a JSON object
@@ -76,7 +93,10 @@ class Character(db.Model):
             "race": self.race,
             "gender": self.gender,
             "status": self.status,
+            "img_url": self.get_img_url()
         }
+
+    
 
 # class Request(db.Model):
 #     __tablename__ = "request"

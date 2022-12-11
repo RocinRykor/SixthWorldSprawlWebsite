@@ -62,10 +62,6 @@ def logout():
 
 @auth.route("/signup/")
 def signup():
-    user = User.query.filter_by(id=1).first()
-    if user:
-        return redirect("auth.display_login")
-    
     form = UserForm()
     return render_template("public/users/signup.html", form=form)
 

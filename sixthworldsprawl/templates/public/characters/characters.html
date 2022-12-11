@@ -8,20 +8,11 @@
 {% endif %}
 
 <div class="main-character-list">
-    <div class="character-list-item__player-block">
-        <p class="player-block__title">Rocin</p>
-        <p class="player-block__description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <div class="player-block__character-card-list">
-            {% for character in characters %}
-                {% with character=character %}
-                    {% include "public/characters/partials/character_card.html" %}
-                {% endwith %}
-            {% endfor %}
-        </div>
-    </div>
+    {% for player in players %}
+        {% with player=player %}
+            {% include "public/characters/partials/character_card_list.html" %}
+        {% endwith %}
+    {% endfor %}
 </div>
 
 {% endblock %}

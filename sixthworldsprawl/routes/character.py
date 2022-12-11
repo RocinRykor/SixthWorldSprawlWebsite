@@ -3,15 +3,15 @@ from flask_login import login_required, current_user
 from sixthworldsprawl.app import db, User, Character
 from sixthworldsprawl.forms import CharacterForm
 from sixthworldsprawl.routes.api.characters import characters_api
+from sixthworldsprawl.routes.api.users import users_api
 from sixthworldsprawl.utils import character_utils
 character = Blueprint("character", __name__, url_prefix="/character")
 
 @character.route("/")
 def characters():
-    characters = characters_api.get_all()
-    character_dict = character_utils.group_by_player(characters)
+    players = users_api.get_all()
     return render_template("public/characters/characters.html", 
-                            title="Meet The Runners", characters=characters)
+                            title="Meet The Runners", players=players)
 
 @login_required
 @character.route("/edit", methods=["GET"])
