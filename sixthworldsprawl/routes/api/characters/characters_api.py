@@ -107,3 +107,26 @@ def json_helper(json, key, default):
         return json[key]
     except KeyError:
         return default
+
+def get_bulk(character_limit):
+    """
+    Creates a multi character object that has x amount of characters in it.
+    Currently starts at the begining of the database;
+
+    Parameters
+    ==========
+    characer_limit: int
+
+    -> Character(s) JSON
+    """
+    characters = Character.query.order_by(Character.id.asc).yield_per(character_limit)
+    return characters
+
+def get_all():
+    """
+    Creates a multi character object that has all the characters in the database
+
+    -> Character(s) JSON
+    """
+    characters = Character.query.all()
+    return characters

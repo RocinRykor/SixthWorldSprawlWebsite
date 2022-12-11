@@ -63,7 +63,7 @@ def edit_character(quote_id):
     character = characters_api.edit_character(character_id, request.json)
     return character.jsonify(), 200
 
-@character_api.route("/get/<int:character_id>", methods=["GET"])
+@character_api.route("/<int:character_id>", methods=["GET"])
 def get_character(character_id):
     character = characters_api.get_character(character_id)
     
@@ -75,3 +75,15 @@ def get_character(character_id):
 @character_api.route("/random/", methods=["GET"])
 def random_character():
     return characters_api.random_character().jsonify(), 200
+
+@character_api.route("/all", methods=["GET"])
+def get_all_characters():
+    characters = characters_api.get_all()
+    characters = [character.jsonify() for character in characters]
+    return characters
+
+@character_api.route("/limit/<int:character_limit>", methods=["GET"])
+def get_multiple_characters(character_limit):
+    characters = characters_api.get_bulk(character_limit)
+    characters = [character.jsonify() for character in characters]
+    return characters

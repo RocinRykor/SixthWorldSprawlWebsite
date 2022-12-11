@@ -15,17 +15,13 @@
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div class="player-block__character-card-list">
-            <div class="character-card">
-                <button class="character-card__button">
-                    <img src="../static/img/portraits/dwarf_male.png" alt="" />
-                    <p class="character-card__title">Wheels</p>
-                </button>
-            </div>
+            {% for character in characters %}
+                {% with character=character %}
+                    {% include "public/characters/partials/character_card.html" %}
+                {% endwith %}
+            {% endfor %}
         </div>
     </div>
 </div>
 
-<script src="../static/js/promise-polyfill.js"></script>
-<script src="../static/js/fetch-polyfill.js"></script>
-<script src="../static/js/characters.js" type="module"></script>
 {% endblock %}
