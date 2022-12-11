@@ -4,11 +4,12 @@ from sixthworldsprawl.routes.api.characters import characters_api
 
 characters_api = Blueprint("characters_api", "__name__", url_prefix="/api/character")
 
-@characters_api.app_errorhandler(404)
-def not_found_error(e):
-    return {"error" : "Endpoint Not Found",
-    "status" : 404,
-    "message" : "The requested endpoint does not exist"}, 404
+
+# @characters_api.errorhandler(404)
+# def not_found_error(e):
+#     return {"error" : "Endpoint Not Found",
+#     "status" : 404,
+#     "message" : "The requested endpoint does not exist"}, 404
 
 @login_required
 @characters_api.route("/create/", methods=["POST"])

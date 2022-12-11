@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "public/partials/base.html" %} {% block main %}
+
+<h1>Add to the cast and crew!</h1>
+
+<form action="/character/edit" id="character_edit" name="character_edit" method="post">
+    {{form.csrf_token}}
+    <div class="wtform_field">
+        <p>{{form.name.label}}</p>
+        {{form.name}}
+    </div>
+    <div class="wtform_field">
+        <p>{{form.bio.label}}</p>
+        {{form.bio}}
+    </div>
+    <div class="wtform_field">
+        <p>{{form.race.label}}</p>
+        {{form.race}}
+    </div>
+    <div class="wtform_field">
+        <p>{{form.gender.label}}</p>
+        {{form.gender}}
+    </div>
+    <div class="wtform_field">
+        <p>{{form.status.label}}</p>
+        {{form.status}}
+    </div>
+
+        {{form.submit}}
+</form>
+
+
+{% endblock %}

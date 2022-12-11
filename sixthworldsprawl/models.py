@@ -23,7 +23,7 @@ class User(db.Model, UserMixin):
     is_admin = db.Column(db.Boolean, default=False)
     authenticated = db.Column(db.Boolean, default=False)
     display_name = db.Column(db.String(32))
-    characters = db.relationship('Character', backref='user', lazy=True)
+    characters = db.relationship('Character', back_populates='user', lazy=True)
 
     def is_authenticated(self):
         return self.authenticated
@@ -54,7 +54,8 @@ class Character(db.Model):
     | status:       A short decription of the character's in-game status
     """
     id = db.Column(db.Integer, primary_key=True)
-    player_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    player_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    player = db.relationship("User", back_populates("characters"), lazy=True)
     name = db.Column(db.String(32))
     bio = db.Column(db.String(2048))
     race = db.Column(db.String(32))

@@ -4,7 +4,7 @@
 <h1>Meet the cast and crew!</h1>
 
 {% if current_user.is_admin %}
-<a href="/character/create">Submit New Character</a>
+<a href="{{url_for('character.get_edit_character')}}">Submit New Character</a>
 {% endif %}
 
 <div class="main-character-list">
