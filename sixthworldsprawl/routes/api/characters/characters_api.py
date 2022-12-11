@@ -40,7 +40,7 @@ def get_character(character_id):
     -> Character or None
     """
 
-    character = Character.query.filter_by(id=characer_id).first()
+    character = Character.query.filter_by(id=character_id).first()
     
     return character
 
@@ -63,7 +63,7 @@ def edit_character(character_id, character_json):
     -> Character or None
     """
 
-    character = get_character(characer_id)
+    character = get_character(character_id)
     if not character:
         return None
 
@@ -79,7 +79,7 @@ def edit_character(character_id, character_json):
 
 def delete_character(character_id):
     """
-    Deletes the Character passed in specified by the characer_id
+    Deletes the Character passed in specified by the character_id
 
     Parameters:
     ==========
@@ -88,7 +88,7 @@ def delete_character(character_id):
     -> None
     """
 
-    character = get_character(characer_id)
+    character = get_character(character_id)
 
     db.session.delete(character)
     db.session.commit()

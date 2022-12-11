@@ -2,17 +2,17 @@ from flask import request, Blueprint
 from flask_login import login_required
 from sixthworldsprawl.routes.api.characters import characters_api
 
-characters_api = Blueprint("characters_api", "__name__", url_prefix="/api/character")
+character_api = Blueprint("characters_api", "__name__", url_prefix="/api/character")
 
 
-# @characters_api.errorhandler(404)
+# @character_api.errorhandler(404)
 # def not_found_error(e):
 #     return {"error" : "Endpoint Not Found",
 #     "status" : 404,
 #     "message" : "The requested endpoint does not exist"}, 404
 
 @login_required
-@characters_api.route("/create/", methods=["POST"])
+@character_api.route("/create/", methods=["POST"])
 def create_character():
     """
     Method: POST
@@ -36,8 +36,8 @@ def create_character():
     return character.jsonify(), 200
 
 @login_required
-@characters_api.route("/delete/<int:character_id>", methods=["POST"])
-def delete_character(characer_id):
+@character_api.route("/delete/<int:character_id>", methods=["POST"])
+def delete_character(character_id):
     """
     Method: POST
 
@@ -46,13 +46,13 @@ def delete_character(characer_id):
     Using POST for simplicity.
     """
 
-    character = characters_api.delete_character(characer_id)
+    character = characters_api.delete_character(character_id)
     if not character:
         return None
 
     return {"message" : "Character Deleted"}, 200
 
-@characters_api.route("/edit/<int:character_id>", methods=["POST"])
+@character_api.route("/edit/<int:character_id>", methods=["POST"])
 def edit_character(quote_id):
     """
     Method: POST
@@ -63,15 +63,15 @@ def edit_character(quote_id):
     character = characters_api.edit_character(character_id, request.json)
     return character.jsonify(), 200
 
-@characters_api.route("/get/<int:character_id>", methods=["GET"])
+@character_api.route("/get/<int:character_id>", methods=["GET"])
 def get_character(character_id):
-    character = characters_api.get_qutoe(character_id)
+    character = characters_api.get_character(character_id)
     
     if not character:
         return {"message": "character not found", "error": 404}, 200
     return character.jsonify()
 
-@characters_api.route("/", methods=["GET"])
-@characters_api.route("/random/", methods=["GET"])
+@character_api.route("/", methods=["GET"])
+@character_api.route("/random/", methods=["GET"])
 def random_character():
     return characters_api.random_character().jsonify(), 200

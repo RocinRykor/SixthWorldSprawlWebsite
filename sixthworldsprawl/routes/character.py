@@ -1,5 +1,5 @@
 from flask import render_template, Blueprint, redirect, request
-from flask_login import login_required
+from flask_login import login_required, current_user
 from sixthworldsprawl.app import db, User, Character
 from sixthworldsprawl.forms import CharacterForm
 
@@ -26,9 +26,9 @@ def finish_character_add():
     gender = form.gender.data
     status = form.status.data
 
-    character = Character(name=name, player_id=current_user, bio=bio, race=race, form=form, status=status)
+    character = Character(name=name, player_id=current_user.id, bio=bio, race=race, gender=gender, status=status)
     
     db.session.add(character)
     db.session.commit()
 
-    return character
+    return render_template("public/characters/characters.html", title="Meet The Runners")

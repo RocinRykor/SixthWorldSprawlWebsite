@@ -53,13 +53,13 @@ def build_app():
         from .routes.auth import auth
         from .routes.user import user
         from .routes.character import character
-        from .routes.api.characters.character_api_routes import characters_api
+        from .routes.api.characters.character_api_routes import character_api
 
         app.register_blueprint(general)
         app.register_blueprint(auth)
         app.register_blueprint(user)
         app.register_blueprint(character)
-        app.register_blueprint(characters_api)
+        app.register_blueprint(character_api)
 
         print("Creating")
         db.create_all()
