@@ -118,12 +118,6 @@ a:hover {
     background-color: transparent;
 }
 
-.navlink:hover {
-    border-top: 2px solid var(--primary-accent);
-    color: var(--light);
-    background: none;
-}
-
 /* 11 || Misc. */
 
 /*12 || Attributes */
@@ -148,6 +142,7 @@ a:hover {
 }
 
 /* Page Header || Navigation*/
+
 .navigation-list {
     list-style-type: none;
 }
@@ -157,9 +152,16 @@ a:hover {
     margin-left: 15px;
 }
 
-.navlink {
+.nav-link {
     font-size: 24px;
     color: var(--light);
+}
+
+.nav-link:hover {
+    border-top: 2px solid var(--primary-accent);
+    color: var(--light);
+    background: none;
+    text-decoration: none;
 }
 
 /* The container <div> - needed to position the dropdown content */

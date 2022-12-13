@@ -1,14 +1,86 @@
 <!DOCTYPE html>
 <header class="page-header">
     <h1 class="main_title">
-        <a href="/" class="navlink" role="menuitem" title="Return Home"
+        <a href="/" class="nav-link" role="menuitem" title="Return Home"
             >SIXTH-WORLD SPRAWL</a
         >
     </h1>
+    <nav class="nav-bar page-header__item">
+        <ul role="menubar" class="navigation-list">
+            <li role="presentation">
+                <a
+                    href="{{url_for('general.index')}}"
+                    class="nav-link"
+                    role="menuitem"
+                    title="Return Home"
+                    >Home</a
+                >
+            </li>
+            <li role="presentation">
+                <a
+                    href="{{url_for('character.characters')}}"
+                    class="nav-link"
+                    role="menuitem"
+                    title="View The Characters"
+                    >Characters</a
+                >
+            </li>
+            <li role="presentation">
+                <a
+                    href="{{url_for('general.roller')}}"
+                    class="nav-link"
+                    role="menuitem"
+                    title="Dice Roller"
+                    >Dice Roller</a
+                >
+            </li>
+            {% if current_user.is_authenticated %}
+            <li role="presentation">
+                <div class="dropdown">
+                    <button class="button-dropdown">User &gt;</button>
+                    <div class="dropdown-content">
+                        <a
+                            href="{{url_for('user.get_edit_user')}}"
+                            class="nav-link"
+                            role="menuitem"
+                            title="Edit User Details"
+                            >Edit User</a
+                        >
+                        <a
+                            href="{{url_for('auth.logout')}}"
+                            class="nav-link"
+                            role="menuitem"
+                            title="Logout User"
+                            >Logout</a
+                        >
+                    </div>
+                </div>
+            </li>
+            {% else %}
+            <li role="presentation">
+                <a
+                    href="{{url_for('auth.login')}}"
+                    class="navlink"
+                    role="menuitem"
+                    title="Log In"
+                    >Login</a
+                >
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+
+<!--
+
     <nav class="main-navigation page-header__item">
         <ul role="menubar" class="navigation-list">
             <li role="presentation">
-                <a href="{{url_for('general.index')}}" class="navlink" role="menuitem" title="Return Home"
+                <a
+                    href="{{url_for('general.index')}}"
+                    class="navlink"
+                    role="menuitem"
+                    title="Return Home"
                     >Home</a
                 >
             </li>
@@ -65,4 +137,5 @@
             {% endif %}
         </ul>
     </nav>
-</header>
+
+-->
