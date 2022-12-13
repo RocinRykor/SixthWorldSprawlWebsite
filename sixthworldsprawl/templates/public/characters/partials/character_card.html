@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-
-<div class="character-card" onclick="characterModel()">
-        <img src="{{url_for('static', filename=character.get_img_url())}}" alt="" class="character_card__portrait"/>
-        <p class="character-card__title">{{character["name"]}}</p>
+<div class="character-card">
+    <img
+        src="{{url_for('static', filename=character.get_img_url())}}"
+        alt=""
+        class="character_card__portrait" />
+    <p class="character-card__title">{{character["name"]}}</p>
 </div>

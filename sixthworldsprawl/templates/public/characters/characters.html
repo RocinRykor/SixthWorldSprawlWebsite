@@ -8,11 +8,9 @@
 {% endif %}
 
 <div class="main-character-list">
-    {% for player in players %}
-        {% with player=player %}
-            {% include "public/characters/partials/character_card_list.html" %}
-        {% endwith %}
-    {% endfor %}
+    {% for player in players %} {% with player=player %} {% include
+    "public/characters/partials/character_card_list.html" %} {% endwith %} {%
+    endfor %}
 </div>
 
-{% endblock %}
+{% include "public/characters/partials/modal.html" %} {% endblock %}
