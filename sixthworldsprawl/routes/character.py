@@ -2,7 +2,7 @@ from flask import render_template, Blueprint, redirect, request
 from flask_login import login_required, current_user
 from sixthworldsprawl.app import db, User, Character
 from sixthworldsprawl.forms import CharacterForm
-from sixthworldsprawl.routes.api.characters import characters_api
+from sixthworldsprawl.routes.api.characters import characters_api, character_api_routes
 from sixthworldsprawl.routes.api.users import users_api
 from sixthworldsprawl.utils import character_utils
 character = Blueprint("character", __name__, url_prefix="/character")
@@ -12,6 +12,12 @@ def characters():
     players = users_api.get_all()
     return render_template("public/characters/characters.html", 
                             title="Meet The Runners", players=players)
+
+@character.route("/<int:character_id>")
+def character_modal(character_id):
+    players = users_api.get_all()
+    character = character_api_routes.get_character(character_id)
+    return render_template("public/characters/partials/character_modal.html", title="Modal Test", players=players, character=character)
 
 @login_required
 @character.route("/edit", methods=["GET"])

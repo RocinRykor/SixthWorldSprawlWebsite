@@ -108,6 +108,16 @@ a:hover {
     color: black;
 }
 
+.a__hidden {
+    display: transparent;
+    color: inherit;
+}
+
+.a__hidden:hover {
+    display: transparent;
+    background-color: transparent;
+}
+
 .navlink:hover {
     border-top: 2px solid var(--primary-accent);
     color: var(--light);
@@ -316,6 +326,7 @@ a:hover {
     background-color: var(--dark);
     border-radius: var(--default-border-radius);
     margin: 5px;
+    color: white;
 }
 
 .character-card:hover {

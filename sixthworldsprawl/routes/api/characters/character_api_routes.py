@@ -53,7 +53,7 @@ def delete_character(character_id):
     return {"message" : "Character Deleted"}, 200
 
 @character_api.route("/edit/<int:character_id>", methods=["POST"])
-def edit_character(quote_id):
+def edit_character(character_id):
     """
     Method: POST
 
