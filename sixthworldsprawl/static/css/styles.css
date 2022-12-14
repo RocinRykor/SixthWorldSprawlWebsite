@@ -15,14 +15,11 @@
     box-sizing: border-box;
 }
 
-/* 2 || Document */
 html,
 body {
     height: 100%;
 }
-/* 3 || Metadata */
 
-/* 4 || Sections */
 body {
     /* Base || Colors*/
     background-color: var(--light);
@@ -61,10 +58,7 @@ h3 {
     font-weight: 500;
 }
 
-/* 6 || Lists */
-/* 7 || Media */
-
-/* 8 || Forms */
+/* Buttons */
 .button,
 button {
     /* overwrites browser defaults */
@@ -103,6 +97,7 @@ a {
     text-decoration: none;
 }
 
+/* A Href Links */
 a:hover {
     background: var(--primary-accent);
     color: black;
@@ -118,9 +113,7 @@ a:hover {
     background-color: transparent;
 }
 
-/* 11 || Misc. */
-
-/*12 || Attributes */
+/*Attributes */
 /* Section || Page Header*/
 
 .page-header {
@@ -131,6 +124,7 @@ a:hover {
     padding: 0px 25px 0px 25px;
 }
 
+/* Page Header */
 .page-header__item {
     flex: 0 1 200px;
     color: white;
@@ -141,7 +135,7 @@ a:hover {
     text-align: right;
 }
 
-/* Page Header || Navigation*/
+/* Navigation */
 .navbar-brand {
     font-weight: 500;
 }
@@ -172,58 +166,6 @@ a:hover {
     border: none;
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown Button */
-.button-dropdown {
-    background-color: var(--dark);
-    color: var(--light);
-    margin: 0;
-    font-size: 24px;
-    border-bottom: 0px;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--light);
-    min-width: 60px;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: var(--dark);
-    padding: 16px 16px;
-    font-size: 18px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: var(--dark);
-    color: var(--light);
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .button-dropdown {
-    background-color: var(--primary-accent);
-    color: var(--dark);
-}
-
 /* Section || Body */
 .content {
     flex: 1 0 auto;
@@ -236,30 +178,6 @@ a:hover {
     flex-direction: column;
     text-align: center;
     flex-shrink: 0;
-}
-
-/* Main || Portrait */
-.profile_portrait {
-    float: left;
-    width: 250px;
-    margin-right: 40px;
-    border-radius: 50%;
-}
-
-/* Main || Experience Table */
-.experience {
-    text-align: center;
-    margin: 0 auto;
-}
-
-.experience-table {
-    margin: 0px auto;
-    width: 25%;
-}
-
-.profile-main {
-    max-width: 700px;
-    margin: 0 auto;
 }
 
 /* Main || Grids*/
@@ -280,7 +198,7 @@ a:hover {
 
 .grid__item {
     background-color: var(--medium);
-    border-radius: 30px;
+    border-radius: var(--default-border-radius);
     opacity: 100%;
     width: auto;
     min-height: auto;
@@ -290,13 +208,13 @@ a:hover {
     border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-.main-character-list {
+.player-block-list {
     min-width: 35%;
     width: fit-content;
     margin: auto;
 }
 
-.character-list-item__player-block {
+.player-block {
     background-color: darkslategrey;
     margin: 5px;
 
@@ -311,24 +229,20 @@ a:hover {
 .player-block__title {
     font-size: 36px;
     text-decoration: underline;
-    margin: 0px;
+    margin: 0px; /* Trims down some Excess space */
 }
 
 .player-block__description {
-    padding: 5px;
+    /*Add some space from edge of player block*/
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .player-block__character-card-list {
-    padding: 25px;
     border-radius: var(--default-border-radius);
-    text-decoration: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
-    padding: 0px 25px 0px 25px;
-
-    padding: 25px;
-
     text-align: center;
 }
 

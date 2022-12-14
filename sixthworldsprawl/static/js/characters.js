@@ -18,18 +18,6 @@ class APIRequest {
         });
         return this.response.json();
     }
-    async post_request(data = {}) {
-        this.response = await fetch(this.api_request, {
-            method: 'POST',
-            mode: 'cors',
-            cache: 'no-cache',
-            credentials: 'same-origin',
-            headers: this.headers,
-            redirect: 'follow',
-            body: JSON.stringify(data),
-        });
-        return this.response.json();
-    }
 }
 
 // Frontend admin API endpoint implementation
