@@ -7,7 +7,7 @@
 <a href="{{url_for('character.get_edit_character')}}">Submit New Character</a>
 {% endif %}
 
-<div class="player-block-list">
+<div class="player-block-list container">
     {% for player in players %} {% with player=player %} {% include
     "public/characters/partials/player_block_list.html" %} {% endwith %} {%
     endfor %}

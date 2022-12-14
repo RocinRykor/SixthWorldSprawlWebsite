@@ -180,45 +180,11 @@ a:hover {
     flex-shrink: 0;
 }
 
-/* Main || Grids*/
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
-    padding: 0px 25px 0px 25px;
-
-    text-align: center;
-}
-
-/* start grid fallback */
-.grid__item {
-    display: inline-block;
-    width: 33%;
-}
-
-.grid__item {
-    background-color: var(--medium);
-    border-radius: var(--default-border-radius);
-    opacity: 100%;
-    width: auto;
-    min-height: auto;
-    margin: 0;
-
-    /* Start styling */
-    border: 2px solid rgba(0, 0, 0, 0.3);
-}
-
-.player-block-list {
-    min-width: 35%;
-    width: fit-content;
-    margin: auto;
-}
-
 .player-block {
-    background-color: darkslategrey;
+    background-color: var(--dark);
     margin: 5px;
 
-    border: 3px solid black;
+    border: 3px solid var(--medium);
     border-radius: var(--default-border-radius);
     color: white;
 
@@ -232,22 +198,13 @@ a:hover {
     margin: 0px; /* Trims down some Excess space */
 }
 
-.player-block__description {
-    /*Add some space from edge of player block*/
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
 .player-block__character-card-list {
     border-radius: var(--default-border-radius);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
     text-align: center;
 }
 
 .character-card {
-    background-color: var(--dark);
+    background-color: transparent;
     border-radius: var(--default-border-radius);
     margin: 5px;
     color: white;
@@ -258,7 +215,7 @@ a:hover {
     border-radius: var(--default-border-radius);
 }
 
-.character-card:hover {
+.character_card__portrait:hover {
     /* lets the mouse appear as a hand when hovering over the button */
     cursor: pointer;
     /* reduces the opacity of the button to 75% */
@@ -271,8 +228,8 @@ a:hover {
 }
 
 .character_card__portrait {
+    border: 1px solid white;
     border-radius: var(--default-border-radius);
-    padding-top: 10px;
 }
 
 /* Modal */
