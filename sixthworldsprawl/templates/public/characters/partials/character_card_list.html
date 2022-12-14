@@ -3,14 +3,12 @@
 <div class="character-list-item__player-block">
     <p class="player-block__title">{{player.username}}</p>
     <p class="player-block__description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
     </p>
     <div class="player-block__character-card-list">
-        {% for character in player.characters %}
-            {% with character=character %}
-                {% include "public/characters/partials/character_card.html" %}
-            {% endwith %}
-        {% endfor %}
+        {% for character in player.characters %} {% with character=character %}
+        {% include "public/characters/partials/character_card.html" %} {%
+        endwith %} {% endfor %}
     </div>
 </div>

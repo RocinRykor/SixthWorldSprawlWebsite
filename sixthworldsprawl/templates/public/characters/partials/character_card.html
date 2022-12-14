@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 
-<a
-    href="{{url_for('character.characters')}}{{character['id']}}"
-    class="a__hidden">
-    <div class="character-card">
-        <img
-            src="{{url_for('static', filename=character.get_img_url())}}"
-            alt=""
-            class="character_card__portrait" />
-        <p class="character-card__title">{{character["name"]}}</p>
-    </div>
-</a>
+<div class="character-card" onclick="showModal('{{character.id}}')">
+    <img
+        src="{{url_for('static', filename=character.get_img_url())}}"
+        class="character_card__portrait" />
+    <p class="character-card__title">{{character["name"]}}</p>
+</div>

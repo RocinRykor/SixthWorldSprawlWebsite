@@ -1,33 +1,70 @@
-const playerRepository = function () {
-    const characterFile = '../static/json/characters.json';
-    const playerList = [];
-
-    function loadList() {
-        return fetch(characterFile)
-            .then(function (response) {
-                console.log(response)
-                return response.json();
-            })
-            .then(function (json) {
-                json.results.forEach(function (item) {
-                    console.log(item);
-                });
-            })
-            .catch(function (e) {
-                console.error(e);
-            });
+class APIRequest {
+    constructor(api_request) {
+        this.endpoint_url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/api/`;
+        this.headers = {
+            'Content-Type': 'application/json',
+        };
+        this.response = {};
+        this.api_request = this.endpoint_url + api_request;
     }
-
-    function add(player) {
-        playerList.push(player);
+    async get_request() {
+        this.response = await fetch(this.api_request, {
+            method: 'GET',
+            mode: 'cors',
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: this.headers,
+            redirect: 'follow',
+        });
+        return this.response.json();
     }
+    async post_request(data = {}) {
+        this.response = await fetch(this.api_request, {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: this.headers,
+            redirect: 'follow',
+            body: JSON.stringify(data),
+        });
+        return this.response.json();
+    }
+}
 
-    return {
-        add,
-        loadList,
-    };
-}();
+// Frontend admin API endpoint implementation
+async function character_search(character_id) {
+    /*
+     * Searches for character on the server.
+     * keywords should be a json list of keywords to search for
+     *
+     * Returns a JSON dict containing the character
+     */
+    var api_request = `character/${character_id}`;
+    var request = new APIRequest(api_request);
+    return await request.get_request();
+}
 
-playerRepository.loadList().then(function () {
-    console.log('Complete!');
+function showModal(character_id) {
+    character_search(character_id).then((character) => {
+        console.log(character);
+
+        $('.modal-title').html(character.name);
+
+        img_url = '/static/' + character.img_url;
+
+        console.log(img_url);
+
+        $('.character-portrait').attr('src', img_url);
+        $('#details-metatype').text('Metatype: ' + character.race);
+        $('#details-gender').text('Gender: ' + character.gender);
+        $('#details-bio').text('Bio: ' + character.bio);
+        $('#details-status').text('Current Status: ' + character.status);
+
+        $('#characterModal').modal('show');
+    });
+}
+
+$(document).ready(() => {
+    console.log('Character Window is loaded');
 });

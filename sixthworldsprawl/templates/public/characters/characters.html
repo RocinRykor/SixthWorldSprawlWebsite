@@ -12,5 +12,5 @@
     "public/characters/partials/character_card_list.html" %} {% endwith %} {%
     endfor %}
 </div>
-
-{% block modal%} {% endblock %} {% block script %} {% endblock %} {% endblock %}
+<script src="{{url_for('static', filename='/js/characters.js')}}"></script>
+{% include "public/characters/partials/character_modal.html" %} {% endblock %}

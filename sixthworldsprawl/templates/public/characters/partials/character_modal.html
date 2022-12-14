@@ -1,33 +1,48 @@
 <!DOCTYPE html>
-{% extends '/public/characters/characters.html' %} {% block modal %}
 <div
-    class="modal"
-    id="exampleModal"
+    class="modal fade"
+    id="characterModal"
     tabindex="-1"
     role="dialog"
-    aria-labelledby="exampleModalLabel"
+    aria-labelledby="characterModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h3 class="modal-title" id="exampleModalLabel">
+                    - Character Name -
+                </h3>
             </div>
-            <div class="modal-body">...</div>
+            <div class="modal-body">
+                <div class="modal-image-block">
+                    <img
+                        src="https://via.placeholder.com/150x200"
+                        class="character-portrait"
+                        alt="Character Portrait" />
+                </div>
+                <div class="modal-details-block float-start">
+                    <p class="modal-details__text" id="details-metatype">
+                        Metatype
+                    </p>
+                    <p class="modal-details__text" id="details-gender">
+                        Gender
+                    </p>
+                    <p class="modal-details__text" id="details-bio">
+                        Description
+                    </p>
+                    <p class="modal-details__text" id="details-status">
+                        Status
+                    </p>
+                </div>
+            </div>
             <div class="modal-footer">
-                <a
-                    href="{{url_for('character.characters')}}"
+                <button
+                    type="button"
                     class="btn btn-secondary"
-                    >Close</a
-                >
+                    data-bs-dismiss="modal">
+                    Close
+                </button>
             </div>
         </div>
     </div>
 </div>
-{% endblock %} {% block script %}
-<script>
-    $(document).ready(() => {
-        console.log('Character Window is loaded');
-        $('#exampleModal').modal('show');
-    });
-</script>
-{% endblock%}

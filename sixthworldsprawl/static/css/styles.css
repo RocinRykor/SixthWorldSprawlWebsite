@@ -339,6 +339,11 @@ a:hover {
     color: white;
 }
 
+.character-card__button {
+    box-shadow: none;
+    border-radius: var(--default-border-radius);
+}
+
 .character-card:hover {
     /* lets the mouse appear as a hand when hovering over the button */
     cursor: pointer;
@@ -354,4 +359,31 @@ a:hover {
 .character_card__portrait {
     border-radius: var(--default-border-radius);
     padding-top: 10px;
+}
+
+/* Modal */
+.modal-content {
+    background-color: var(--dark);
+    border: 3px solid var(--medium);
+    color: white;
+}
+
+.modal-title {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.character-portrait {
+    border-radius: var(--default-border-radius);
+    border: 1px solid lightgray;
+}
+
+.modal-image-block {
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+}
+
+.modal-details__text {
+    text-align: left;
+    font-size: 20px;
 }
