@@ -99,6 +99,7 @@ a {
 
 /* A Href Links */
 a:hover {
+    cursor: pointer;
     background: var(--primary-accent);
     color: black;
 }

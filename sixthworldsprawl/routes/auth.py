@@ -53,6 +53,10 @@ def display_login():
                             form=form)
 
 
+@auth.route("/login-form/", methods=["GET"])
+def display_login_modal():
+    return render_template("public/users/partials/login_form.html", title="SixthWorldSprawl Login")
+
 @auth.route("/logout/")
 def logout():
     current_user.authenticated = False
