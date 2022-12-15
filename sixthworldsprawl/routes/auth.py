@@ -55,7 +55,9 @@ def display_login():
 
 @auth.route("/login-form/", methods=["GET"])
 def display_login_modal():
-    return render_template("public/users/partials/login_form.html", title="SixthWorldSprawl Login")
+    form = LoginForm()
+    return render_template("public/users/partials/login_form.html", title="SixthWorldSprawl Login", 
+                            form=form)
 
 @auth.route("/logout/")
 def logout():
@@ -68,6 +70,11 @@ def logout():
 def signup():
     form = UserForm()
     return render_template("public/users/signup.html", form=form)
+
+@auth.route("/signup-form/")
+def signup_form():
+    form = UserForm()
+    return render_template("public/users/partials/signup_form.html", form=form)
 
 
 @auth.route("/signup/", methods=['POST'])

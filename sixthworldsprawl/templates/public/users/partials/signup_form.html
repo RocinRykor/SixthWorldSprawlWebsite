@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<form action="/login/" id="login" name="login" method="post">
+<form
+    action="{{url_for('auth.finish_signup')}}"
+    id="setup"
+    name="setup"
+    method="post">
     {{form.csrf_token}}
     <div class="form-group">
-        {{form.username.label}} {{form.username(class_="form-control", size=30,
+        {{form.name.label}} {{form.name(class_="form-control", size=30,
         maxlength=30)}}
     </div>
     <br />
@@ -11,11 +15,16 @@
         minlength=12)}}
     </div>
     <br />
+    <div class="form-group">
+        {{form.confirmation.label}} {{form.confirmation(class_="form-control",
+        minlength=12)}}
+    </div>
+    <br />
     <div class="row mx-auto">
         <button
-            onclick="openModal('Sign Up:', '/signup-form/')"
+            onclick="openModal('User Login:', '/login-form/')"
             class="btn btn-secondary col">
-            Not Registed? Sign Up
+            Already Registed? Log In
         </button>
         {{form.submit(class_="btn btn-primary col")}}
     </div>
