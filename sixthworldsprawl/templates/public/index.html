@@ -5,6 +5,141 @@
     Welcome, {% if current_user.is_authenticated %} {{current_user.username}}{%
     else %} Chummer! {% endif %}, to the Sixth-World!
 </h1>
+
+<div class="accordion w-75 mx-auto" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne"
+                aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseOne">
+                What is this site?
+            </button>
+        </h2>
+        <div
+            id="panelsStayOpen-collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+                <strong
+                    >A website built for use with the TableTop Role-Playing
+                    Game, Shadowrun (3e)</strong
+                >
+                <br />
+                Contained within, will be a host of generators and rollers to
+                help play the game, along with other features such as digital
+                character sheets and character management tools.
+                <br />
+                Plus features for anyone to enjoy, even non-players, such as
+                overviews of featured characters and quotes from some of our
+                funniest moments.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTwo">
+                DNDBeyond, but for Shadowrun?
+            </button>
+        </h2>
+        <div
+            id="panelsStayOpen-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+                <strong>That's honestly the best way that I can put it.</strong>
+                <br />
+                For those familiar with that site, a lot of the features that I
+                want to add to this site will be the same types of tools that
+                you find there.
+                <br />
+                However, it is important to note
+                <strong>They have a team, I am doing this by myself.</strong>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree">
+                Is only 3rd Edition Supported, what about (X) Edition?
+            </button>
+        </h2>
+        <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree">
+            <div class="accordion-body">
+                <strong>Only 3rd Edition is supported at this time.</strong>
+                <br />
+                This is very much a personal project and I am working on it
+                because 3rd Edition is the version that I mostly play and the
+                one that I want to work on first.
+                <br />
+                While some planned features like the generators (magical groups,
+                corps, missions, etc) might be able to be used with other
+                editions with minor tweaks they will be primarily made with 3rd
+                edition rules in mind.
+                <br />
+                However, when the 3rd edition features are complete and I feel
+                that it is in a good spot, I would very much like to start
+                making the site work with all editions of the game.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+            <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseFour"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseFour">
+                Is This Site Official?
+            </button>
+        </h2>
+        <div
+            id="panelsStayOpen-collapseFour"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingFour">
+            <div class="accordion-body">
+                <strong>No... No it is not.</strong>
+                <br />
+                I'm gonna be honest here, I am making this becuase of my love
+                for the game and the setting of Shadowrun. But I know that I
+                dont have any of the rights to that IP, Topps can come in at any
+                moment and shut this project down and I would just have to deal
+                with that.
+                <br />
+                However,
+                <strong>this site isn't commercialized in any way </strong>, I
+                am making absolutly no money off of it. You will never see ads
+                on my site (I can't stand em, and dont wanna deal with em), and
+                servers that are hosting this site are run by me personally.
+                <br />
+                That said, so long as the site stays small and goes unnoticed I
+                will probably be fine. If it gets popular and starts getting
+                attention then, frankly, all bets are off.
+            </div>
+        </div>
+    </div>
+</div>
+
 <p>To get started, check the navigation links up top!</p>
 
 {% endblock %}
