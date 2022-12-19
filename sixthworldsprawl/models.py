@@ -74,6 +74,9 @@ class Character(db.Model):
     race = db.Column(db.String(32))
     gender = db.Column(db.String(32))
     status = db.Column(db.String(64))
+    img_url = db.relationship("Portrait", backref="character",
+                                   lazy="select")
+
 
     def get_img_url(self):
         return character_utils.set_img(self.race, self.gender)
@@ -96,7 +99,26 @@ class Character(db.Model):
             "img_url": self.get_img_url()
         }
 
-    
+class Portrait(db.model):
+    id = db.Column(db.Integer, primary_key=True)
+    img_url = id = db.Column(db.Integer, primary_key=True)
+
+class PortraitTag(db.model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(32))
+    decription = = db.Column(db.String(2048))
+
+    def jsonify(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "decription": self.decription,
+        }
+
+class PortraitTagLinker(db.model):
+    id = db.Column(db.Integer, primary_key=True)
+    portrait_id = db.Column(db.Integer, db.ForeignKey('portrait.id'))
+    tag_id = db.Column(db.Integer, db.ForeignKey('tag.id'))
 
 # class Request(db.Model):
 #     __tablename__ = "request"
