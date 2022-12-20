@@ -101,7 +101,7 @@ class Character(db.Model):
 
 class Portrait(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    img_url = db.Column(db.Integer, primary_key=True)
+    img_url = db.Column(db.String(64), db.ForeignKey('character.id'))
 
 class Tag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
