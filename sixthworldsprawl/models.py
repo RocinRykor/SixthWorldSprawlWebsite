@@ -99,14 +99,14 @@ class Character(db.Model):
             "img_url": self.get_img_url()
         }
 
-class Portrait(db.model):
+class Portrait(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    img_url = id = db.Column(db.Integer, primary_key=True)
+    img_url = db.Column(db.Integer, primary_key=True)
 
-class PortraitTag(db.model):
+class Tag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(32))
-    decription = = db.Column(db.String(2048))
+    decription = db.Column(db.String(2048))
 
     def jsonify(self):
         return {
@@ -115,7 +115,7 @@ class PortraitTag(db.model):
             "decription": self.decription,
         }
 
-class PortraitTagLinker(db.model):
+class PortraitTagLinker(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     portrait_id = db.Column(db.Integer, db.ForeignKey('portrait.id'))
     tag_id = db.Column(db.Integer, db.ForeignKey('tag.id'))
