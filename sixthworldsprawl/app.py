@@ -14,6 +14,9 @@ db = models.db
 # Create any items that will be used in the app
 User = models.User
 Character = models.Character
+Portrait = models.Portrait
+Tag = models.Tag
+PortraitTagLinker = models.PortraitTagLinker
 
 migrate = Migrate()
 login_manager = LoginManager()
@@ -49,12 +52,16 @@ def build_app():
     # statistics.init_app(app, db, Request, check_user)
 
     with app.app_context():
+        # Base Routes
         from .routes.general import general
         from .routes.auth import auth
         from .routes.user import user
         from .routes.character import character
+
+        #API Routes
         from .routes.api.characters.character_api_routes import character_api
         from .routes.api.users.user_api_routes import user_api
+        from .routes.api.portraits.portrait_api_routes import portrait_api
 
         app.register_blueprint(general)
         app.register_blueprint(auth)
@@ -62,6 +69,7 @@ def build_app():
         app.register_blueprint(character)
         app.register_blueprint(character_api)
         app.register_blueprint(user_api)
+        app.register_blueprint(portrait_api)
 
         print("Creating")
         db.create_all()
