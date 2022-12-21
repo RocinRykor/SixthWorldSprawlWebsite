@@ -3,7 +3,11 @@
 
 <h1>Add to the cast and crew!</h1>
 
-<form action="/character/edit" id="character_edit" name="character_edit" method="post">
+<form
+    action="/character/edit"
+    id="character_edit"
+    name="character_edit"
+    method="post">
     {{form.csrf_token}}
     <div class="wtform_field">
         <p>{{form.name.label}}</p>
@@ -26,8 +30,9 @@
         {{form.status}}
     </div>
 
-        {{form.submit}}
+    {{form.submit}}
 </form>
 
-
-{% endblock %}
+{% for portrait in portraits %}
+<img src="../static/img/portraits/{{portrait.filename}}" alt="" />
+{% endfor %} {% endblock %}
