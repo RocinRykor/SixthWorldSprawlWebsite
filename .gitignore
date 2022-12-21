@@ -1,5 +1,6 @@
 # Manual additions
-rrprojects/config.py
+sixthworldsprawl/static/img/portraits/*
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

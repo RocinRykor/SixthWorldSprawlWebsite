@@ -3,6 +3,7 @@ from flask_login import login_required, current_user
 from sixthworldsprawl.app import db, User, Character
 from sixthworldsprawl.forms import CharacterForm
 from sixthworldsprawl.routes.api.characters import characters_api, character_api_routes
+from sixthworldsprawl.routes.api.portraits import portraits_api, portrait_api_routes
 from sixthworldsprawl.routes.api.users import users_api
 from sixthworldsprawl.utils import character_utils
 character = Blueprint("character", __name__, url_prefix="/character")
@@ -23,7 +24,8 @@ def character_modal(character_id):
 @character.route("/edit", methods=["GET"])
 def get_edit_character():
     form = CharacterForm(request.form)
-    return render_template("public/characters/create_character.html", form=form)
+    portraits = portraits_api.get_all()
+    return render_template("public/characters/create_character.html", form=form, portraits=portraits)
 
 @login_required
 @character.route("/edit", methods=["POST"])
