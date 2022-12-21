@@ -74,7 +74,8 @@ class Character(db.Model):
     race = db.Column(db.String(32))
     gender = db.Column(db.String(32))
     status = db.Column(db.String(64))
-    img_url = db.relationship("Portrait", backref="character",
+    portrait_filename = (db.String(64))
+    portrait_id = db.relationship("Portrait", backref="character",
                                    lazy="select")
 
 
@@ -101,12 +102,12 @@ class Character(db.Model):
 
 class Portrait(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    img_url = db.Column(db.String(64), db.ForeignKey('character.id'))
+    filename = db.Column(db.String(64))
 
 class Tag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(32))
-    decription = db.Column(db.String(2048))
+    description = db.Column(db.String(2048))
 
     def jsonify(self):
         return {
