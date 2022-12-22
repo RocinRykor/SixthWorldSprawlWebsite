@@ -33,7 +33,7 @@ class EditUserForm(FlaskForm):
 
 class CharacterForm(FlaskForm):
     name = StringField("Name", validators=[InputRequired(), Length(max=32)])
-    bio = StringField("Bio", validators=[InputRequired(), Length(max=2048)])
+    bio = TextAreaField("Bio", validators=[InputRequired(), Length(max=2048)])
     race = StringField("Race", validators=[InputRequired(), Length(max=32)])
     gender = StringField("Gender", validators=[InputRequired(), Length(max=32)])
     status = StringField("Status", validators=[InputRequired(), Length(max=64)])

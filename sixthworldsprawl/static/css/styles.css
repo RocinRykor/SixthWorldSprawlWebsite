@@ -245,9 +245,26 @@ a:hover {
     font-weight: 500;
 }
 
-.character-portrait {
+.character-portrait,
+.character-portrait-sm,
+.character-portrait-lg {
     border-radius: var(--default-border-radius);
     border: 1px solid lightgray;
+}
+
+.character-portrait {
+    height: 150px;
+    width: 150px;
+}
+
+.character-portrait-sm {
+    height: 75px;
+    width: 75px;
+}
+
+.character-portrait-lg {
+    height: 250px;
+    width: 250px;
 }
 
 .modal-image-block {
@@ -258,4 +275,11 @@ a:hover {
 .modal-details__text {
     text-align: left;
     font-size: 20px;
+}
+
+.character-portrait-selector:hover {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 75% */
+    opacity: 0.75;
 }

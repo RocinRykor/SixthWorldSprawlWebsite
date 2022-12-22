@@ -9,30 +9,38 @@
     name="character_edit"
     method="post">
     {{form.csrf_token}}
-    <div class="wtform_field">
-        <p>{{form.name.label}}</p>
-        {{form.name}}
-    </div>
-    <div class="wtform_field">
-        <p>{{form.bio.label}}</p>
-        {{form.bio}}
-    </div>
-    <div class="wtform_field">
-        <p>{{form.race.label}}</p>
-        {{form.race}}
-    </div>
-    <div class="wtform_field">
-        <p>{{form.gender.label}}</p>
-        {{form.gender}}
-    </div>
-    <div class="wtform_field">
-        <p>{{form.status.label}}</p>
-        {{form.status}}
+    <div class="container">
+        <div class="portrait-selector">
+            <img
+                src="../../../static/img/icons/placeholder.png"
+                class="character-portrait character-portrait-selector"
+                alt="Select Character Portrait"
+                onclick="openPortraitSelector()" />
+            <p>Click to change character portrait!</p>
+        </div>
+        <div class="form-group wtform_field row">
+            {{form.name.label(class_="col-1")}}{{form.name(class_="form-control",
+            size=32, maxlength=32)}}
+        </div>
+        <div class="form-group wtform_field row">
+            {{form.race.label(class_="col-1")}}
+            {{form.race(class_="form-control", size=32, maxlength=32)}}
+        </div>
+        <div class="form-group wtform_field row">
+            {{form.gender.label(class_="col-1")}}
+            {{form.gender(class_="form-control", size=32, maxlength=32)}}
+        </div>
+        <div class="form-group wtform_field row">
+            {{form.status.label(class_="col-1")}}
+            {{form.status(class_="form-control", size=64, maxlength=64)}}
+        </div>
+        <div class="form-group wtform_field row">
+            {{form.bio.label(class_="col-1")}} {{form.bio(class_="form-control",
+            rows=10, maxlength=2048)}}
+        </div>
     </div>
 
+    <!-- TODO Modal and Script for portrait selecting-->
     {{form.submit}}
 </form>
-
-{% for portrait in portraits %}
-<img src="../static/img/portraits/{{portrait.filename}}" alt="" />
-{% endfor %} {% endblock %}
+{% endblock %}
