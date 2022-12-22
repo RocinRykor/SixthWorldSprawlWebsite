@@ -111,6 +111,7 @@ class Portrait(db.Model):
 class Tag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(32))
+    category = db.Column(db.String(32))
     description = db.Column(db.String(2048))
 
     def jsonify(self):
@@ -118,6 +119,7 @@ class Tag(db.Model):
             "id": self.id,
             "title": self.title,
             "decription": self.decription,
+            "category": self.category,
         }
 
 class PortraitTagLinker(db.Model):
