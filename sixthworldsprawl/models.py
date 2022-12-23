@@ -78,7 +78,7 @@ class Character(db.Model):
     portrait_id = db.Column(db.Integer, db.ForeignKey('portrait.id'))
 
     def get_img_url(self):
-        return character_utils.set_img(self.race, self.gender)
+        return character_utils.get_img(self.portrait_id, self.portrait_filename)
 
     def jsonify(self):
         """
@@ -95,7 +95,8 @@ class Character(db.Model):
             "race": self.race,
             "gender": self.gender,
             "status": self.status,
-            "img_url": self.get_img_url()
+            "portrait_id": self.portrait_id,
+            "portrait_filename": self.portrait_filename,
         }
 
 class Portrait(db.Model):

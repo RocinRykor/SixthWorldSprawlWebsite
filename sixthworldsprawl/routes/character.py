@@ -37,8 +37,10 @@ def finish_character_add():
     race = form.race.data
     gender = form.gender.data
     status = form.status.data
+    portrait_id = form.portrait_id.data
+    portrait_filename = form.portrait_filename.data
 
-    character = Character(name=name, player_id=current_user.id, bio=bio, race=race, gender=gender, status=status)
+    character = Character(name=name, player_id=current_user.id, bio=bio, race=race, gender=gender, status=status, portrait_id=portrait_id, portrait_filename=portrait_filename)
     
     db.session.add(character)
     db.session.commit()

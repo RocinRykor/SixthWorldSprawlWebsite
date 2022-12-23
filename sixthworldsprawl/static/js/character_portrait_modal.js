@@ -41,10 +41,18 @@ function setCharacterPortrait(portraitID) {
     portrait_search(portraitID).then((portrait) => {
         console.log(portraitID);
 
-        img_url = '../../../static/img/portraits/' + portrait.filename;
+        //Add Selected portrait information to hidden form fields
+        formPortraitID = $('#portrait_id');
+        formPortraitID.val(portraitID);
 
+        formPortraitFileName = $('#portrait_filename');
+        formPortraitFileName.val(portrait.filename);
+
+        // Show Selected Picture
+        img_url = '../../../static/img/portraits/' + portrait.filename;
         $('#selectedCharacterPortrait').attr('src', img_url);
 
+        //Hide
         $('#characterPortraitModal').modal('hide');
     });
 }

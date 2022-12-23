@@ -37,5 +37,7 @@ class CharacterForm(FlaskForm):
     race = StringField("Race", validators=[InputRequired(), Length(max=32)])
     gender = StringField("Gender", validators=[InputRequired(), Length(max=32)])
     status = StringField("Status", validators=[InputRequired(), Length(max=64)])
+    portrait_id = StringField("Portrait ID", validators=[InputRequired(), Length(max=8)])
+    portrait_filename = StringField("Portrait filename", validators=[InputRequired(), Length(max=64)])
 
     submit = SubmitField("Add Character")                                       
