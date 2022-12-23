@@ -24,6 +24,14 @@ def create_portrait():
     portrait = portraits_api.create_portrait(request.json)
     return portrait.jsonify(), 200
 
+@portrait_api.route("/<int:portrait_id>", methods=["GET"])
+def get_portrait(portrait_id):
+    portrait = portraits_api.get_portrait(portrait_id)
+    
+    if not portrait:
+        return {"message": "portrait not found", "error": 404}, 200
+    return portrait.jsonify()
+
 
 @portrait_api.route("/all", methods=["GET"])
 def get_all_portraits():
