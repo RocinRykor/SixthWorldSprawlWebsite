@@ -39,7 +39,7 @@ function showModal(character_id) {
 
         $('.modal-title').html(character.name);
 
-        img_url = '/static/' + character.img_url;
+        img_url = '/static/img/portraits/' + character.portrait_filename;
 
         console.log(img_url);
 
