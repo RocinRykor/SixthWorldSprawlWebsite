@@ -74,7 +74,7 @@ class Character(db.Model):
     race = db.Column(db.String(32))
     gender = db.Column(db.String(32))
     status = db.Column(db.String(64))
-    portrait_filename = (db.String(64))
+    portrait_filename = db.Column(db.String(64))
     portrait_id = db.Column(db.Integer, db.ForeignKey('portrait.id'))
 
     def get_img_url(self):
