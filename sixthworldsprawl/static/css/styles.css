@@ -252,19 +252,22 @@ a:hover {
     border: 1px solid lightgray;
 }
 
+.character-portrait-lg {
+    /* Full Size Portrait*/
+    height: 278px;
+    width: 212px;
+}
+
 .character-portrait {
-    height: 150px;
-    width: 150px;
+    /* 75% Size */
+    height: 208px;
+    width: 159px;
 }
 
 .character-portrait-sm {
-    height: 75px;
-    width: 75px;
-}
-
-.character-portrait-lg {
-    height: 250px;
-    width: 250px;
+    /* 50% Size */
+    height: 139px;
+    width: 106px;
 }
 
 .modal-image-block {
