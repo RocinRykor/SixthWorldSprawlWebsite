@@ -246,6 +246,7 @@ a:hover {
 }
 
 .character-portrait,
+.character-portrait-xs,
 .character-portrait-sm,
 .character-portrait-lg {
     border-radius: var(--default-border-radius);
@@ -268,6 +269,12 @@ a:hover {
     /* 50% Size */
     height: 139px;
     width: 106px;
+}
+
+.character-portrait-xs {
+    /* 25% Size */
+    height: 70px;
+    width: 53px;
 }
 
 .modal-image-block {
