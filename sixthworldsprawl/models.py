@@ -14,6 +14,7 @@ class User(db.Model, UserMixin):
     | is_admin:      A boolean determining whether or not the user is an admin
     | authenticated: Whether or not the user has logged in.
     | display_name:  The name that will show up for the user in situations like player info
+    | bio:  A Short description of the player
     | characters:    Links a user to their characters
     """
 
@@ -23,6 +24,7 @@ class User(db.Model, UserMixin):
     is_admin = db.Column(db.Boolean, default=False)
     authenticated = db.Column(db.Boolean, default=False)
     display_name = db.Column(db.String(32))
+    bio = db.Column(db.String(2048))
     characters = db.relationship('Character', backref='user', lazy=True)
 
     def is_authenticated(self):

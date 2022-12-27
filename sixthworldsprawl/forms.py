@@ -29,6 +29,7 @@ class UserForm(FlaskForm):
 class EditUserForm(FlaskForm):
     name = StringField("Display", validators=[InputRequired(),
                                                Length(max=30)])
+    bio = TextAreaField("Bio", validators=[InputRequired(), Length(max=2048)])
     submit = SubmitField("Change Display Name")
 
 class CharacterForm(FlaskForm):

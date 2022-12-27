@@ -2,10 +2,7 @@
 
 <div class="player-block">
     <p class="player-block__title">{{player.username}}</p>
-    <p class="player-block__description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-    </p>
+    <p class="player-block__description">{{player.bio}}</p>
     <div class="player-block__character-card-list container">
         <div class="row">
             {% for character in player.characters %} {% with character=character

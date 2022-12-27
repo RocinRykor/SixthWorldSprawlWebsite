@@ -19,7 +19,9 @@ def edit_user():
     
     # Get the form data
     name = form.name.data
+    bio = form.bio.data
 
     current_user.display_name = name
+    current_user.bio = bio
     db.session.commit()
     return redirect("/")
