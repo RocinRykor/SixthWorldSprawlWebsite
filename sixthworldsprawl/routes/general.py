@@ -16,3 +16,11 @@ def index():
 @general.route("/roller")
 def roller():
     return render_template("public/rollers/diceroller.html", title="Dice Roller")
+
+@general.route("/matrixhost")
+def matrixhost():
+    return render_template("public/generators/matrixhost.html", title="Matrix Host Generator")
+
+@general.route("/matrixsecurity")
+def matrixsecurity():
+    return render_template("public/generators/matrixsecurity.html", title="Matrix Security Sheaf Generator")
