@@ -1,6 +1,49 @@
 <!DOCTYPE html>
 {% extends "public/partials/base.html" %} {% block main %}
 
-<h2>This is the main block on the Example page</h2>
+<div class="w-50 mx-auto">
+    <h2>Matrix Security Hosts</h2>
+    <p>
+        Hosts are the computer systems that serve as the backbone of the Sixth
+        World's information society. Billions of nuyen and inestimable
+        megapulses of data flow through these systems daily. Hosts are the
+        vaults where these secret jewels are stored. Hosts serve as databanks,
+        research file storage, libraries, virtual shopping malls, chat rooms,
+        virtual arcades, private meeting sites, bulletin boards, local networks,
+        archives, banks, and so forth.
+    </p>
+
+    <h3>Host Rating Table</h3>
+    <p>
+        This is the table that descibes rolling for your custom host. Select an
+        option below to auto generate a host of that difficulty
+    </p>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Difficulty</th>
+                <th scope="col">Security Value</th>
+                <th scope="col">Subsystem Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-option" onclick="generateEasyHost()">
+                <th scope="row">Easy</th>
+                <td>1D3 + 3</td>
+                <td>1D3 + 7</td>
+            </tr>
+            <tr class="table-option" onclick="generateEasyHost()">
+                <th scope="row">Average</th>
+                <td>1D3 + 6</td>
+                <td>2D3 + 9</td>
+            </tr>
+            <tr class="table-option" onclick="generateEasyHost()">
+                <th scope="row">Hard</th>
+                <td>2D3 + 6</td>
+                <td>1D6 + 12</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}

@@ -293,3 +293,14 @@ a:hover {
     /* reduces the opacity of the button to 75% */
     opacity: 0.75;
 }
+
+.table-option {
+    transition: 1s;
+}
+
+.table-option:hover {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 75% */
+    opacity: 0.75;
+}
