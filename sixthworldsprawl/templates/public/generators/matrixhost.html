@@ -32,12 +32,12 @@
                 <td>1D3 + 3</td>
                 <td>1D3 + 7</td>
             </tr>
-            <tr class="table-option" onclick="generateEasyHost()">
+            <tr class="table-option" onclick="generateAverageHost()">
                 <th scope="row">Average</th>
                 <td>1D3 + 6</td>
                 <td>2D3 + 9</td>
             </tr>
-            <tr class="table-option" onclick="generateEasyHost()">
+            <tr class="table-option" onclick="generateHardHost()">
                 <th scope="row">Hard</th>
                 <td>2D3 + 6</td>
                 <td>1D6 + 12</td>
@@ -46,4 +46,5 @@
     </table>
 </div>
 
+<script src="{{url_for('static', filename='js/generators/matrixhost.js')}}"></script>
 {% endblock %}
