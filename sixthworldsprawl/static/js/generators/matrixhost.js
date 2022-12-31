@@ -23,6 +23,28 @@ function generateHost(svPool, svSide, svMod, srPool, srSide, srMod) {
         `Host Level-Host Rating/Access/Control/Index/Files/Slave
         Green-${securityValue}/${subsystemAccess}/${subsystemControl}/${subsystemIndex}/${subsystemFiles}/${subsystemSlave}`
     );
+
+    outputToTable();
+}
+
+function outputToTable() {
+    var myTable = '<tr><th>Security Code</th>';
+    myTable += '<th>Host Rating</th>';
+    myTable += '<th>Access</th>';
+    myTable += '<th>Control</th>';
+    myTable += '<th>Index</th>';
+    myTable += '<th>Files</th>';
+    myTable += '<th>Slave</th>';
+
+    myTable += '<tr class="table-option"><th> COLOR </th>';
+    myTable += '<td>' + securityValue + '</td>';
+    myTable += '<td>' + subsystemAccess + '</td>';
+    myTable += '<td>' + subsystemControl + '</td>';
+    myTable += '<td>' + subsystemIndex + '</td>';
+    myTable += '<td>' + subsystemFiles + '</td>';
+    myTable += '<td>' + subsystemSlave + '</td>';
+
+    document.getElementById('resultsTable').innerHTML = myTable;
 }
 
 function rollWithMod(dicePool, diceSide, modifer) {
