@@ -19,10 +19,7 @@ function generateHost(svPool, svSide, svMod, srPool, srSide, srMod) {
     subsystemFiles = rollWithMod(srPool, srSide, srMod);
     subsystemSlave = rollWithMod(srPool, srSide, srMod);
 
-    console.log(
-        `Host Level-Host Rating/Access/Control/Index/Files/Slave
-        Green-${securityValue}/${subsystemAccess}/${subsystemControl}/${subsystemIndex}/${subsystemFiles}/${subsystemSlave}`
-    );
+    standardFormat = `Green-${securityValue}/${subsystemAccess}/${subsystemControl}/${subsystemIndex}/${subsystemFiles}/${subsystemSlave}`;
 
     outputToTable();
 }
@@ -36,7 +33,8 @@ function outputToTable() {
     myTable += '<th>Files</th>';
     myTable += '<th>Slave</th>';
 
-    myTable += '<tr class="table-option"><th> COLOR </th>';
+    myTable +=
+        '<tr class="table-option" onClick="copyToClipboard()"><th> COLOR </th>';
     myTable += '<td>' + securityValue + '</td>';
     myTable += '<td>' + subsystemAccess + '</td>';
     myTable += '<td>' + subsystemControl + '</td>';
@@ -61,4 +59,14 @@ function getRandomRange(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function copyToClipboard() {
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(standardFormat).then(() => {
+            alert('Copied to clipboard');
+        });
+    } else {
+        console.log('Browser Not compatible');
+    }
 }
