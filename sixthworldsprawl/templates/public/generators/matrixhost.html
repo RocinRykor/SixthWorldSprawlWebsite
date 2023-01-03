@@ -13,6 +13,8 @@
         archives, banks, and so forth.
     </p>
 
+    <br />
+
     <h3>Host Rating Table</h3>
     <p>
         This is the table that descibes rolling for your custom host. Select an
@@ -47,6 +49,7 @@
 
     <br />
     <br />
+
     <h3>-- Results --</h3>
     <p>
         After selecting an option above your generated host will be displayed
@@ -56,7 +59,81 @@
         Click on a subsystem to learn more or select the generated results to
         copy the host infortmation to clipboard
     </p>
-    <table id="resultsTable" class="table table-dark"></table>
+    <table id="resultsTable" class="table table-dark">
+        <tr>
+            <th>Security Code</th>
+            <th>Host Rating</th>
+            <th>Access</th>
+            <th>Control</th>
+            <th>Index</th>
+            <th>Files</th>
+            <th>Slave</th>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="radioSecrityCode"
+                        id="radioSecrityCodeBlue"
+                        value="Blue"
+                        checked />
+                    <label class="form-check-label" for="radioSecrityCodeBlue">
+                        Blue
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="radioSecrityCode"
+                        id="radioSecrityCodeGreen"
+                        value="Green" />
+                    <label class="form-check-label" for="radioSecrityCodeGreen">
+                        Green
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="radioSecrityCode"
+                        id="radioSecrityCodeOrange"
+                        value="Orange" />
+                    <label
+                        class="form-check-label"
+                        for="radioSecrityCodeOrange">
+                        Orange
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="radioSecrityCode"
+                        id="radioSecrityCodeRed"
+                        value="Red" />
+                    <label class="form-check-label" for="radioSecrityCodeRed">
+                        Red
+                    </label>
+                </div>
+            </th>
+            <td id="securityValue" class="align-middle"></td>
+            <td id="subsystemAccess" class="align-middle"></td>
+            <td id="subsystemControl" class="align-middle"></td>
+            <td id="subsystemIndex" class="align-middle"></td>
+            <td id="subsystemFiles" class="align-middle"></td>
+            <td id="subsystemSlave" class="align-middle"></td>
+            <td
+                id="copyResults"
+                class="align-middle visually-hidden table-option"
+                onclick="copyToClipboard()">
+                Copy
+            </td>
+        </tr>
+    </table>
 </div>
 
 <script src="{{url_for('static', filename='js/generators/matrixhost.js')}}"></script>

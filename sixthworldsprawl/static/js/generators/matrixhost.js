@@ -19,30 +19,19 @@ function generateHost(svPool, svSide, svMod, srPool, srSide, srMod) {
     subsystemFiles = rollWithMod(srPool, srSide, srMod);
     subsystemSlave = rollWithMod(srPool, srSide, srMod);
 
-    standardFormat = `Green-${securityValue}/${subsystemAccess}/${subsystemControl}/${subsystemIndex}/${subsystemFiles}/${subsystemSlave}`;
-
     outputToTable();
 }
 
 function outputToTable() {
-    var myTable = '<tr><th>Security Code</th>';
-    myTable += '<th>Host Rating</th>';
-    myTable += '<th>Access</th>';
-    myTable += '<th>Control</th>';
-    myTable += '<th>Index</th>';
-    myTable += '<th>Files</th>';
-    myTable += '<th>Slave</th>';
+    document.getElementById('securityValue').innerHTML = securityValue;
+    document.getElementById('subsystemAccess').innerHTML = subsystemAccess;
+    document.getElementById('subsystemControl').innerHTML = subsystemControl;
+    document.getElementById('subsystemIndex').innerHTML = subsystemIndex;
+    document.getElementById('subsystemFiles').innerHTML = subsystemFiles;
+    document.getElementById('subsystemSlave').innerHTML = subsystemSlave;
 
-    myTable +=
-        '<tr class="table-option" onClick="copyToClipboard()"><th> COLOR </th>';
-    myTable += '<td>' + securityValue + '</td>';
-    myTable += '<td>' + subsystemAccess + '</td>';
-    myTable += '<td>' + subsystemControl + '</td>';
-    myTable += '<td>' + subsystemIndex + '</td>';
-    myTable += '<td>' + subsystemFiles + '</td>';
-    myTable += '<td>' + subsystemSlave + '</td>';
-
-    document.getElementById('resultsTable').innerHTML = myTable;
+    //Reveal the Copy Results Button
+    $('#copyResults').removeClass('visually-hidden');
 }
 
 function rollWithMod(dicePool, diceSide, modifer) {
@@ -62,6 +51,13 @@ function getRandomRange(min, max) {
 }
 
 function copyToClipboard() {
+    //Get the currently selected security code (Host Color)
+    const securityCode = $(
+        "input[type='radio'][name='radioSecrityCode']:checked"
+    ).val();
+
+    standardFormat = `${securityCode}-${securityValue}/${subsystemAccess}/${subsystemControl}/${subsystemIndex}/${subsystemFiles}/${subsystemSlave}`;
+
     if (navigator.clipboard) {
         navigator.clipboard.writeText(standardFormat).then(() => {
             alert('Copied to clipboard');
