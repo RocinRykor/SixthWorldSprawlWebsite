@@ -1,3 +1,7 @@
+var matrixInformationTable = {
+    'Security Codes': 'This is a test',
+};
+
 function generateEasyHost() {
     generateHost(1, 3, 3, 1, 3, 7);
 }
@@ -65,4 +69,9 @@ function copyToClipboard() {
     } else {
         console.log('Browser Not compatible');
     }
+}
+
+function openBasicModal(title) {
+    $('#genericModalTitle').html(title);
+    $('#genericModal').modal('show');
 }
