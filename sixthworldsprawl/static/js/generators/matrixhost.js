@@ -1,7 +1,3 @@
-var matrixInformationTable = {
-    'Security Codes': 'This is a test',
-};
-
 function generateEasyHost() {
     generateHost(1, 3, 3, 1, 3, 7);
 }
@@ -27,12 +23,12 @@ function generateHost(svPool, svSide, svMod, srPool, srSide, srMod) {
 }
 
 function outputToTable() {
-    document.getElementById('securityValue').innerHTML = securityValue;
-    document.getElementById('subsystemAccess').innerHTML = subsystemAccess;
-    document.getElementById('subsystemControl').innerHTML = subsystemControl;
-    document.getElementById('subsystemIndex').innerHTML = subsystemIndex;
-    document.getElementById('subsystemFiles').innerHTML = subsystemFiles;
-    document.getElementById('subsystemSlave').innerHTML = subsystemSlave;
+    $('#securityValue').html(securityValue);
+    $('#subsystemAccess').html(subsystemAccess);
+    $('#subsystemControl').html(subsystemControl);
+    $('#subsystemIndex').html(subsystemIndex);
+    $('#subsystemFiles').html(subsystemFiles);
+    $('#subsystemSlave').html(subsystemSlave);
 
     //Reveal the Copy Results Button
     $('#copyResults').removeClass('visually-hidden');
@@ -73,5 +69,14 @@ function copyToClipboard() {
 
 function openBasicModal(title) {
     $('#genericModalTitle').html(title);
+
+    modalBody = $('#genericModalBody');
+    modalBody.empty();
+
+    //the content that I am adding to the modal will get added here
+    let bodyText = '';
+
+    modalBody.append(bodyText);
+
     $('#genericModal').modal('show');
 }

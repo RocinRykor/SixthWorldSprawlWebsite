@@ -1,0 +1,26 @@
+{
+    "Access Rating": {
+        "description": "The Access Rating measures a system\u2019s resistance to unauthorized access. To access a grid/host, an unauthorized decker must pit his Computer Skill against the grid/host\u2019s Access Rating in a Success Contest."
+    },
+    "Control Rating": {
+        "description": "The Control Rating measures a system\u2019s resistance to unauthorized administrative commands. For example, an unauthorized decker attempting to kick a legitimate user off a host must make a Success Contest against the host\u2019s Control Rating.\nGenerally, successful tests will enable deckers to reprogram a system or defeat its security measures."
+    },
+    "Files Rating": {
+        "description": "Deckers must make a Success Contest against the Files Ratings whenever they attempt to illegally read or write datafiles in a system. Deckers must also make tests to decrypt encoded files and send output to devices such as faxprinters or chip cookers."
+    },
+    "Security Codes": {
+        "description": "The security code of a host measures the level of security precautions the host maintains. Generally, the code reflects the sensitivity of the data on the host, but it may also simply reflect the degree of paranoia suffered by the host\u2019s owner.\nBlue Hosts Blue hosts include most public-service databases: newsfax distribution systems, public library databases, directories of listed commcodes\u2014pretty much anything free, whether provided by a government, a corp, or a private individual. Small businesses too poor to secure their systems tend to have Blue hosts as well.\nGreen Hosts Green hosts are average systems, but never make the mistake of thinking a Green host represents easy prey. They may be more patient with intruders than the Orange or Red systems, but they can load any IC the hotter hosts mount.\nOrange Hosts Orange hosts pride themselves on being secure systems, if not wild-eyed killer hosts. Orange hosts store your standard \u201cconfidential\u201d data and carry out processing that is important but not absolutely essential to the host\u2019s operators. Orange systems include the typical factory controller and the networks used by middle management in a typical corporate office.\nRed Hosts Red hosts offer the most security that a system may legally carry. They contain \u201ctop secret\u201d data, often the kind owners will kill to protect, and mission-critical process controls (life support, vital labs and factories, power grids, and the like).\nAnti-intrusion defenses tend to be lethal\u2014deckers get no \u201cwarning shots\u201d on Red systems"
+    },
+    "Security Rating": {
+        "description": "A Security Rating consists of a security code (a color) and a Security Value (a number).\nThe four security codes are Blue (little or no security), Green (average security), Orange (significant security), and Red (high security). Reportedly, some systems contain killer defenses that send their security codes right off the \u201cofficial\u201d color scale. Decker slang calls these Ultra-Violet, UV, or black systems.\nGenerally, Security Values range from 4 to 12, though they sometimes range higher. Double-digit values represent extreme system security. The Security Value indicates the number of dice the gamemaster rolls to oppose a decker\u2019s System Tests (see System Tests, p. 209). It is also the number of dice rolled for Security Tests."
+    },
+    "Index Rating": {
+        "description": "The Index Rating measures a system\u2019s resistance to unauthorized searches. An unauthorized decker searching a grid or host for a system address or specific file must make a Success Contest against the grid/host\u2019s Index Rating."
+    },
+    "Slave Rating": {
+        "description": "The Slave Rating governs the operation of remote devices controlled by a system. For example, a Success Contest against the Slave Rating enables an unauthorized decker to take control of devices manipulated by a host, such as security cameras and elevators."
+    },
+    "Rating Format": {
+        "description": "System Ratings use the following shorthand format: Security Code\u2013Security Value/Access/Control/Index/Files/Slave For example, a Red-6 system with Access and Index Ratings of 10, a Control Rating of 12, and Files and Slave Ratings equal to 9 would be written: Red-6/10/12/10/9/9 The acronym \u201cACIFS\u201d\u2014Access Control Index Files Slave\u2014may make remembering this format easier."
+    }
+}
