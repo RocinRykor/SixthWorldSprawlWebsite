@@ -22,5 +22,8 @@
     },
     "Rating Format": {
         "description": "System Ratings use the following shorthand format: Security Code\u2013Security Value/Access/Control/Index/Files/Slave For example, a Red-6 system with Access and Index Ratings of 10, a Control Rating of 12, and Files and Slave Ratings equal to 9 would be written: Red-6/10/12/10/9/9 The acronym \u201cACIFS\u201d\u2014Access Control Index Files Slave\u2014may make remembering this format easier."
+    },
+    "Security Value": {
+        "description": "Generally, Security Values range from 4 to 12, though they sometimes range higher. Double-digit values represent extreme system security. The Security Value indicates the number of dice the gamemaster rolls to oppose a decker\u2019s System Tests. It is also the number of dice rolled for Security Tests."
     }
 }

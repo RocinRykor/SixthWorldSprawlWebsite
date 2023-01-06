@@ -1,3 +1,7 @@
+fetch('static/json/matrix_info.json')
+    .then((response) => response.json())
+    .then((json) => (matrixInformation = json));
+
 function generateEasyHost() {
     generateHost(1, 3, 3, 1, 3, 7);
 }
@@ -74,9 +78,21 @@ function openBasicModal(title) {
     modalBody.empty();
 
     //the content that I am adding to the modal will get added here
-    let bodyText = '';
+    let bodyText = matrixInformation[title].description;
 
-    modalBody.append(bodyText);
+    console.log(bodyText);
+
+    formatedText = myFormat(bodyText);
+
+    console.log(formatedText);
+
+    modalBody.append(formatedText);
 
     $('#genericModal').modal('show');
+}
+
+function myFormat(inputText) {
+    // Replace the \n with double <br>
+    str = inputText.replace(/(?:\r\n|\r|\n)/g, '<br><br>'); // Update the value of paragraph
+    return str;
 }
