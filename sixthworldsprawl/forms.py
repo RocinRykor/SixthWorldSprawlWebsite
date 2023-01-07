@@ -30,7 +30,7 @@ class EditUserForm(FlaskForm):
     name = StringField("Display", validators=[InputRequired(),
                                                Length(max=30)])
     bio = TextAreaField("Bio", validators=[InputRequired(), Length(max=2048)])
-    submit = SubmitField("Change Display Name")
+    submit = SubmitField("Edit User")
 
 class CharacterForm(FlaskForm):
     name = StringField("Name", validators=[InputRequired(), Length(max=32)])
