@@ -2,7 +2,7 @@ from flask import request, Blueprint
 from flask_login import login_required
 from sixthworldsprawl.routes.api.portraits import portraits_api
 
-portrait_api = Blueprint("portraits_api", "__name__", url_prefix="/api/portrait")
+portrait_api = Blueprint("portraits_api", __name__, url_prefix="/api/portrait")
 
 @login_required
 @portrait_api.route("/create/", methods=["POST"])

@@ -58,15 +58,16 @@ def build_app():
         from .routes.user import user
         from .routes.character import character
 
-        #API Routes
-        from .routes.api.characters.character_api_routes import character_api
-        from .routes.api.users.user_api_routes import user_api
-        from .routes.api.portraits.portrait_api_routes import portrait_api
-
         app.register_blueprint(general)
         app.register_blueprint(auth)
         app.register_blueprint(user)
         app.register_blueprint(character)
+
+        #API Routes
+        from .routes.api.characters.character_api_routes import character_api
+        from .routes.api.users.user_api_routes import user_api
+        from .routes.api.portraits.portrait_api_routes import portrait_api
+        
         app.register_blueprint(character_api)
         app.register_blueprint(user_api)
         app.register_blueprint(portrait_api)
