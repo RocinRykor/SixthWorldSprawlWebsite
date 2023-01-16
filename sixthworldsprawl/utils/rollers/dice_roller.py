@@ -20,7 +20,7 @@ def sr3_roll(dice_pool=1, sides=6):
 def success_test(rolls, threshold=4):
     count = 0
     for roll in rolls:
-        if roll > threshold:
+        if roll >= threshold:
             count += 1
     return count
 
