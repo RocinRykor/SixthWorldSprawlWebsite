@@ -5,6 +5,7 @@
 # Compare Results to Assencing Table
 
 from sixthworldsprawl.utils.rollers import dice_roller
+from sixthworldsprawl.utils.constants.magic_constants import ASSCENING_TEST_RESULTS
 import math
 
 def assencing_test(assencing_dice_pool, target_number=4, aura_reading_dice_pool=0):
@@ -21,6 +22,8 @@ def assencing_test(assencing_dice_pool, target_number=4, aura_reading_dice_pool=
     else :
         total_hits = 0
 
+    information = get_information_from_table(total_hits)
+
     output = {
         "Assencing Test" : {
             "Rolls" : assencing_rolls,
@@ -31,7 +34,23 @@ def assencing_test(assencing_dice_pool, target_number=4, aura_reading_dice_pool=
             "Raw Results" : aura_reading_initial_results,
             "Results" : aura_reading_results,
         },
-        "Total Hits" : total_hits
+        "Total Hits" : total_hits,
+        "Information" : information
     }
 
     return output
+
+def get_information_from_table(total_hits: int) -> dict:
+    level = ""
+    if total_hits == 0:
+        return "No Hits, Test Failure"
+    elif total_hits < 3:
+        level = "LOW"
+    elif total_hits < 5:
+        level = "MID"
+    else:
+        level = "HIGH"
+    results = {}
+    for category, levels in ASSCENING_TEST_RESULTS.items():
+        results[category] = levels[level]
+    return results
