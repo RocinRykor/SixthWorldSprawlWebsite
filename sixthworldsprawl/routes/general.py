@@ -1,5 +1,6 @@
 from flask import render_template, Blueprint, redirect
 from sixthworldsprawl.app import db, User, Character
+from sixthworldsprawl.utils.generators.matrix import security_sheaf
 
 general = Blueprint("general", __name__)
 
@@ -23,4 +24,4 @@ def matrixhost():
 
 @general.route("/matrixsecurity")
 def matrixsecurity():
-    return render_template("public/generators/matrixsecurity.html", title="Matrix Security Sheaf Generator")
+    return render_template("public/generators/matrixsecurity.html", title="Matrix Security Sheaf Generator", matrix=security_sheaf.generate_sheaf(1, 7, False))
