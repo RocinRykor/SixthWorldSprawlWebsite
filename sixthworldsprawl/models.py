@@ -5,6 +5,7 @@ from sixthworldsprawl.utils import character_utils
 
 db = SQLAlchemy()
 
+
 class User(db.Model, UserMixin):
     """
     | id:            The primary key for the user
@@ -43,7 +44,7 @@ class User(db.Model, UserMixin):
 
     def set_password(self, to_set):
         self.password_hash = generate_password_hash(to_set, method='pbkdf2:sha256',
-                                               salt_length=24)
+                                                    salt_length=24)
 
     def jsonify(self):
         """
@@ -58,6 +59,7 @@ class User(db.Model, UserMixin):
             "display_name": self.display_name,
             "characters": [character.jsonify() for character in self.characters],
         }
+
 
 class Character(db.Model):
     """
@@ -101,6 +103,7 @@ class Character(db.Model):
             "portrait_filename": self.portrait_filename,
         }
 
+
 class Portrait(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     filename = db.Column(db.String(64))
@@ -110,6 +113,7 @@ class Portrait(db.Model):
             "id": self.id,
             "filename": self.filename,
         }
+
 
 class Tag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -121,9 +125,10 @@ class Tag(db.Model):
         return {
             "id": self.id,
             "title": self.title,
-            "decription": self.decription,
+            "description": self.decription,
             "category": self.category,
         }
+
 
 class PortraitTagLinker(db.Model):
     id = db.Column(db.Integer, primary_key=True)

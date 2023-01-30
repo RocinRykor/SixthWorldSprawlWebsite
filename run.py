@@ -4,7 +4,6 @@ import sys
 basedir = os.path.abspath(os.path.dirname(__file__))
 sys.path.append(basedir)
 
-
 import sixthworldsprawl
 
 application = sixthworldsprawl.application

@@ -3,9 +3,10 @@ from . import models
 from flask import Flask, redirect
 from flask_login import LoginManager
 from flask_migrate import Migrate
-#from .routes.general import general
-#from .routes.admin import admin
-#from .routes.auth import auth
+
+# from .routes.general import general
+# from .routes.admin import admin
+# from .routes.auth import auth
 # from flask_statistics import Statistics
 
 
@@ -20,6 +21,8 @@ PortraitTagLinker = models.PortraitTagLinker
 
 migrate = Migrate()
 login_manager = LoginManager()
+
+
 # statistics = Statistics()
 
 
@@ -43,7 +46,6 @@ def check_user():
 
 
 def build_app():
-
     app = Flask(__name__)
     app.config.from_object(Config())
     db.init_app(app)
@@ -65,12 +67,12 @@ def build_app():
         app.register_blueprint(character)
         app.register_blueprint(rules)
 
-        #API Routes
+        # API Routes
         from .routes.api.characters.character_api_routes import character_api
         from .routes.api.users.user_api_routes import user_api
         from .routes.api.portraits.portrait_api_routes import portrait_api
         from .routes.api.discord.discord_api_routes import bot_api
-        
+
         app.register_blueprint(character_api)
         app.register_blueprint(user_api)
         app.register_blueprint(portrait_api)
@@ -84,7 +86,6 @@ def build_app():
 
 
 application = build_app()
-
 
 if __name__ == "__main__":
     application.run(debug=True, host="0.0.0.0")
