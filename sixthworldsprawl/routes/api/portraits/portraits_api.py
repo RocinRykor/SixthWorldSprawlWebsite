@@ -2,6 +2,7 @@ from sixthworldsprawl.app import db, Portrait
 from flask_login import current_user
 from sqlalchemy import func
 
+
 def create_portrait(portrait_json):
     """
     JSON Keys:
@@ -18,6 +19,7 @@ def create_portrait(portrait_json):
 
     return portrait
 
+
 def get_portrait(portrait_id):
     """
     Gets a single portrait from the database specified by the portrait_id
@@ -30,8 +32,9 @@ def get_portrait(portrait_id):
     """
 
     portrait = Portrait.query.filter_by(id=portrait_id).first()
-    
+
     return portrait
+
 
 def get_all():
     """

@@ -8,7 +8,7 @@ function openModal(title, pageURL) {
 }
 
 function setContent(pageURL) {
-    //First Clear out the exisitng content
+    //First Clear out the existing content
     $('#genericModalBody').empty();
     $('#genericModalBody').load(pageURL);
 }

@@ -13,8 +13,6 @@ def generate_sheaf(host_level: int, security_rating: int, has_nasty_surprises: b
 
     alert_level = 0 # 0 = No Alert, 1 = Passive, 2 = Active, 3 = Shutdown
     steps_since_last_alert = 0
-    current_step = 0
-
     while alert_level < 3: # Has not yet reached Alert Level: Shutdown
         # Step 1: Trigger Step
         current_step += roll_trigger_step(host_level) # Increment Step Counter
@@ -139,6 +137,7 @@ class AlertContainer:
 
     def get_level_ic(self):
         return self.level_ic
-    
+
     def get_category_ic(self):
         return self.category_ic
+    current_step = 0

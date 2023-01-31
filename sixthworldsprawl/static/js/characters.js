@@ -28,8 +28,8 @@ async function character_search(character_id) {
      *
      * Returns a JSON dict containing the character
      */
-    var api_request = `character/${character_id}`;
-    var request = new APIRequest(api_request);
+    const api_request = `character/${character_id}`;
+    const request = new APIRequest(api_request);
     return await request.get_request();
 }
 

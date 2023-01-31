@@ -35,6 +35,7 @@ def create_user():
     user = users_api.create_user(request.json)
     return user.jsonify(), 200
 
+
 @login_required
 @user_api.route("/delete/<int:user_id>", methods=["POST"])
 def delete_user(user_id):
@@ -50,7 +51,8 @@ def delete_user(user_id):
     if not user:
         return None
 
-    return {"message" : "User Deleted"}, 200
+    return {"message": "User Deleted"}, 200
+
 
 @user_api.route("/edit/<int:user_id>", methods=["POST"])
 def edit_user(quote_id):
@@ -63,24 +65,28 @@ def edit_user(quote_id):
     user = users_api.edit_user(user_id, request.json)
     return user.jsonify(), 200
 
+
 @user_api.route("/<int:user_id>", methods=["GET"])
 def get_user(user_id):
     user = users_api.get_user(user_id)
-    
+
     if not user:
         return {"message": "user not found", "error": 404}, 200
     return user.jsonify()
+
 
 @user_api.route("/", methods=["GET"])
 @user_api.route("/random/", methods=["GET"])
 def random_user():
     return users_api.random_user().jsonify(), 200
 
+
 @user_api.route("/all", methods=["GET"])
 def get_all_users():
     users = users_api.get_all()
     users = [user.jsonify() for user in users]
     return users
+
 
 @user_api.route("/limit/<int:user_limit>", methods=["GET"])
 def get_multiple_users(user_limit):

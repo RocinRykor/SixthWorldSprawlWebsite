@@ -1,6 +1,8 @@
 fetch('static/json/matrix_info.json')
     .then((response) => response.json())
-    .then((json) => (matrixInformation = json));
+    .then((json) => {
+        return json;
+    });
 
 function generateEasyHost() {
     generateHost(1, 3, 3, 1, 3, 7);
@@ -93,6 +95,5 @@ function openBasicModal(title) {
 
 function myFormat(inputText) {
     // Replace the \n with double <br>
-    str = inputText.replace(/(?:\r\n|\r|\n)/g, '<br><br>'); // Update the value of paragraph
-    return str;
+    return inputText.replace(/(?:\r\n|\r|\n)/g, '<br><br>'); // Update the value of paragraph
 }

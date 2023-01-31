@@ -12,8 +12,8 @@ class User(db.Model, UserMixin):
     | username:      A string containing the user's login name
     | password:      A password hashed with werkzeug.generate_password_hash
     | email:         A string containing the user's email address
-    | is_admin:      A boolean determining whether or not the user is an admin
-    | authenticated: Whether or not the user has logged in.
+    | is_admin:      A boolean determining whether the user is an admin
+    | authenticated: Whether the user has logged in.
     | display_name:  The name that will show up for the user in situations like player info
     | bio:  A Short description of the player
     | characters:    Links a user to their characters
@@ -66,10 +66,10 @@ class Character(db.Model):
     | id:           The primary key for the player
     | player_id:    Link to an existing user
     | name:         A string containing the character's name
-    | bio:          A short decription of the player
+    | bio:          A short description of the player
     | race:         Character Race
     | gender:       Character's gender
-    | status:       A short decription of the character's in-game status
+    | status:       A short description of the character's in-game status
     """
     id = db.Column(db.Integer, primary_key=True)
     player_id = db.Column(db.Integer, db.ForeignKey('user.id'))
