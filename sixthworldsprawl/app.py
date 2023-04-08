@@ -1,8 +1,9 @@
-from .config import Config
-from . import models
 from flask import Flask, redirect
 from flask_login import LoginManager
 from flask_migrate import Migrate
+
+from . import models
+from .config import Config
 
 # from .routes.general import general
 # from .routes.admin import admin

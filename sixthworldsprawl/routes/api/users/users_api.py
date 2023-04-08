@@ -1,6 +1,6 @@
-from sixthworldsprawl.app import db, User
-from flask_login import current_user
 from sqlalchemy import func
+
+from sixthworldsprawl.app import db, User
 
 
 def create_user(user_json):

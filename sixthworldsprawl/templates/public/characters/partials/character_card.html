@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
 <div class="character-card col">
-	<img
-		src="{{url_for('static', filename=character.get_img_url())}}"
-		class="character_card__portrait character-portrait-lg"
-		onclick="showModal('{{character.id}}')"  alt=""/>
-	<p class="character-card__title">{{character["name"]}}</p>
+    <img
+            src="{{ url_for('static', filename=character.get_img_url()) }}"
+            class="character_card__portrait character-portrait-lg"
+            onclick="showModal('{{ character.id }}')" alt=""/>
+    <p class="character-card__title">{{ character["name"] }}</p>
 </div>

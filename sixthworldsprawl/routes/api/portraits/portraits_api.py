@@ -1,6 +1,4 @@
 from sixthworldsprawl.app import db, Portrait
-from flask_login import current_user
-from sqlalchemy import func
 
 
 def create_portrait(portrait_json):

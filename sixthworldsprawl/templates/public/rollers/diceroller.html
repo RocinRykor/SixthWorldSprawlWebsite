@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 {% extends "public/partials/base.html" %} {% block main %}
 
-<h2>Success Test Dice Roller</h2>
-<br />
-<form>
-	<div class="container">
-		<div class="form-group">
-			<label for="dice_pool">Dice Pool: </label>
-			<input
-				class="col-4"
-				type="number"
-				name="dice_pool"
-				id="dice_pool"
-				min="1"
-				max="100"
-				step="1"
-				value="6" />
-		</div>
-		<div class="form-group">
-			<label for="target_number">Target Number: </label>
-			<input
-				class="col-4"
-				type="number"
-				name="target_number"
-				id="target_number"
-				min="2"
-				max="100"
-				step="1"
-				value="4" />
-		</div>
-		<div class="form-group shadow-textarea">
-			<label for="results_text_area">RESULTS:</label>
-			<textarea
-				class="form-control z-depth-1"
-				id="results_text_area"
-				rows="3"
-				placeholder="Roll to see results..."
-				disabled
-				readonly></textarea>
-		</div>
-	</div>
-</form>
-<br /><br />
+    <h2>Success Test Dice Roller</h2>
+    <br/>
+    <form>
+        <div class="container">
+            <div class="form-group">
+                <label for="dice_pool">Dice Pool: </label>
+                <input
+                        class="col-4"
+                        type="number"
+                        name="dice_pool"
+                        id="dice_pool"
+                        min="1"
+                        max="100"
+                        step="1"
+                        value="6"/>
+            </div>
+            <div class="form-group">
+                <label for="target_number">Target Number: </label>
+                <input
+                        class="col-4"
+                        type="number"
+                        name="target_number"
+                        id="target_number"
+                        min="2"
+                        max="100"
+                        step="1"
+                        value="4"/>
+            </div>
+            <div class="form-group shadow-textarea">
+                <label for="results_text_area">RESULTS:</label>
+                <textarea
+                        class="form-control z-depth-1"
+                        id="results_text_area"
+                        rows="3"
+                        placeholder="Roll to see results..."
+                        disabled
+                        readonly></textarea>
+            </div>
+        </div>
+    </form>
+    <br/><br/>
 
-<button onclick="submitEvent()" class="btn btn-primary">ROLL!</button>
+    <button onclick="submitEvent()" class="btn btn-primary">ROLL!</button>
 
-<script src="{{url_for('static', filename='js/rollers/3erollers.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/rollers/3erollers.js') }}"></script>
 
 {% endblock %}

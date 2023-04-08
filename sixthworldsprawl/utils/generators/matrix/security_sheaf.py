@@ -1,7 +1,8 @@
-from collections import defaultdict
 from typing import Dict
-from sixthworldsprawl.utils.rollers import dice_roller
+
 from sixthworldsprawl.utils.constants import matrix_constants as Matrix
+from sixthworldsprawl.utils.rollers import dice_roller
+
 
 def generate_sheaf(host_level: int, security_rating: int, has_nasty_surprises: bool) -> None:
     alert_level_table: Dict[int, str] = {
@@ -11,16 +12,14 @@ def generate_sheaf(host_level: int, security_rating: int, has_nasty_surprises: b
         3: Matrix.SHUTDOWN
     }
 
-    alert_level = 0 # 0 = No Alert, 1 = Passive, 2 = Active, 3 = Shutdown
+    alert_level = 0  # 0 = No Alert, 1 = Passive, 2 = Active, 3 = Shutdown
     steps_since_last_alert = 0
-    while alert_level < 3: # Has not yet reached Alert Level: Shutdown
+    while alert_level < 3:  # Has not yet reached Alert Level: Shutdown
         # Step 1: Trigger Step
-        current_step += roll_trigger_step(host_level) # Increment Step Counter
-        sheaf_step = SheafStep(current_step) # Generate a new Sheaf Step
+        current_step += roll_trigger_step(host_level)  # Increment Step Counter
+        sheaf_step = SheafStep(current_step)  # Generate a new Sheaf Step
 
         # Step 2: Alert Level
-
-
 
         # alertContainer = roll_alert_table(alert_level, steps_since_last_alert, False)
         # generate_ic = True
@@ -45,6 +44,7 @@ def generate_sheaf(host_level: int, security_rating: int, has_nasty_surprises: b
 
         # print(f"{current_step}: {sheaf_step.listIC()}")
 
+
 def roll_trigger_step(host_level: int) -> int:
     base_step = sum(dice_roller.roll(1, 3))
 
@@ -55,6 +55,7 @@ def roll_trigger_step(host_level: int) -> int:
         3: base_step + 1
     }
     return switch.get(host_level, "Invalid Number")
+
 
 def roll_alert_table(alert_level: int, steps_since_last_alert: int, limit_to_ic: bool) -> AlertContainer:
     roll_result = sum(dice_roller.roll(1, 6))
@@ -130,6 +131,7 @@ class SheafStep:
         else:
             return str(self.ic_list)
 
+
 class AlertContainer:
     def __init__(self, level_ic=None, category_ic=None):
         self.level_ic = level_ic
@@ -140,4 +142,5 @@ class AlertContainer:
 
     def get_category_ic(self):
         return self.category_ic
+
     current_step = 0

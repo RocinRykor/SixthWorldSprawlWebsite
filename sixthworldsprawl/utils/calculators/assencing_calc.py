@@ -4,10 +4,11 @@
 #   * Half the successes from Complementary Test are added to initial Success Test
 # Compare Results to Assencing Table
 
-from typing import Dict, Any
-from sixthworldsprawl.utils.rollers import dice_roller
-from sixthworldsprawl.utils.constants.magic_constants import ASSCENING_TEST_RESULTS
 import math
+from typing import Any
+
+from sixthworldsprawl.utils.constants.magic_constants import ASSCENING_TEST_RESULTS
+from sixthworldsprawl.utils.rollers import dice_roller
 
 
 def assencing_test(assencing_dice_pool, target_number=4, aura_reading_dice_pool=0):

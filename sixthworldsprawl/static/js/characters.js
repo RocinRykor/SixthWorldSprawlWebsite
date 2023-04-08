@@ -7,6 +7,7 @@ class APIRequest {
         this.response = {};
         this.api_request = this.endpoint_url + api_request;
     }
+
     async get_request() {
         this.response = await fetch(this.api_request, {
             method: 'GET',

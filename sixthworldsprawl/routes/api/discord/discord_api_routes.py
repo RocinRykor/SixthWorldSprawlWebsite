@@ -1,8 +1,6 @@
 from flask import request, Blueprint
-from sixthworldsprawl.routes.api.discord import discord_api
-from sixthworldsprawl.utils.calculators import assencing_calc
 
-import json
+from sixthworldsprawl.utils.calculators import assencing_calc
 
 bot_api = Blueprint("bot_api", __name__, url_prefix="/api/bot")
 

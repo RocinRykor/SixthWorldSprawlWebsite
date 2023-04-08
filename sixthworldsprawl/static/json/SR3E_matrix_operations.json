@@ -1,188 +1,188 @@
 {
-    "Analyze Subsystem": {
-        "test": "Targeted Subsystem",
-        "utility": "Analyze",
-        "action": "Simple",
-        "description": "An Analyze Subsystem operation identifies anything out of the ordinary about the targeted subsystem. The operation identifies the presence of scramble IC programs or other defenses or system tricks present on the subsystem."
-    },
-    "Swap Memory": {
-        "test": "None",
-        "utility": "None",
-        "action": "Simple",
-        "description": "The Swap Memory operation enables a decker to load a new utility program into his deck\u2019s active memory and then upload it to his on-line icon.\nLoading the utility to active memory is a Simple Action\u2014 the decker simply tells the deck to do it. If his deck does not have enough active memory to hold the new program, he must first spend a Free Action to unload a program from his deck\u2019s active memory. No tests are required for these actions.\nOnce the utility is in active memory, it automatically starts uploading to the icon. See Ongoing Operations, p. 214, for details on just when the utility will be available to the persona."
-    },
-    "Logon to Host": {
-        "test": "Access",
-        "utility": "Deception",
-        "action": "Complex",
-        "description": "The Logon to Host operation simply consists of the standard System Test. Apply any appropriate modifiers to the test and remember to begin counting the decker\u2019s security tally with any successes the host achieves.\nThe decker will not know the host\u2019s Access Rating until he takes his first crack at the logon. At that point, the rating will be all too evident. No need to make it a big secret.\nOnce the deckers succeeds at the System Test, the virtual landscape of the computer becomes visible. If the decker is accessing a host directly through a work station, his icon may appear in scenery corresponding to an I/O port. Of course, with the preponderance of sculpted systems in the Matrix today, the scene may be something quite unique.\nGaining access to a host through a remote device means the decker\u2019s icon enters the host at a slave controller, and access through the console puts the decker in the heart of the CPU node.\nThese virtual locations do not affect the decker\u2019s tests, but are provided as guidelines when describing the scene to the decker.\nOnce on the host, the decker can perform all of the operations that take care of biz\u2014analyzing the host and its defenses, looking for paydata, fiddling files, the whole bit."
-    },
-    "Analyze Host": {
-        "test": "Control",
-        "utility": "Analyze",
-        "action": "Complex",
-        "description": "An Analyze Host operation enables a decker to analyze the ratings of a host. For each net success in the System Test, the decker chooses one of the following pieces of information, which the gamemaster supplies: \u2022 the host\u2019s Security Rating (code and value) \u2022 the rating of any one of the five subsystems on the host Seven or more successes gain the decker all the available information about the host. Note that a decker must be on the host to run an Analyze Host operation on it\u2014no sneak previews from the grid."
-    },
-    "Monitor Slave": {
-        "test": "Slave",
-        "utility": "Spoof",
-        "action": "Simple",
-        "description": "This operation enables the decker to read data transmitted by a remote device. He can listen to signals from audio pickups, watch feeds from security cameras, examine readouts on a computerized medical scanner hooked up to the host, and so on. As long as he maintains the operation, he receives constant updates from the device.\nThe Monitor Slave operation is a monitored operation."
-    },
-    "Logon to LTG": {
-        "test": "Access",
-        "utility": "Deception",
-        "action": "Complex",
-        "description": "The Logon to LTG operation simply consists of the usual System Test using the Access Rating of the LTG. Remember to begin counting the decker\u2019s security tally on the grid with any successes the grid achieves. If the decker loses the test, his logon attempt fails. The decker can try again, but his security tally remains on the grid for some time (typically, public LTGs \u201cremember\u201d unauthorized access attempts for 1D3 x 5 minutes). The decker also can switch to a different jackpoint before his next logon attempt\u2014which means the grid will have to start a new security tally for him.\nOnce the decker succeeds in the Success Contest, his icon appears in the familiar virtual landscape of the LTG. From an LTG, the decker can log on to the RTG that controls the LTG, or on to the PLTG attached to this LTG (if he knows its address), or to any host attached to the LTG (if he knows the host\u2019s address)."
-    },
-    "Decrypt Slave": {
-        "test": "Slave",
-        "utility": "Decrypt",
-        "action": "Simple",
-        "description": "The Decrypt Slave operation defeats scramble IC programs on a Slave subsystem. A decker cannot make Slave Tests against a scrambled Slave subsystem until he has performed a successful Decrypt Slave operation on the subsystem."
-    },
-    "Null Operation": {
-        "test": "Control",
-        "utility": "Deception",
-        "action": "Complex",
-        "description": "The gamemaster may require a decker to perform one or more Null Operations whenever the decker is waiting for something to happen, whether it is an event on the Matrix, the end of an ongoing operation, or something else that involves hanging around in cyberspace without making System Tests. The gamemaster may also call for a Null Operation if a decker is doing anything that requires actions but not System Tests, such as maintaining an Edit Slave. The gamemaster may secretly perform these operations on behalf of the decker, if he so desires.\nUse the host\u2019s base Security Value for the Success Contest if the decker is inactive on the host for less than 10 seconds. If the period of inactivity is less than a minute but more than 10 seconds, apply a +1 modifier to the Security Value. If the period is less than an hour but more than a minute, apply a +2 modifier. If the period is less than 12 hours but more than 1 hour, apply a +4 modifier; apply an additional +1 modifier for every additional 12 hours. The gamemaster may set an upper limit on the inactive period, depending on the decker\u2019s ability to avoid falling asleep in the event of such implausibly long times.\nSelena begins a download that will complete in 12 seconds. She has nothing else she wants to do, so she waits. The gamemaster requires a Null Operation and adds +1 to the host\u2019s Security Value.\nOn a different run, Selena is waiting for a ground team to get through a locked door (don\u2019t you just hate those manual doors with no computer overrides on the lock?).\nThe gamemaster determines that the maglock penetration task will take 7 minutes. He also performs a secret Null Operation for Selena and applies a +2 modifier to the host\u2019s Security Value for the Success Contest. The test yields several successes that push the security tally past its next trigger step, which triggers a truly unpleasant IC program. The gamemaster decides to have the IC show up 3 minutes into the waiting period.\nIf the Security Test raises the decker\u2019s security tally and triggers a response from the host, the gamemaster should activate the response as he sees fit, perhaps after a percentage interval of the decker\u2019s period of inactivity."
-    },
-    "Edit Slave": {
-        "test": "Slave",
-        "utility": "Spoof",
-        "action": "Complex",
-        "description": "This operation enables a decker to modify data sent to or received from a remote device controlled by the host\u2019s Slave subsystem. For example, a decker could perform Edit Slave operations to alter video signals or sensor readings from a computer-controlled security system or alter readings being sent to a console or simulator.\nThe Edit Slave operation is a monitored operation."
-    },
-    "Graceful Logoff": {
-        "test": "Access",
-        "utility": "Deception",
-        "action": "Complex",
-        "description": "The Graceful Logoff operation enables a decker to disconnect from a host and the LTG where he logged on to the grid without experiencing dump shock.\nIn addition, a successful Graceful Logoff operation clears all traces of the decker and his actions from the security and memory systems of the host. A track utility in its location cycle will add its rating as a target number modifier to any Graceful Logoff attempts (see Track, p. 221)."
-    },
-    "Locate IC": {
-        "test": "Index",
-        "utility": "Analyze",
-        "action": "Complex",
-        "description": "The Locate IC operation follows the same rules as the Locate Decker operation. However, the decker automatically locates the IC program(s) if his System Test succeeds\u2014he need not make a Sensor Test. The IC program(s) remains located unless it maneuvers to evade detection."
-    },
-    "Logon to RTG": {
-        "test": "Access",
-        "utility": "Deception",
-        "action": "Complex",
-        "description": "Once he has logged on to an LTG, a decker can log on to its controlling RTG by performing a Logon to RTG operation.\nHe must perform this operation if he wants to connect to a different LTG on the same RTG, or to a different RTG altogether.\nTo perform the operation, the decker makes a System Test against the RTG\u2019s Access Rating. Remember that \u201clocal\u201d changes in the LTG system ratings (see p. 202) will not carry over to the RTG. The gamemaster can assign temporary changes to the RTG Ratings, of course.\nRemember that an RTG maintains the same security tally for all a decker\u2019s activities on any LTGs it controls, as well as the RTG itself.\nOnce the decker is on the RTG, he can perform a Logon to LTG to reach any LTG attached to the RTG, or a Logon to RTG operation to reach any other RTG in the world."
-    },
-    "Locate File": {
-        "test": "Index",
-        "utility": "Browse",
-        "action": "Complex",
-        "description": "The Locate File operation is an interrogation operation that searches for specific datafiles. To use the operation, the decker must have some idea of what he is looking for\u2014\u201dvaluable data\u201d is not enough.\nIf the operation succeeds, the decker knows the system location of the file."
-    },
-    "Analyze Security": {
-        "test": "Control",
-        "utility": "Analyze",
-        "action": "Simple",
-        "description": "The Analyze Security operation tells the decker the current Security Rating of the host, the decker\u2019s security tally on the host (including any tally points accrued by the test for Analyze Security), and the host\u2019s alert status."
-    },
-    "Make Comcall": {
-        "test": "Files",
-        "utility": "Commlink",
-        "action": "Complex",
-        "description": "A decker on an RTG can make a call to any commcode on an LTG controlled by that RTG by performing a Make Comcall operation. But this operation is not just a way to beat payphones. The decker can make a call, then move to another RTG and make a call to a number under its control, then link the two together. A decker can move to multiple RTGs in this manner, building a secure conference call. Each call the decker links together requires another System Test.\nDeckers can be licensed to provide this service on various RTGs. This means they get a passcode from the RTG vendor that authorizes this operation. In that case, no tests are needed to make the calls or link them together. This license is usually restricted to corporate deckers.\nThe Tap Comcall operation cannot trace this kind of call, but another decker could use the track utility to try to locate the commcodes involved in the call. (See Tap Comcall, p. 219, for further information.) In addition, the decker can detect any taps or tracers on the commlines by winning an Opposed Sensor versus Device Rating Test. He can neutralize them with another Opposed Test, pitting Evasion against the Device Rating.\nDumping a participant from a comcall requires a Files Test.\nLikewise, jumping into a tapped comcall requires a Files Test.\nDeckers often arrange secure calls as a profitable sideline.\nThe typical charge is 100 nuyen per caller per minute.\nThe Make Comcall operation is a monitored operation."
-    },
-    "Decrypt File": {
-        "test": "Files",
-        "utility": "Decrypt",
-        "action": "Simple",
-        "description": "The Decrypt File operation defeats scramble IC programs on a file. Deckers must perform successful Decrypt File operations on scrambled files before performing other operations on such files. A file with scrambled IC program cannot be downloaded until after it has been decrypted."
-    },
-    "Tap Comcall": {
-        "test": "Special",
-        "utility": "Commlink",
-        "action": "Complex",
-        "description": "The Tap Commcall operation enables deckers to locate active commcodes on an LTG, trace and tap commcalls.\nDeckers use the commlink utility for all the tests required during this monitored operation.\nTo locate active commcodes on an LTG, a decker must be active on an RTG that controls the LTG. The decker makes an Index Test to determine if any commcodes on the LTG are sending or receiving a call. If the decker is checking for a particular commcode, he must be on that commcode\u2019s parent RTG, and he receives a \u20132 target number modifier for the Index Test. If the decker finds a commcode in use, he can make a Control Test to trace the call to its origin or destination. If multiple participants are undertaking a conference call with that commcode, each net success on the test reveals the commcode of one participant.\nIf the call was set up by another decker using the Make Comcall operation, then the Control Test locates the decker controlling the call. The decker trying to trace the call must move to the RTG the calling decker is currently located in and use a track utility against him. Note that using the track utility on a decker is considered an attack and reveals your presence to that decker. The track utility locates all the other commcodes involved in the call.\nIf the decker wants to tap the call and record it in his deck\u2019s storage memory or off-line storage, he must make a Files Test. Each minute of recording occupies 1 Mp of storage.\nIf the comm connection is scrambled, the decker must decrypt it by making an Opposed Test pitting his Computer Skill against the Device Rating of the data encryption system on the comm line. The decrypt utility reduces the decker\u2019s target number. The number of phones and encryption devices involved in the call have no effect on the decker\u2019s target number. If the first decryption test fails, the decker can try again; apply a +2 modifier to the target number for each additional test. None of the tests against scrambling affect the decker\u2019s security tally on the RTG.\nIf any of the phones involved in the call is equipped with a dataline scanner, the decker may set that off even if he doesn\u2019t trigger an alert on the RTG. Dataline scanners (p. 291) have a rating from 1 to 10. Once the decker establishes his tap, the decker must make an Opposed Test, Computer Skill versus the scanner\u2019s Device Rating. The commlink utility reduces the decker\u2019s target number. If the decker wins, he has synchronized the tiny fluctuations in signal integrity caused by his tap and fooled the scanner. If multiple dataline scanners are in use on the call, use the highest rating among them for the test. In this case, the decker needs 1 success for each scanner involved, or some of the devices detect the tap (presumably the more expensive ones). Whether this test succeeds or fails, the result does not affect the decker\u2019s security tally on the RTG.\nOnce a decker has tapped and unscrambled a call, he can listen in and record, as he wishes. When the call terminates, he can stay locked on to any of the commcodes, either the original one that he was after or any that he traced. He can then attempt to monitor any subsequent calls placed from the commcode. If the decker is monitoring a code that he has already tapped, he does not need to make Index Tests to determine when it becomes active again. He does need to make new tests to trace or tap the new calls and defeat any dataline scanners or encryption on the calls.\nDeckers may also reveal themselves and enter in tapped comcalls, or disconnect participants from comcalls by performing a Make Comcall operation (Files Test, modified by commlink utility).\nTap Comcall is a monitored operation."
-    },
-    "Control Slave": {
-        "test": "Slave",
-        "utility": "Spoof",
-        "action": "Complex",
-        "description": "The Control Slave operation enables a decker to take control of a remote device controlled by the host\u2019s Slave subsystem. Remote devices range from simple automatic security doors and elevators to entire automated factories full of robotic assemblers.\nIf the decker is attempting to take control of a manufacturing or scientific process controlled by the Slave subsystem, he must make the System Test with the average of his ratings in Computer Skill and a B/R or Knowledge Skill that applies to the process. For example, a decker attempting to take control of an automated medical lab would make the test with an average of his Computer and Biotech Skills, or Computer and Medicine Skills, or Computer and some similar skill. Be strict about appropriate skills here, especially if the decker is attempting a task that might call for some obscure skill specialization.\nThe Control Slave operation is a monitored operation."
-    },
-    "Analyze IC": {
-        "test": "Control",
-        "utility": "Analyze",
-        "action": "Free",
-        "description": "The Analyze IC operation enables a decker to identify any specific IC program that he has located (deckers may locate IC programs by performing Locate IC operations or by coming under attack from the IC program). If the Analyze IC operation succeeds, the decker learns the type and rating of the IC program and any options or defenses it carries."
-    },
-    "Locate Access Node": {
-        "test": "Index",
-        "utility": "Browse",
-        "action": "Complex",
-        "description": "The Locate Access Node operation is \u201cdirectory assistance\u201d Sixth World-style. It enables a decker to find the codes of LTGs that provide access to the hosts he wants. The operation also lets him locate commcodes for regular telecom calls.\nModify the target number for the System Test according to the decker\u2019s stated goal. For example, if all he knows is a company or individual name\u2014\u201cI\u2019m looking for a Mitsuhama system\u201d\u2014apply a +1 modifier to the target number. If his goal is a bit more specific\u2014\u201cI\u2019m looking for a Mitsuhama public-relations system\u201d\u2014do not modify the target number. If he has a definite, specific goal\u2014\u201cI\u2019m looking for the Mitsuhama publicrelations system out of the Mitsu office in Bellevue on LTG 5209\u201d\u2014apply a \u20131 modifier to the target number.\nOnce a decker has located an LTG code, he need not repeat the Locate Access Node operation to find the host in future\u2014unless its owners change the address, of course.\nThe Locate Access Node operation is an interrogation operation."
-    },
-    "Locate Slave": {
-        "test": "Index",
-        "utility": "Browse",
-        "action": "Complex",
-        "description": "The Locate Slave operation follows the same rules as the Locate File operation (see Locate File). The operation is used to determine system addresses for specific remote devices controlled by the host. A vague inquiry would be, \u201cFind all the security cameras controlled by this computer.\u201d A very specific inquiry would be, \u201cFind the camera that monitors the eastern stairwell door on the third floor.\u201d On the other hand, most hosts are likely to control far fewer slaves than files, so a decker need achieve only 3 successes on his System Test to locate the desired system. After locating the slave node, a decker can perform operations such as Edit Slave for that node.\nLocate Slave is an interrogation operation."
-    },
-    "Analyze Icon": {
-        "test": "Control",
-        "utility": "Analyze",
-        "action": "Free",
-        "description": "The Analyze Icon operation scans any icon and identifies its general type: IC, persona, application and so on. The decker may reduce the Control Test target number by his Sensor Rating and any analyze utility he is running. However, the test target number may not drop below 2, regardless of the decker\u2019s combined Sensor and analyze utility ratings."
-    },
-    "Download Data": {
-        "test": "Files",
-        "utility": "Read/Write",
-        "action": "Simple",
-        "description": "The Download Data operation copies a file from the host to the decker\u2019s cyberdeck. The data moves at the decks I/O speed. It may be transferred to active memory, storage memory, or even off-line storage.\nThe Download Data operation is an ongoing operation that continues until the data transfer is completed, the decker logs off or is crashed, or the decker terminates the download early.\nIf the operation is terminated before the transfer is completed, it creates a corrupted copy of the file, which is worthless.\nHowever, if the file contains information that is particularly important to an adventure, the gamemaster may allow partially completed downloads to produce damaged, yet readable file copies. The base time to reconstruct a damaged file is calculated as follows: (full file size in Mp divided by amount of data downloaded in Mp) x 2.\nThe result is in days. Once a damaged file is reconstructed, the gamemaster determines whether the file contains the pertinent information by dividing the size of the downloaded file by the full size of the original file.\nFor example, if a decker manages to copy 10 Mp of a 100 Mp file, the base time for reconstructing the file is (100 ÷ 10) x 2, or 20 days. Dividing 10 by 100 yields .10, so there is a 10 percent chance that the copied file contains the pertinent information."
-    },
-    "Locate Decker": {
-        "test": "Index",
-        "utility": "Scanner",
-        "action": "Complex",
-        "description": "The Locate Decker operation is a two-step process. The decker makes the standard System Test and then an Openended Sensor Test. The decker locates any other deckers whose Masking Attributes are equal to or lower than his Sensor Test results. In addition, he knows if they log off or jack out. If a targeted decker is running a sleaze utility, add its rating to the targeted decker\u2019s Masking Rating to determine if the testing decker locates the target decker.\nLocated deckers may break contact by maneuvering (see Combat Maneuvers, p. 224).\nFriendly deckers who wish to make their presences known to each other may do so automatically."
-    },
-    "Decrypt Access": {
-        "test": "Access",
-        "utility": "Decrypt",
-        "action": "Simple",
-        "description": "The Decrypt Access operation defeats scramble IC programs guarding access to a host. IC programs on a scrambled SAN must be defeated with a Decrypt Access operation before a decker can perform a Logon to Host operation on a scrambled SAN."
-    },
-    "Edit File": {
-        "test": "Files",
-        "utility": "Read/Write",
-        "action": "Simple",
-        "description": "The Edit File operation enables a decker to create, change, or erase a datafile. Small changes (approximately one line of print or the equivalent of one short form of some kind) can be made directly on the host by performing this operation. Before replacing larger amounts of data, the decker must prepare the new material off-line first, then upload it and perform an Edit File operation to insert it into the file. Any uploaded information may be inserted with a single Edit File operation, regardless of its size.\nA successful System Test creates new files. Because these files have counterfeit headers, the operating system may notice irregularities.\nDeckers also can use Edit File operations to make copies of files on the same host. Thus, deckers can copy a file from a particularly secure datastore, stash it on a less secure part of the same host and retrieve it at a later time. When using the Edit File operation in this manner, a decker must make two System Tests. The first test is a Files Test. The second test is made against the subsystem that controls the location where the decker hid the copied file.\nAfter altering, inserting, or deleting a file, a decker may make a Control Test, with target number reduced by his read/write utility, to authenticate the file\u2019s headers. Note the number of successes. If the decker fails to successfully take this step, make a Masking (Files) Test. The number of successes is the number of hours before the host notices the tampered file and reports it to the host\u2019s supervisor.\nDeckers may also check to determine whether a file has been tampered with. If the file was altered by an unauthorized decker who failed to make a Control Test to authenticate the headers, then a simple Files Test will reveal the tampering. If the file headers were authenticated, the Files Test must achieve more successes than the tampering decker achieved on the Control Test to recognize signs of tampering in the file.\nKeep in mind that any time a decker deletes a host file, the gamemaster must consider the impact on the adventure in progress and decide whether back-up copies of the file exist."
-    },
-    "Upload Data": {
-        "test": "Files",
-        "utility": " Read/Write",
-        "action": "Simple",
-        "description": "This operation enables a decker to transmit data from his cyberdeck to the Matrix. This data comes directly from the deck\u2019s storage memory and does not affect active memory.\nIf the decker is creating a new file on the host, the file is written automatically. If the decker intends to modify an existing file on the host\u2014adding false records to a database, for example\u2014the decker must perform an Edit File operation after the upload is finished.\nNote that the Upload Data operation is not used to upload utilities. The Swap Memory operation handles that function.\nThe Upload Data operation is an ongoing operation."
-    },
-    "Access Rating": {
-        "description": "The Access Rating measures a system\u2019s resistance to unauthorized access. To access a grid/host, an unauthorized decker must pit his Computer Skill against the grid/host\u2019s Access Rating in a Success Contest."
-    },
-    "Control Rating": {
-        "description": "The Control Rating measures a system\u2019s resistance to unauthorized administrative commands. For example, an unauthorized decker attempting to kick a legitimate user off a host must make a Success Contest against the host\u2019s Control Rating.\nGenerally, successful tests will enable deckers to reprogram a system or defeat its security measures."
-    },
-    "Files Rating": {
-        "description": "Deckers must make a Success Contest against the Files Ratings whenever they attempt to illegally read or write datafiles in a system. Deckers must also make tests to decrypt encoded files and send output to devices such as faxprinters or chip cookers."
-    },
-    "Security Codes": {
-        "description": "The security code of a host measures the level of security precautions the host maintains. Generally, the code reflects the sensitivity of the data on the host, but it may also simply reflect the degree of paranoia suffered by the host\u2019s owner.\nBlue Hosts Blue hosts include most public-service databases: newsfax distribution systems, public library databases, directories of listed commcodes\u2014pretty much anything free, whether provided by a government, a corp, or a private individual. Small businesses too poor to secure their systems tend to have Blue hosts as well.\nGreen Hosts Green hosts are average systems, but never make the mistake of thinking a Green host represents easy prey. They may be more patient with intruders than the Orange or Red systems, but they can load any IC the hotter hosts mount.\nOrange Hosts Orange hosts pride themselves on being secure systems, if not wild-eyed killer hosts. Orange hosts store your standard \u201cconfidential\u201d data and carry out processing that is important but not absolutely essential to the host\u2019s operators. Orange systems include the typical factory controller and the networks used by middle management in a typical corporate office.\nRed Hosts Red hosts offer the most security that a system may legally carry. They contain \u201ctop secret\u201d data, often the kind owners will kill to protect, and mission-critical process controls (life support, vital labs and factories, power grids, and the like).\nAnti-intrusion defenses tend to be lethal\u2014deckers get no \u201cwarning shots\u201d on Red systems"
-    },
-    "Security Rating": {
-        "description": "A Security Rating consists of a security code (a color) and a Security Value (a number).\nThe four security codes are Blue (little or no security), Green (average security), Orange (significant security), and Red (high security). Reportedly, some systems contain killer defenses that send their security codes right off the \u201cofficial\u201d color scale. Decker slang calls these Ultra-Violet, UV, or black systems.\nGenerally, Security Values range from 4 to 12, though they sometimes range higher. Double-digit values represent extreme system security. The Security Value indicates the number of dice the gamemaster rolls to oppose a decker\u2019s System Tests (see System Tests, p. 209). It is also the number of dice rolled for Security Tests."
-    },
-    "Index Rating": {
-        "description": "The Index Rating measures a system\u2019s resistance to unauthorized searches. An unauthorized decker searching a grid or host for a system address or specific file must make a Success Contest against the grid/host\u2019s Index Rating."
-    },
-    "Slave Rating": {
-        "description": "The Slave Rating governs the operation of remote devices controlled by a system. For example, a Success Contest against the Slave Rating enables an unauthorized decker to take control of devices manipulated by a host, such as security cameras and elevators."
-    },
-    "Rating Format": {
-        "description": "System Ratings use the following shorthand format: Security Code\u2013Security Value/Access/Control/Index/Files/Slave For example, a Red-6 system with Access and Index Ratings of 10, a Control Rating of 12, and Files and Slave Ratings equal to 9 would be written: Red-6/10/12/10/9/9 The acronym \u201cACIFS\u201d\u2014Access Control Index Files Slave\u2014may make remembering this format easier."
-    }
+  "Analyze Subsystem": {
+    "test": "Targeted Subsystem",
+    "utility": "Analyze",
+    "action": "Simple",
+    "description": "An Analyze Subsystem operation identifies anything out of the ordinary about the targeted subsystem. The operation identifies the presence of scramble IC programs or other defenses or system tricks present on the subsystem."
+  },
+  "Swap Memory": {
+    "test": "None",
+    "utility": "None",
+    "action": "Simple",
+    "description": "The Swap Memory operation enables a decker to load a new utility program into his deck\u2019s active memory and then upload it to his on-line icon.\nLoading the utility to active memory is a Simple Action\u2014 the decker simply tells the deck to do it. If his deck does not have enough active memory to hold the new program, he must first spend a Free Action to unload a program from his deck\u2019s active memory. No tests are required for these actions.\nOnce the utility is in active memory, it automatically starts uploading to the icon. See Ongoing Operations, p. 214, for details on just when the utility will be available to the persona."
+  },
+  "Logon to Host": {
+    "test": "Access",
+    "utility": "Deception",
+    "action": "Complex",
+    "description": "The Logon to Host operation simply consists of the standard System Test. Apply any appropriate modifiers to the test and remember to begin counting the decker\u2019s security tally with any successes the host achieves.\nThe decker will not know the host\u2019s Access Rating until he takes his first crack at the logon. At that point, the rating will be all too evident. No need to make it a big secret.\nOnce the deckers succeeds at the System Test, the virtual landscape of the computer becomes visible. If the decker is accessing a host directly through a work station, his icon may appear in scenery corresponding to an I/O port. Of course, with the preponderance of sculpted systems in the Matrix today, the scene may be something quite unique.\nGaining access to a host through a remote device means the decker\u2019s icon enters the host at a slave controller, and access through the console puts the decker in the heart of the CPU node.\nThese virtual locations do not affect the decker\u2019s tests, but are provided as guidelines when describing the scene to the decker.\nOnce on the host, the decker can perform all of the operations that take care of biz\u2014analyzing the host and its defenses, looking for paydata, fiddling files, the whole bit."
+  },
+  "Analyze Host": {
+    "test": "Control",
+    "utility": "Analyze",
+    "action": "Complex",
+    "description": "An Analyze Host operation enables a decker to analyze the ratings of a host. For each net success in the System Test, the decker chooses one of the following pieces of information, which the gamemaster supplies: \u2022 the host\u2019s Security Rating (code and value) \u2022 the rating of any one of the five subsystems on the host Seven or more successes gain the decker all the available information about the host. Note that a decker must be on the host to run an Analyze Host operation on it\u2014no sneak previews from the grid."
+  },
+  "Monitor Slave": {
+    "test": "Slave",
+    "utility": "Spoof",
+    "action": "Simple",
+    "description": "This operation enables the decker to read data transmitted by a remote device. He can listen to signals from audio pickups, watch feeds from security cameras, examine readouts on a computerized medical scanner hooked up to the host, and so on. As long as he maintains the operation, he receives constant updates from the device.\nThe Monitor Slave operation is a monitored operation."
+  },
+  "Logon to LTG": {
+    "test": "Access",
+    "utility": "Deception",
+    "action": "Complex",
+    "description": "The Logon to LTG operation simply consists of the usual System Test using the Access Rating of the LTG. Remember to begin counting the decker\u2019s security tally on the grid with any successes the grid achieves. If the decker loses the test, his logon attempt fails. The decker can try again, but his security tally remains on the grid for some time (typically, public LTGs \u201cremember\u201d unauthorized access attempts for 1D3 x 5 minutes). The decker also can switch to a different jackpoint before his next logon attempt\u2014which means the grid will have to start a new security tally for him.\nOnce the decker succeeds in the Success Contest, his icon appears in the familiar virtual landscape of the LTG. From an LTG, the decker can log on to the RTG that controls the LTG, or on to the PLTG attached to this LTG (if he knows its address), or to any host attached to the LTG (if he knows the host\u2019s address)."
+  },
+  "Decrypt Slave": {
+    "test": "Slave",
+    "utility": "Decrypt",
+    "action": "Simple",
+    "description": "The Decrypt Slave operation defeats scramble IC programs on a Slave subsystem. A decker cannot make Slave Tests against a scrambled Slave subsystem until he has performed a successful Decrypt Slave operation on the subsystem."
+  },
+  "Null Operation": {
+    "test": "Control",
+    "utility": "Deception",
+    "action": "Complex",
+    "description": "The gamemaster may require a decker to perform one or more Null Operations whenever the decker is waiting for something to happen, whether it is an event on the Matrix, the end of an ongoing operation, or something else that involves hanging around in cyberspace without making System Tests. The gamemaster may also call for a Null Operation if a decker is doing anything that requires actions but not System Tests, such as maintaining an Edit Slave. The gamemaster may secretly perform these operations on behalf of the decker, if he so desires.\nUse the host\u2019s base Security Value for the Success Contest if the decker is inactive on the host for less than 10 seconds. If the period of inactivity is less than a minute but more than 10 seconds, apply a +1 modifier to the Security Value. If the period is less than an hour but more than a minute, apply a +2 modifier. If the period is less than 12 hours but more than 1 hour, apply a +4 modifier; apply an additional +1 modifier for every additional 12 hours. The gamemaster may set an upper limit on the inactive period, depending on the decker\u2019s ability to avoid falling asleep in the event of such implausibly long times.\nSelena begins a download that will complete in 12 seconds. She has nothing else she wants to do, so she waits. The gamemaster requires a Null Operation and adds +1 to the host\u2019s Security Value.\nOn a different run, Selena is waiting for a ground team to get through a locked door (don\u2019t you just hate those manual doors with no computer overrides on the lock?).\nThe gamemaster determines that the maglock penetration task will take 7 minutes. He also performs a secret Null Operation for Selena and applies a +2 modifier to the host\u2019s Security Value for the Success Contest. The test yields several successes that push the security tally past its next trigger step, which triggers a truly unpleasant IC program. The gamemaster decides to have the IC show up 3 minutes into the waiting period.\nIf the Security Test raises the decker\u2019s security tally and triggers a response from the host, the gamemaster should activate the response as he sees fit, perhaps after a percentage interval of the decker\u2019s period of inactivity."
+  },
+  "Edit Slave": {
+    "test": "Slave",
+    "utility": "Spoof",
+    "action": "Complex",
+    "description": "This operation enables a decker to modify data sent to or received from a remote device controlled by the host\u2019s Slave subsystem. For example, a decker could perform Edit Slave operations to alter video signals or sensor readings from a computer-controlled security system or alter readings being sent to a console or simulator.\nThe Edit Slave operation is a monitored operation."
+  },
+  "Graceful Logoff": {
+    "test": "Access",
+    "utility": "Deception",
+    "action": "Complex",
+    "description": "The Graceful Logoff operation enables a decker to disconnect from a host and the LTG where he logged on to the grid without experiencing dump shock.\nIn addition, a successful Graceful Logoff operation clears all traces of the decker and his actions from the security and memory systems of the host. A track utility in its location cycle will add its rating as a target number modifier to any Graceful Logoff attempts (see Track, p. 221)."
+  },
+  "Locate IC": {
+    "test": "Index",
+    "utility": "Analyze",
+    "action": "Complex",
+    "description": "The Locate IC operation follows the same rules as the Locate Decker operation. However, the decker automatically locates the IC program(s) if his System Test succeeds\u2014he need not make a Sensor Test. The IC program(s) remains located unless it maneuvers to evade detection."
+  },
+  "Logon to RTG": {
+    "test": "Access",
+    "utility": "Deception",
+    "action": "Complex",
+    "description": "Once he has logged on to an LTG, a decker can log on to its controlling RTG by performing a Logon to RTG operation.\nHe must perform this operation if he wants to connect to a different LTG on the same RTG, or to a different RTG altogether.\nTo perform the operation, the decker makes a System Test against the RTG\u2019s Access Rating. Remember that \u201clocal\u201d changes in the LTG system ratings (see p. 202) will not carry over to the RTG. The gamemaster can assign temporary changes to the RTG Ratings, of course.\nRemember that an RTG maintains the same security tally for all a decker\u2019s activities on any LTGs it controls, as well as the RTG itself.\nOnce the decker is on the RTG, he can perform a Logon to LTG to reach any LTG attached to the RTG, or a Logon to RTG operation to reach any other RTG in the world."
+  },
+  "Locate File": {
+    "test": "Index",
+    "utility": "Browse",
+    "action": "Complex",
+    "description": "The Locate File operation is an interrogation operation that searches for specific datafiles. To use the operation, the decker must have some idea of what he is looking for\u2014\u201dvaluable data\u201d is not enough.\nIf the operation succeeds, the decker knows the system location of the file."
+  },
+  "Analyze Security": {
+    "test": "Control",
+    "utility": "Analyze",
+    "action": "Simple",
+    "description": "The Analyze Security operation tells the decker the current Security Rating of the host, the decker\u2019s security tally on the host (including any tally points accrued by the test for Analyze Security), and the host\u2019s alert status."
+  },
+  "Make Comcall": {
+    "test": "Files",
+    "utility": "Commlink",
+    "action": "Complex",
+    "description": "A decker on an RTG can make a call to any commcode on an LTG controlled by that RTG by performing a Make Comcall operation. But this operation is not just a way to beat payphones. The decker can make a call, then move to another RTG and make a call to a number under its control, then link the two together. A decker can move to multiple RTGs in this manner, building a secure conference call. Each call the decker links together requires another System Test.\nDeckers can be licensed to provide this service on various RTGs. This means they get a passcode from the RTG vendor that authorizes this operation. In that case, no tests are needed to make the calls or link them together. This license is usually restricted to corporate deckers.\nThe Tap Comcall operation cannot trace this kind of call, but another decker could use the track utility to try to locate the commcodes involved in the call. (See Tap Comcall, p. 219, for further information.) In addition, the decker can detect any taps or tracers on the commlines by winning an Opposed Sensor versus Device Rating Test. He can neutralize them with another Opposed Test, pitting Evasion against the Device Rating.\nDumping a participant from a comcall requires a Files Test.\nLikewise, jumping into a tapped comcall requires a Files Test.\nDeckers often arrange secure calls as a profitable sideline.\nThe typical charge is 100 nuyen per caller per minute.\nThe Make Comcall operation is a monitored operation."
+  },
+  "Decrypt File": {
+    "test": "Files",
+    "utility": "Decrypt",
+    "action": "Simple",
+    "description": "The Decrypt File operation defeats scramble IC programs on a file. Deckers must perform successful Decrypt File operations on scrambled files before performing other operations on such files. A file with scrambled IC program cannot be downloaded until after it has been decrypted."
+  },
+  "Tap Comcall": {
+    "test": "Special",
+    "utility": "Commlink",
+    "action": "Complex",
+    "description": "The Tap Commcall operation enables deckers to locate active commcodes on an LTG, trace and tap commcalls.\nDeckers use the commlink utility for all the tests required during this monitored operation.\nTo locate active commcodes on an LTG, a decker must be active on an RTG that controls the LTG. The decker makes an Index Test to determine if any commcodes on the LTG are sending or receiving a call. If the decker is checking for a particular commcode, he must be on that commcode\u2019s parent RTG, and he receives a \u20132 target number modifier for the Index Test. If the decker finds a commcode in use, he can make a Control Test to trace the call to its origin or destination. If multiple participants are undertaking a conference call with that commcode, each net success on the test reveals the commcode of one participant.\nIf the call was set up by another decker using the Make Comcall operation, then the Control Test locates the decker controlling the call. The decker trying to trace the call must move to the RTG the calling decker is currently located in and use a track utility against him. Note that using the track utility on a decker is considered an attack and reveals your presence to that decker. The track utility locates all the other commcodes involved in the call.\nIf the decker wants to tap the call and record it in his deck\u2019s storage memory or off-line storage, he must make a Files Test. Each minute of recording occupies 1 Mp of storage.\nIf the comm connection is scrambled, the decker must decrypt it by making an Opposed Test pitting his Computer Skill against the Device Rating of the data encryption system on the comm line. The decrypt utility reduces the decker\u2019s target number. The number of phones and encryption devices involved in the call have no effect on the decker\u2019s target number. If the first decryption test fails, the decker can try again; apply a +2 modifier to the target number for each additional test. None of the tests against scrambling affect the decker\u2019s security tally on the RTG.\nIf any of the phones involved in the call is equipped with a dataline scanner, the decker may set that off even if he doesn\u2019t trigger an alert on the RTG. Dataline scanners (p. 291) have a rating from 1 to 10. Once the decker establishes his tap, the decker must make an Opposed Test, Computer Skill versus the scanner\u2019s Device Rating. The commlink utility reduces the decker\u2019s target number. If the decker wins, he has synchronized the tiny fluctuations in signal integrity caused by his tap and fooled the scanner. If multiple dataline scanners are in use on the call, use the highest rating among them for the test. In this case, the decker needs 1 success for each scanner involved, or some of the devices detect the tap (presumably the more expensive ones). Whether this test succeeds or fails, the result does not affect the decker\u2019s security tally on the RTG.\nOnce a decker has tapped and unscrambled a call, he can listen in and record, as he wishes. When the call terminates, he can stay locked on to any of the commcodes, either the original one that he was after or any that he traced. He can then attempt to monitor any subsequent calls placed from the commcode. If the decker is monitoring a code that he has already tapped, he does not need to make Index Tests to determine when it becomes active again. He does need to make new tests to trace or tap the new calls and defeat any dataline scanners or encryption on the calls.\nDeckers may also reveal themselves and enter in tapped comcalls, or disconnect participants from comcalls by performing a Make Comcall operation (Files Test, modified by commlink utility).\nTap Comcall is a monitored operation."
+  },
+  "Control Slave": {
+    "test": "Slave",
+    "utility": "Spoof",
+    "action": "Complex",
+    "description": "The Control Slave operation enables a decker to take control of a remote device controlled by the host\u2019s Slave subsystem. Remote devices range from simple automatic security doors and elevators to entire automated factories full of robotic assemblers.\nIf the decker is attempting to take control of a manufacturing or scientific process controlled by the Slave subsystem, he must make the System Test with the average of his ratings in Computer Skill and a B/R or Knowledge Skill that applies to the process. For example, a decker attempting to take control of an automated medical lab would make the test with an average of his Computer and Biotech Skills, or Computer and Medicine Skills, or Computer and some similar skill. Be strict about appropriate skills here, especially if the decker is attempting a task that might call for some obscure skill specialization.\nThe Control Slave operation is a monitored operation."
+  },
+  "Analyze IC": {
+    "test": "Control",
+    "utility": "Analyze",
+    "action": "Free",
+    "description": "The Analyze IC operation enables a decker to identify any specific IC program that he has located (deckers may locate IC programs by performing Locate IC operations or by coming under attack from the IC program). If the Analyze IC operation succeeds, the decker learns the type and rating of the IC program and any options or defenses it carries."
+  },
+  "Locate Access Node": {
+    "test": "Index",
+    "utility": "Browse",
+    "action": "Complex",
+    "description": "The Locate Access Node operation is \u201cdirectory assistance\u201d Sixth World-style. It enables a decker to find the codes of LTGs that provide access to the hosts he wants. The operation also lets him locate commcodes for regular telecom calls.\nModify the target number for the System Test according to the decker\u2019s stated goal. For example, if all he knows is a company or individual name\u2014\u201cI\u2019m looking for a Mitsuhama system\u201d\u2014apply a +1 modifier to the target number. If his goal is a bit more specific\u2014\u201cI\u2019m looking for a Mitsuhama public-relations system\u201d\u2014do not modify the target number. If he has a definite, specific goal\u2014\u201cI\u2019m looking for the Mitsuhama publicrelations system out of the Mitsu office in Bellevue on LTG 5209\u201d\u2014apply a \u20131 modifier to the target number.\nOnce a decker has located an LTG code, he need not repeat the Locate Access Node operation to find the host in future\u2014unless its owners change the address, of course.\nThe Locate Access Node operation is an interrogation operation."
+  },
+  "Locate Slave": {
+    "test": "Index",
+    "utility": "Browse",
+    "action": "Complex",
+    "description": "The Locate Slave operation follows the same rules as the Locate File operation (see Locate File). The operation is used to determine system addresses for specific remote devices controlled by the host. A vague inquiry would be, \u201cFind all the security cameras controlled by this computer.\u201d A very specific inquiry would be, \u201cFind the camera that monitors the eastern stairwell door on the third floor.\u201d On the other hand, most hosts are likely to control far fewer slaves than files, so a decker need achieve only 3 successes on his System Test to locate the desired system. After locating the slave node, a decker can perform operations such as Edit Slave for that node.\nLocate Slave is an interrogation operation."
+  },
+  "Analyze Icon": {
+    "test": "Control",
+    "utility": "Analyze",
+    "action": "Free",
+    "description": "The Analyze Icon operation scans any icon and identifies its general type: IC, persona, application and so on. The decker may reduce the Control Test target number by his Sensor Rating and any analyze utility he is running. However, the test target number may not drop below 2, regardless of the decker\u2019s combined Sensor and analyze utility ratings."
+  },
+  "Download Data": {
+    "test": "Files",
+    "utility": "Read/Write",
+    "action": "Simple",
+    "description": "The Download Data operation copies a file from the host to the decker\u2019s cyberdeck. The data moves at the decks I/O speed. It may be transferred to active memory, storage memory, or even off-line storage.\nThe Download Data operation is an ongoing operation that continues until the data transfer is completed, the decker logs off or is crashed, or the decker terminates the download early.\nIf the operation is terminated before the transfer is completed, it creates a corrupted copy of the file, which is worthless.\nHowever, if the file contains information that is particularly important to an adventure, the gamemaster may allow partially completed downloads to produce damaged, yet readable file copies. The base time to reconstruct a damaged file is calculated as follows: (full file size in Mp divided by amount of data downloaded in Mp) x 2.\nThe result is in days. Once a damaged file is reconstructed, the gamemaster determines whether the file contains the pertinent information by dividing the size of the downloaded file by the full size of the original file.\nFor example, if a decker manages to copy 10 Mp of a 100 Mp file, the base time for reconstructing the file is (100 ÷ 10) x 2, or 20 days. Dividing 10 by 100 yields .10, so there is a 10 percent chance that the copied file contains the pertinent information."
+  },
+  "Locate Decker": {
+    "test": "Index",
+    "utility": "Scanner",
+    "action": "Complex",
+    "description": "The Locate Decker operation is a two-step process. The decker makes the standard System Test and then an Openended Sensor Test. The decker locates any other deckers whose Masking Attributes are equal to or lower than his Sensor Test results. In addition, he knows if they log off or jack out. If a targeted decker is running a sleaze utility, add its rating to the targeted decker\u2019s Masking Rating to determine if the testing decker locates the target decker.\nLocated deckers may break contact by maneuvering (see Combat Maneuvers, p. 224).\nFriendly deckers who wish to make their presences known to each other may do so automatically."
+  },
+  "Decrypt Access": {
+    "test": "Access",
+    "utility": "Decrypt",
+    "action": "Simple",
+    "description": "The Decrypt Access operation defeats scramble IC programs guarding access to a host. IC programs on a scrambled SAN must be defeated with a Decrypt Access operation before a decker can perform a Logon to Host operation on a scrambled SAN."
+  },
+  "Edit File": {
+    "test": "Files",
+    "utility": "Read/Write",
+    "action": "Simple",
+    "description": "The Edit File operation enables a decker to create, change, or erase a datafile. Small changes (approximately one line of print or the equivalent of one short form of some kind) can be made directly on the host by performing this operation. Before replacing larger amounts of data, the decker must prepare the new material off-line first, then upload it and perform an Edit File operation to insert it into the file. Any uploaded information may be inserted with a single Edit File operation, regardless of its size.\nA successful System Test creates new files. Because these files have counterfeit headers, the operating system may notice irregularities.\nDeckers also can use Edit File operations to make copies of files on the same host. Thus, deckers can copy a file from a particularly secure datastore, stash it on a less secure part of the same host and retrieve it at a later time. When using the Edit File operation in this manner, a decker must make two System Tests. The first test is a Files Test. The second test is made against the subsystem that controls the location where the decker hid the copied file.\nAfter altering, inserting, or deleting a file, a decker may make a Control Test, with target number reduced by his read/write utility, to authenticate the file\u2019s headers. Note the number of successes. If the decker fails to successfully take this step, make a Masking (Files) Test. The number of successes is the number of hours before the host notices the tampered file and reports it to the host\u2019s supervisor.\nDeckers may also check to determine whether a file has been tampered with. If the file was altered by an unauthorized decker who failed to make a Control Test to authenticate the headers, then a simple Files Test will reveal the tampering. If the file headers were authenticated, the Files Test must achieve more successes than the tampering decker achieved on the Control Test to recognize signs of tampering in the file.\nKeep in mind that any time a decker deletes a host file, the gamemaster must consider the impact on the adventure in progress and decide whether back-up copies of the file exist."
+  },
+  "Upload Data": {
+    "test": "Files",
+    "utility": " Read/Write",
+    "action": "Simple",
+    "description": "This operation enables a decker to transmit data from his cyberdeck to the Matrix. This data comes directly from the deck\u2019s storage memory and does not affect active memory.\nIf the decker is creating a new file on the host, the file is written automatically. If the decker intends to modify an existing file on the host\u2014adding false records to a database, for example\u2014the decker must perform an Edit File operation after the upload is finished.\nNote that the Upload Data operation is not used to upload utilities. The Swap Memory operation handles that function.\nThe Upload Data operation is an ongoing operation."
+  },
+  "Access Rating": {
+    "description": "The Access Rating measures a system\u2019s resistance to unauthorized access. To access a grid/host, an unauthorized decker must pit his Computer Skill against the grid/host\u2019s Access Rating in a Success Contest."
+  },
+  "Control Rating": {
+    "description": "The Control Rating measures a system\u2019s resistance to unauthorized administrative commands. For example, an unauthorized decker attempting to kick a legitimate user off a host must make a Success Contest against the host\u2019s Control Rating.\nGenerally, successful tests will enable deckers to reprogram a system or defeat its security measures."
+  },
+  "Files Rating": {
+    "description": "Deckers must make a Success Contest against the Files Ratings whenever they attempt to illegally read or write datafiles in a system. Deckers must also make tests to decrypt encoded files and send output to devices such as faxprinters or chip cookers."
+  },
+  "Security Codes": {
+    "description": "The security code of a host measures the level of security precautions the host maintains. Generally, the code reflects the sensitivity of the data on the host, but it may also simply reflect the degree of paranoia suffered by the host\u2019s owner.\nBlue Hosts Blue hosts include most public-service databases: newsfax distribution systems, public library databases, directories of listed commcodes\u2014pretty much anything free, whether provided by a government, a corp, or a private individual. Small businesses too poor to secure their systems tend to have Blue hosts as well.\nGreen Hosts Green hosts are average systems, but never make the mistake of thinking a Green host represents easy prey. They may be more patient with intruders than the Orange or Red systems, but they can load any IC the hotter hosts mount.\nOrange Hosts Orange hosts pride themselves on being secure systems, if not wild-eyed killer hosts. Orange hosts store your standard \u201cconfidential\u201d data and carry out processing that is important but not absolutely essential to the host\u2019s operators. Orange systems include the typical factory controller and the networks used by middle management in a typical corporate office.\nRed Hosts Red hosts offer the most security that a system may legally carry. They contain \u201ctop secret\u201d data, often the kind owners will kill to protect, and mission-critical process controls (life support, vital labs and factories, power grids, and the like).\nAnti-intrusion defenses tend to be lethal\u2014deckers get no \u201cwarning shots\u201d on Red systems"
+  },
+  "Security Rating": {
+    "description": "A Security Rating consists of a security code (a color) and a Security Value (a number).\nThe four security codes are Blue (little or no security), Green (average security), Orange (significant security), and Red (high security). Reportedly, some systems contain killer defenses that send their security codes right off the \u201cofficial\u201d color scale. Decker slang calls these Ultra-Violet, UV, or black systems.\nGenerally, Security Values range from 4 to 12, though they sometimes range higher. Double-digit values represent extreme system security. The Security Value indicates the number of dice the gamemaster rolls to oppose a decker\u2019s System Tests (see System Tests, p. 209). It is also the number of dice rolled for Security Tests."
+  },
+  "Index Rating": {
+    "description": "The Index Rating measures a system\u2019s resistance to unauthorized searches. An unauthorized decker searching a grid or host for a system address or specific file must make a Success Contest against the grid/host\u2019s Index Rating."
+  },
+  "Slave Rating": {
+    "description": "The Slave Rating governs the operation of remote devices controlled by a system. For example, a Success Contest against the Slave Rating enables an unauthorized decker to take control of devices manipulated by a host, such as security cameras and elevators."
+  },
+  "Rating Format": {
+    "description": "System Ratings use the following shorthand format: Security Code\u2013Security Value/Access/Control/Index/Files/Slave For example, a Red-6 system with Access and Index Ratings of 10, a Control Rating of 12, and Files and Slave Ratings equal to 9 would be written: Red-6/10/12/10/9/9 The acronym \u201cACIFS\u201d\u2014Access Control Index Files Slave\u2014may make remembering this format easier."
+  }
 }

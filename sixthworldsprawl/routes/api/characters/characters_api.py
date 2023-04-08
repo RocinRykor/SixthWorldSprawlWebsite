@@ -1,6 +1,6 @@
-from sixthworldsprawl.app import db, Character
-from flask_login import current_user
 from sqlalchemy import func
+
+from sixthworldsprawl.app import db, Character
 
 
 def create_character(character_json):

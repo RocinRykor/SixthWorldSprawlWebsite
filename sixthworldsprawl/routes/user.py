@@ -1,7 +1,8 @@
-from flask import request, Blueprint, render_template
 from flask import redirect
+from flask import request, Blueprint, render_template
 from flask_login import login_required, current_user
-from sixthworldsprawl.app import db, User
+
+from sixthworldsprawl.app import db
 from sixthworldsprawl.forms import EditUserForm
 
 user = Blueprint("user", "__name__", url_prefix="/user")

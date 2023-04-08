@@ -1,4 +1,4 @@
-from flask import render_template, Blueprint, redirect
+from flask import render_template, Blueprint
 
 rules = Blueprint("rules", __name__, url_prefix="/gamerules")
 

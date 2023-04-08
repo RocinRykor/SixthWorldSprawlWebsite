@@ -1,11 +1,11 @@
-from flask_login import login_user, current_user
-from flask import render_template, redirect, Blueprint, request, session, flash
-from werkzeug.security import check_password_hash
-from sixthworldsprawl.forms import LoginForm, UserForm
-from sixthworldsprawl.app import db
-from sixthworldsprawl import models
-from werkzeug.security import check_password_hash
+from flask import render_template, redirect, Blueprint, request, flash
+from flask_login import current_user
 from flask_login import login_user, logout_user
+from werkzeug.security import check_password_hash
+
+from sixthworldsprawl import models
+from sixthworldsprawl.app import db
+from sixthworldsprawl.forms import LoginForm, UserForm
 
 User = models.User
 

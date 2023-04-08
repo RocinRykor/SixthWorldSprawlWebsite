@@ -1,11 +1,11 @@
-from flask import render_template, Blueprint, redirect, request
+from flask import render_template, Blueprint, request
 from flask_login import login_required, current_user
-from sixthworldsprawl.app import db, User, Character
+
+from sixthworldsprawl.app import db, Character
 from sixthworldsprawl.forms import CharacterForm
-from sixthworldsprawl.routes.api.characters import characters_api, character_api_routes
-from sixthworldsprawl.routes.api.portraits import portraits_api, portrait_api_routes
+from sixthworldsprawl.routes.api.characters import character_api_routes
+from sixthworldsprawl.routes.api.portraits import portraits_api
 from sixthworldsprawl.routes.api.users import users_api
-from sixthworldsprawl.utils import character_utils
 
 character = Blueprint("character", __name__, url_prefix="/character")
 

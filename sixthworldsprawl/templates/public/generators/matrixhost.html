@@ -1,154 +1,154 @@
 <!DOCTYPE html>
 {% extends "public/partials/base.html" %} {% block main %}
 
-<div class="w-50 mx-auto">
-	<h2>Matrix Security Hosts</h2>
-	<p>
-		Hosts are the computer systems that serve as the backbone of the Sixth
-		World's information society. Billions of nuyen and inestimable
-		megapulses of data flow through these systems daily. Hosts are the
-		vaults where these secret jewels are stored. Hosts serve as databanks,
-		research file storage, libraries, virtual shopping malls, chat rooms,
-		virtual arcades, private meeting sites, bulletin boards, local networks,
-		archives, banks, and so forth.
-	</p>
+    <div class="w-50 mx-auto">
+        <h2>Matrix Security Hosts</h2>
+        <p>
+            Hosts are the computer systems that serve as the backbone of the Sixth
+            World's information society. Billions of nuyen and inestimable
+            megapulses of data flow through these systems daily. Hosts are the
+            vaults where these secret jewels are stored. Hosts serve as databanks,
+            research file storage, libraries, virtual shopping malls, chat rooms,
+            virtual arcades, private meeting sites, bulletin boards, local networks,
+            archives, banks, and so forth.
+        </p>
 
-	<br />
+        <br/>
 
-	<h3>Host Rating Table</h3>
-	<p>
-		This is the table that descibes rolling for your custom host. Select an
-		option below to auto generate a host of that difficulty
-	</p>
-	<table class="table table-dark">
-		<thead>
-			<tr>
-				<th scope="col">Difficulty</th>
-				<th scope="col">Security Value</th>
-				<th scope="col">Subsystem Rating</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class="table-option" onclick="generateEasyHost()">
-				<th scope="row">Easy</th>
-				<td>1D3 + 3</td>
-				<td>1D3 + 7</td>
-			</tr>
-			<tr class="table-option" onclick="generateAverageHost()">
-				<th scope="row">Average</th>
-				<td>1D3 + 6</td>
-				<td>2D3 + 9</td>
-			</tr>
-			<tr class="table-option" onclick="generateHardHost()">
-				<th scope="row">Hard</th>
-				<td>2D3 + 6</td>
-				<td>1D6 + 12</td>
-			</tr>
-		</tbody>
-	</table>
+        <h3>Host Rating Table</h3>
+        <p>
+            This is the table that descibes rolling for your custom host. Select an
+            option below to auto generate a host of that difficulty
+        </p>
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Difficulty</th>
+                <th scope="col">Security Value</th>
+                <th scope="col">Subsystem Rating</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="table-option" onclick="generateEasyHost()">
+                <th scope="row">Easy</th>
+                <td>1D3 + 3</td>
+                <td>1D3 + 7</td>
+            </tr>
+            <tr class="table-option" onclick="generateAverageHost()">
+                <th scope="row">Average</th>
+                <td>1D3 + 6</td>
+                <td>2D3 + 9</td>
+            </tr>
+            <tr class="table-option" onclick="generateHardHost()">
+                <th scope="row">Hard</th>
+                <td>2D3 + 6</td>
+                <td>1D6 + 12</td>
+            </tr>
+            </tbody>
+        </table>
 
-	<br />
-	<br />
+        <br/>
+        <br/>
 
-	<h3>-- Results --</h3>
-	<p>
-		After selecting an option above your generated host will be displayed
-		here.
-	</p>
-	<p>
-		Click on a subsystem to learn more or select the generated results to
-		copy the host infortmation to clipboard
-	</p>
-	<table id="resultsTable" class="table table-dark">
-		<tr>
-			<th onclick="openBasicModal('Security Codes')" class="table-option">
-				Security Code
-			</th>
-			<th onclick="openBasicModal('Security Value')" class="table-option">
-				Host Rating
-			</th>
-			<th onclick="openBasicModal('Access Rating')" class="table-option">
-				Access
-			</th>
-			<th onclick="openBasicModal('Control Rating')" class="table-option">
-				Control
-			</th>
-			<th onclick="openBasicModal('Index Rating')" class="table-option">
-				Index
-			</th>
-			<th onclick="openBasicModal('Files Rating')" class="table-option">
-				Files
-			</th>
-			<th onclick="openBasicModal('Slave Rating')" class="table-option">
-				Slave
-			</th>
-		</tr>
+        <h3>-- Results --</h3>
+        <p>
+            After selecting an option above your generated host will be displayed
+            here.
+        </p>
+        <p>
+            Click on a subsystem to learn more or select the generated results to
+            copy the host infortmation to clipboard
+        </p>
+        <table id="resultsTable" class="table table-dark">
+            <tr>
+                <th onclick="openBasicModal('Security Codes')" class="table-option">
+                    Security Code
+                </th>
+                <th onclick="openBasicModal('Security Value')" class="table-option">
+                    Host Rating
+                </th>
+                <th onclick="openBasicModal('Access Rating')" class="table-option">
+                    Access
+                </th>
+                <th onclick="openBasicModal('Control Rating')" class="table-option">
+                    Control
+                </th>
+                <th onclick="openBasicModal('Index Rating')" class="table-option">
+                    Index
+                </th>
+                <th onclick="openBasicModal('Files Rating')" class="table-option">
+                    Files
+                </th>
+                <th onclick="openBasicModal('Slave Rating')" class="table-option">
+                    Slave
+                </th>
+            </tr>
 
-		<tr>
-			<th>
-				<div class="form-check">
-					<input
-						class="form-check-input"
-						type="radio"
-						name="radioSecrityCode"
-						id="radioSecrityCodeBlue"
-						value="Blue"
-						checked />
-					<label class="form-check-label" for="radioSecrityCodeBlue">
-						Blue
-					</label>
-				</div>
-				<div class="form-check">
-					<input
-						class="form-check-input"
-						type="radio"
-						name="radioSecrityCode"
-						id="radioSecrityCodeGreen"
-						value="Green" />
-					<label class="form-check-label" for="radioSecrityCodeGreen">
-						Green
-					</label>
-				</div>
-				<div class="form-check">
-					<input
-						class="form-check-input"
-						type="radio"
-						name="radioSecrityCode"
-						id="radioSecrityCodeOrange"
-						value="Orange" />
-					<label
-						class="form-check-label"
-						for="radioSecrityCodeOrange">
-						Orange
-					</label>
-				</div>
-				<div class="form-check">
-					<input
-						class="form-check-input"
-						type="radio"
-						name="radioSecrityCode"
-						id="radioSecrityCodeRed"
-						value="Red" />
-					<label class="form-check-label" for="radioSecrityCodeRed">
-						Red
-					</label>
-				</div>
-			</th>
-			<td id="securityValue" class="align-middle"></td>
-			<td id="subsystemAccess" class="align-middle"></td>
-			<td id="subsystemControl" class="align-middle"></td>
-			<td id="subsystemIndex" class="align-middle"></td>
-			<td id="subsystemFiles" class="align-middle"></td>
-			<td id="subsystemSlave" class="align-middle"></td>
-			<td
-				id="copyResults"
-				class="align-middle visually-hidden table-option"
-				onclick="copyToClipboard()">
-				Copy
-			</td>
-		</tr>
-	</table>
-</div>
+            <tr>
+                <th>
+                    <div class="form-check">
+                        <input
+                                class="form-check-input"
+                                type="radio"
+                                name="radioSecrityCode"
+                                id="radioSecrityCodeBlue"
+                                value="Blue"
+                                checked/>
+                        <label class="form-check-label" for="radioSecrityCodeBlue">
+                            Blue
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input
+                                class="form-check-input"
+                                type="radio"
+                                name="radioSecrityCode"
+                                id="radioSecrityCodeGreen"
+                                value="Green"/>
+                        <label class="form-check-label" for="radioSecrityCodeGreen">
+                            Green
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input
+                                class="form-check-input"
+                                type="radio"
+                                name="radioSecrityCode"
+                                id="radioSecrityCodeOrange"
+                                value="Orange"/>
+                        <label
+                                class="form-check-label"
+                                for="radioSecrityCodeOrange">
+                            Orange
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input
+                                class="form-check-input"
+                                type="radio"
+                                name="radioSecrityCode"
+                                id="radioSecrityCodeRed"
+                                value="Red"/>
+                        <label class="form-check-label" for="radioSecrityCodeRed">
+                            Red
+                        </label>
+                    </div>
+                </th>
+                <td id="securityValue" class="align-middle"></td>
+                <td id="subsystemAccess" class="align-middle"></td>
+                <td id="subsystemControl" class="align-middle"></td>
+                <td id="subsystemIndex" class="align-middle"></td>
+                <td id="subsystemFiles" class="align-middle"></td>
+                <td id="subsystemSlave" class="align-middle"></td>
+                <td
+                        id="copyResults"
+                        class="align-middle visually-hidden table-option"
+                        onclick="copyToClipboard()">
+                    Copy
+                </td>
+            </tr>
+        </table>
+    </div>
 
-<script src="{{url_for('static', filename='js/generators/matrixhost.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/generators/matrixhost.js') }}"></script>
 {% endblock %}

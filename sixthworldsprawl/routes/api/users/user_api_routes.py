@@ -1,5 +1,6 @@
 from flask import request, Blueprint
 from flask_login import login_required
+
 from sixthworldsprawl.routes.api.users import users_api
 
 user_api = Blueprint("users_api", __name__, url_prefix="/api/user")
