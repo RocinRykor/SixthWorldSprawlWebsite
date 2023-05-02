@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="sixthworldsprawl@localhost">
   <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.48">
-    <root id="1">
-      <DefaultCasing>exact</DefaultCasing>
-      <DefaultEngine>InnoDB</DefaultEngine>
-      <Grants>sixthworldsprawl|schema||sixthworldsprawl|localhost|ALTER|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|ALTER ROUTINE|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|CREATE|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|CREATE ROUTINE|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|CREATE TEMPORARY TABLES|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|CREATE VIEW|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|DELETE|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|DELETE HISTORY|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|DROP|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|EVENT|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|EXECUTE|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|INDEX|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|INSERT|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|LOCK TABLES|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|REFERENCES|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|SELECT|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|SHOW VIEW|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|TRIGGER|G
-sixthworldsprawl|schema||sixthworldsprawl|localhost|UPDATE|G</Grants>
-      <ServerVersion>10.9.4</ServerVersion>
-    </root>
+    <root id="1"/>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
     </collation>
