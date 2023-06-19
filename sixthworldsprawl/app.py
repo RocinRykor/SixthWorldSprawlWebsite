@@ -61,12 +61,14 @@ def build_app():
         from .routes.user import user
         from .routes.character import character
         from .routes.game_rules import rules
+        from .routes.calculators import calcs
 
         app.register_blueprint(general)
         app.register_blueprint(auth)
         app.register_blueprint(user)
         app.register_blueprint(character)
         app.register_blueprint(rules)
+        app.register_blueprint(calcs)
 
         # API Routes
         from .routes.api.characters.character_api_routes import character_api

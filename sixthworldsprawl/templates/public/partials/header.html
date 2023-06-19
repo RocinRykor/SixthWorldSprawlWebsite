@@ -55,6 +55,30 @@
                         >Dice Roller</a
                         >
                     </li>
+                <!-- Game Rules -->
+                    <li class="nav-item dropdown">
+                        <a
+                                class="navlink dropdown-toggle"
+                                href="#"
+                                id="navbarGeneratorDropdownMenuLink"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Game Rules
+                        </a>
+                        <ul
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a
+                                        class="dropdown-item"
+                                        href="{{ url_for('rules.assencing') }}"
+                                        title="Magic Assencing Table"
+                                >Assencing</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
                     <!-- Generators -->
                     <li class="nav-item dropdown">
                         <a
@@ -87,7 +111,30 @@
                             </li>
                         </ul>
                     </li>
-
+                <!-- Calculators -->
+                    <li class="nav-item dropdown">
+                        <a
+                                class="navlink dropdown-toggle"
+                                href="#"
+                                id="navbarGeneratorDropdownMenuLink"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Calculators
+                        </a>
+                        <ul
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a
+                                        class="dropdown-item"
+                                        href="{{ url_for('calcs.cyberdeck') }}"
+                                        title="Cyberdeck Utilities"
+                                >Cyberdeck Utilities</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
                     <!-- User -->
                     {% if current_user.is_authenticated %}
                         <li class="nav-item dropdown">

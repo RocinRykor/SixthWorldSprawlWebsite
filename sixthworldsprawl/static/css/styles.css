@@ -1,6 +1,6 @@
 /* 1 || Universal*/
 :root {
-    /* Cyberpunk Neon Pallete */
+    /* Cyberpunk Neon Palette */
     --dark: #091833;
     --medium: #133e7c;
     --light: #0abdc6;
@@ -38,7 +38,6 @@ body {
 }
 
 main {
-    text-align: center;
     margin: 0 auto;
 }
 
@@ -105,12 +104,12 @@ a:hover {
 }
 
 .a__hidden {
-    display: transparent;
+    display: none;
     color: inherit;
 }
 
 .a__hidden:hover {
-    display: transparent;
+    display: none;
     background-color: transparent;
 }
 
@@ -122,7 +121,7 @@ a:hover {
     color: white;
     display: flex;
     width: 100%;
-    padding: 0px 25px 0px 25px;
+    padding: 0 25px 0 25px;
 }
 
 /* Page Header */
@@ -153,7 +152,7 @@ a:hover {
 .navlink {
     font-size: 24px;
     color: var(--light);
-    padding: 0px 15px 0px 15px;
+    padding: 0 15px 0 15px;
 }
 
 .navlink:hover {
@@ -190,13 +189,13 @@ a:hover {
     color: white;
 
     text-decoration: none;
-    display: inline-box;
+    display: -moz-inline-box;
 }
 
 .player-block__title {
     font-size: 36px;
     text-decoration: underline;
-    margin: 0px; /* Trims down some Excess space */
+    margin: 0; /* Trims down some Excess space */
 }
 
 .player-block__character-card-list {
@@ -303,4 +302,100 @@ a:hover {
     cursor: pointer;
     /* reduces the opacity of the button to 75% */
     opacity: 0.75;
+}
+
+/* Cards */
+.utility-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cyberdeck-utility-card {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    padding: 15px;
+    margin: 15px;
+    border-radius: var(--default-border-radius);
+    overflow: hidden;
+}
+
+.cyberdeck-utility-card.offensive {
+    background-color: rgba(255, 0, 0, 0.25);
+}
+
+.cyberdeck-utility-card.defensive {
+    background-color: rgba(0, 0, 255, 0.25);
+}
+
+.cyberdeck-utility-card.operational {
+    background-color: rgba(0, 128, 0, 0.25);
+}
+
+.cyberdeck-utility-card.special {
+    background-color: rgba(255, 255, 0, 0.25);
+}
+
+
+
+.cyberdeck-utility-card:hover {
+    background-color: var(--light);
+    color: black;
+    transition: 5s;
+}
+
+.cyberdeck-utility-card:hover .name {
+    display: none;
+}
+
+.cyberdeck-utility-card:hover .icon {
+    display: none;
+}
+
+
+.cyberdeck-utility-card:hover .info {
+    display: block;
+}
+
+.icons {
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 10px;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 25%;
+}
+
+.name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.info {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
 }

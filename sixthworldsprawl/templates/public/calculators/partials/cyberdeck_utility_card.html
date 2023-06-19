@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<div class='cyberdeck-utility-card {{ value.type|lower }}'>
+    <div class="icons">
+        <div class='icon'><img src={{ url_for('static', filename='img/svg/' ~ value.type ~ ".svg") }} alt='{{ value.type }}'></div>
+    </div>
+    <div class="name">{{ key }}, x{{ value.multiplier }}</div>
+    <div class="info">
+        Type: {{ value.type }}
+        Multiplier: {{ value.multiplier}}
+    </div>
+</div>
