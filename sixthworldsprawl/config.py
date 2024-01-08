@@ -1,6 +1,5 @@
-import os
 import datetime
-
+import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -8,7 +7,7 @@ DB_NAME = 'sixthworldsprawl'
 DB_USER = 'sixthworldsprawl'
 
 
-class Config():
+class Config:
     SECRET_KEY = "#CHANGED_AND_REDACTED#"
     SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{DB_USER}:{SECRET_KEY}@' \
                               f'localhost/{DB_NAME}'

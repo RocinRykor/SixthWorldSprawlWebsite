@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <div
-    class="modal fade"
-    id="genericModal"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="characterModalLabel"
-    aria-hidden="true">
+        class="modal fade"
+        id="genericModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="characterModalLabel"
+        aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -13,19 +13,19 @@
                     - Modal Title -
                 </h3>
                 <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal">
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
                     Close
                 </button>
             </div>
             <div id="genericModalBody" class="modal-body">
-                <textarea
-                    class="form-control rounded-0"
-                    id="genericModalBodyTextArea"
-                    rows="10"></textarea>
+				<textarea
+                        class="form-control rounded-0"
+                        id="genericModalBodyTextArea"
+                        rows="10"></textarea>
             </div>
         </div>
     </div>
 </div>
-<script src="{{url_for('static', filename='/js/modals.js')}}"></script>
+<script src="{{ url_for('static', filename='/js/modals.js') }}"></script>

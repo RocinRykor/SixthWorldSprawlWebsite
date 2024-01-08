@@ -3,7 +3,7 @@ if [ ! -d migrations ]; then
 fi
 
 echo "Flask migrate message: "
-read message
+read -r message
 
 FLASK_APP=sixthworldsprawl flask db migrate --message "$message"
 FLASK_APP=sixthworldsprawl flask db upgrade

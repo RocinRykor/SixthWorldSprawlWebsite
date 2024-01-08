@@ -1,0 +1,134 @@
+{
+   "Scanner": {
+     "target_operation": "Locate Decker",
+     "multiplier": 3,
+     "description": "The scanner utility reduces the target numbers of System Tests made during operations that search for deckers.",
+     "type": "Operational"
+   },
+   "Sleaze": {
+     "target_operation": "None",
+     "multiplier": 3,
+     "description": "The sleaze utility combines with a deck\u2019s Masking Rating to enhance the deck\u2019s Detection Factor: (Masking + Sleaze) ÷ 2, round up.",
+     "type": "Special"
+   },
+   "Attack (Deadly)": {
+     "target_operation": "Personas, IC",
+     "multiplier": 5,
+     "description": "The attack utility, the least subtle offensive program, can be programmed to inflict Light to Deadly damage. It samples the instruction algorithms of the targeted icons and tries to introduce fairly coarse memory faults into the icon\u2019s most frequently accessed code segments. In cybercombat, that translates to a direct attack on the Condition Monitor of the decker\u2019s persona or IC icon.\nThe attack utility affects on-line icons only and has no effect on a decker\u2019s meatbody or cyberdeck. The armor utility reduces the Power of damage done by attack utilities.",
+     "type": "Offensive"
+   },
+   "Decrypt": {
+     "target_operation": "Decrypt Access, Decrypt File, Decrypt Slave",
+     "multiplier": 1,
+     "description": "The decrypt utility reduces the target numbers of any System Tests made to defeat scramble IC programs.",
+     "type": "Operational"
+   },
+   "Deception": {
+     "target_operation": "Graceful Logoff, Logon to (LTG, RTG, or Host), Null Operation",
+     "multiplier": 2,
+     "description": "Unless otherwise noted, the deception utility may be used to reduce the target number of all Access Tests.",
+     "type": "Operational"
+   },
+   "Slow": {
+     "target_operation": "IC",
+     "multiplier": 4,
+     "description": "The slow utility reduces the execution speed of proactive IC. Whenever a decker attacks IC with the slow utility, make an Opposed Test, pitting the Security Value against the Slow Rating. If the IC generates more successes, nothing happens to it. If the slow achieves more successes, the IC loses 1 action for every 2 net successes the slow achieved. If the IC has no actions left in a turn, it hangs\u2014goes dead.\nNote that temporarily disabling IC in this manner prevents the IC from raising the decker\u2019s security tally. However, suppressing the IC requires 1 point of Detection Factor (see Suppressing IC, p. 212). If the IC is not suppressed at the beginning of the next Combat Turn, the gamemaster rolls Initiative for the IC per standard rules and the IC resumes where it left off.\nReactive IC is not vulnerable to the slow utility.",
+     "type": "Offensive"
+   },
+   "Lock-On": {
+     "target_operation": "None",
+     "multiplier": 3,
+     "description": "The lock-on utility reduces the target numbers for opposed Sensor Tests made during combat maneuvers (see Combat Maneuvers, p. 224).",
+     "type": "Defensive"
+   },
+   "Medic": {
+     "target_operation": "None",
+     "multiplier": 4,
+     "description": "The medic utility is used to reduce the number of filled-in boxes in the on-line icon\u2019s Condition Monitor. To use the utility, a decker must spend a Complex Action and make a Success Test using a number of dice equal to the medic utility\u2019s rating. The target number is determined by the level of damage the icon has suffered, as shown on the Medic Target Numbers Table.\nEach success achieved on the Success Test repairs 1 wound on the icon\u2019s Condition Monitor. The program loses 1 Rating Point each time it is used, whether it scores any successes or not. Deckers may load a new copy of the medic utility at its full rating by performing a Swap Memory operation.\n\nMEDIC TARGET NUMBER TABLE\n\nWOUND LEVEL TARGET NUMBER Light 4 Moderate 5 Serious 6",
+     "type": "Defensive"
+   },
+   "Attack (Serious)": {
+     "target_operation": "Personas, IC",
+     "multiplier": 4,
+     "description": "The attack utility, the least subtle offensive program, can be programmed to inflict Light to Deadly damage. It samples the instruction algorithms of the targeted icons and tries to introduce fairly coarse memory faults into the icon\u2019s most frequently accessed code segments. In cybercombat, that translates to a direct attack on the Condition Monitor of the decker\u2019s persona or IC icon.\nThe attack utility affects on-line icons only and has no effect on a decker\u2019s meatbody or cyberdeck. The armor utility reduces the Power of damage done by attack utilities.",
+     "type": "Offensive"
+   },
+   "Relocate": {
+     "target_operation": "None",
+     "multiplier": 2,
+     "description": "This utility is used against track utilities in their location cycle. The decker using relocate engages the tracking decker in a Success Contest. The relocating decker makes a Computer Test, with a target number equal to his opponent\u2019s Sensor Rating minus the Relocate Utility Rating. The tracking decker makes an MPCP Test against the Relocate Utility Rating. If the relocating decker wins, the track program fails completely. The attacker must successfully attack the target decker again before using the track utility against his opponent.",
+     "type": "Operational"
+   },
+   "Spoof": {
+     "target_operation": "Control Slave, Edit Slave, Monitor Slave",
+     "multiplier": 3,
+     "description": "The spoof utility reduces the target numbers for all System Tests made to affect system and subsystem slaves.",
+     "type": "Operational"
+   },
+   "Browse": {
+     "target_operation": "Locate Access Node, Locate File, Locate Slave",
+     "multiplier": 1,
+     "description": "The browse utility reduces the target numbers of Index Tests made to locate specific data values or system addresses.\nUnlike analyze and scanner utilities, which search for Matrix activity, the browse utility works on the contents, or real-world functions, of these data nodes.",
+     "type": "Operational"
+   },
+   "Killjoy": {
+     "target_operation": "Deckers",
+     "multiplier": 10,
+     "description": "The killjoy utility mimics non-lethal black IC. Killjoy programs inflict Stun damage to a decker\u2019s meatbody. Otherwise, the killjoy utility is identical to the black hammer utility.",
+     "type": "Offensive"
+   },
+   "Cloak": {
+     "target_operation": "None",
+     "multiplier": 3,
+     "description": "The cloak utility reduces the target numbers for Evasion Tests made during combat maneuvers (see Combat Maneuvers , p. 224).",
+     "type": "Defensive"
+   },
+   "Commlink": {
+     "target_operation": "Make Comcall, Tap Comcall",
+     "multiplier": 1,
+     "description": "The commlink utility reduces the target numbers of any tests that affect the decker\u2019s communications link.",
+     "type": "Operational"
+   },
+   "Attack (Medium)": {
+     "target_operation": "Personas, IC",
+     "multiplier": 3,
+     "description": "The attack utility, the least subtle offensive program, can be programmed to inflict Light to Deadly damage. It samples the instruction algorithms of the targeted icons and tries to introduce fairly coarse memory faults into the icon\u2019s most frequently accessed code segments. In cybercombat, that translates to a direct attack on the Condition Monitor of the decker\u2019s persona or IC icon.\nThe attack utility affects on-line icons only and has no effect on a decker\u2019s meatbody or cyberdeck. The armor utility reduces the Power of damage done by attack utilities.",
+     "type": "Offensive"
+   },
+   "Armor": {
+     "target_operation": "None",
+     "multiplier": 3,
+     "description": "The armor utility reduces the Power of damage inflicted on a decker\u2019s icon by the Armor Rating. For example, the armor utility reduces damage caused by killer IC or the attack utility.\nAgainst black IC, armor only reduces the Power of damage taken by the decker\u2019s icon\u2014not damage taken by the decker\u2019s meatbody. In short, the armor utility is always effective against standard damage to the icon\u2019s condition monitor but has no effect on collateral damage to the decker or his deck, which must depend on Hardening for protection.\nThe armor utility loses 1 Rating Point every time the decker takes damage\u2014every time it fails to completely absorb damage from a hit. Deckers can replace degraded armor utilities with fresh copies of the program by performing the Swap Memory operation.",
+     "type": "Defensive"
+   },
+   "Black Hammer": {
+     "target_operation": "Deckers",
+     "multiplier": 20,
+     "description": "Five year ago it was a rumor, four years ago a bleeding-edge weapon on the decks of Lone Star\u2019s GridSec elites. Three years ago the so-called black hammer utility began cropping up in shadowy hands and today it is a standard offensive utility that most deckers take for granted.\nThe black hammer utility is a black IC program that targets the decker, not the deck. It can kill a decker without knocking his cyberdeck off-line, so that the decker\u2019s jackpoint remains traceable. Black hammer lacks the blaster-like capabilities of mainframe-driven black IC, but otherwise its effects are identical to those of lethal black IC (see Black IC, p. 230).",
+     "type": "Offensive"
+   },
+   "Read/Write": {
+     "target_operation": " Download Data, Edit File, Upload Data",
+     "multiplier": 2,
+     "description": "The read/write utility reduces the decker\u2019s target number for System Tests necessary to transfer files or otherwise access, edit, or create data in the Matrix.",
+     "type": "Operational"
+   },
+   "Attack (Light)": {
+     "target_operation": "Personas, IC",
+     "multiplier": 2,
+     "description": "The attack utility, the least subtle offensive program, can be programmed to inflict Light to Deadly damage. It samples the instruction algorithms of the targeted icons and tries to introduce fairly coarse memory faults into the icon\u2019s most frequently accessed code segments. In cybercombat, that translates to a direct attack on the Condition Monitor of the decker\u2019s persona or IC icon.\nThe attack utility affects on-line icons only and has no effect on a decker\u2019s meatbody or cyberdeck. The armor utility reduces the Power of damage done by attack utilities.",
+     "type": "Offensive"
+   },
+   "Track": {
+     "target_operation": "None",
+     "multiplier": 8,
+     "description": "The track utility is a trace program used as a combat program against hostile deckers. After each successful attack, note the number of successes the attacking decker scored. The target decker must make an Evasion (Track Rating) Test. If the Evasion Test fails to yield an equal or greater number of successes, the attacker\u2019s track utility locks onto the target decker\u2019s datatrail and begins its location cycle. Divide 10 by the attacker\u2019s net successes to determine how many turns the track utility needs to locate the target decker\u2019s jackpoint.\nFor the purposes of measuring the location cycle, only count full Combat Turns. If a decker can destroy the utility before the last Initiative Pass of a Combat Turn is completed, that turn is not considered completed.\nThe target decker can try to escape the attacking decker by logging off or jacking out. However, the track utility makes logoff operations more difficult.\nTargeted deckers can use the relocate utility against track programs (see Relocate). Of course, the target decker can always crash the attacking persona, which would stop all its pesky programs.",
+     "type": "Special"
+   },
+   "Analyze": {
+     "target_operation": "Analyze (Host, IC, Icon, Security, Subsystem), Locate IC",
+     "multiplier": 3,
+     "description": "The analyze utility reduces the target numbers for System Tests that identify IC, programs, and other resources or events controlled by a host.",
+     "type": "Operational"
+   }
+ }

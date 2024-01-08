@@ -1,5 +1,6 @@
 from flask import request, Blueprint
 from flask_login import login_required
+
 from sixthworldsprawl.routes.api.characters import characters_api
 
 character_api = Blueprint("characters_api", __name__, url_prefix="/api/character")
@@ -35,6 +36,7 @@ def create_character():
     character = characters_api.create_character(request.json)
     return character.jsonify(), 200
 
+
 @login_required
 @character_api.route("/delete/<int:character_id>", methods=["POST"])
 def delete_character(character_id):
@@ -50,7 +52,8 @@ def delete_character(character_id):
     if not character:
         return None
 
-    return {"message" : "Character Deleted"}, 200
+    return {"message": "Character Deleted"}, 200
+
 
 @character_api.route("/edit/<int:character_id>", methods=["POST"])
 def edit_character(character_id):
@@ -63,24 +66,28 @@ def edit_character(character_id):
     character = characters_api.edit_character(character_id, request.json)
     return character.jsonify(), 200
 
+
 @character_api.route("/<int:character_id>", methods=["GET"])
 def get_character(character_id):
     character = characters_api.get_character(character_id)
-    
+
     if not character:
         return {"message": "character not found", "error": 404}, 200
     return character.jsonify()
+
 
 @character_api.route("/", methods=["GET"])
 @character_api.route("/random/", methods=["GET"])
 def random_character():
     return characters_api.random_character().jsonify(), 200
 
+
 @character_api.route("/all", methods=["GET"])
 def get_all_characters():
     characters = characters_api.get_all()
     characters = [character.jsonify() for character in characters]
     return characters
+
 
 @character_api.route("/limit/<int:character_limit>", methods=["GET"])
 def get_multiple_characters(character_limit):

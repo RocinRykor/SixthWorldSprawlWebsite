@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "public/partials/base.html" %} {% block main %}
+
+    <div class="container">
+        <div class="centered">
+            <h2>Select the Program:</h2>
+            <div class="utility-list grid">
+                {% for key, value in util_data.items() %}
+                    {% with key=key, value=value %} {% include
+	"public/calculators/partials/cyberdeck_utility_card.html" %} {% endwith %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

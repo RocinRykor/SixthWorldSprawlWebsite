@@ -4,21 +4,21 @@
         <div class="container-fluid">
             <!-- Nav Main Title -->
             <a
-                class="navbar-brand navlink fs-3 navlink__title"
-                href="{{url_for('general.index')}}"
-                >SIXTH-WORLD SPRAWL</a
+                    class="navbar-brand navlink fs-3 navlink__title"
+                    href="{{ url_for('general.index') }}"
+            >SIXTH-WORLD SPRAWL</a
             >
             <!-- End Nav Main Title -->
 
             <!-- Nav Hamburger Menu -->
             <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- End Nav Hamburger Menu -->
@@ -29,107 +29,154 @@
                     <!-- Home -->
                     <li>
                         <a
-                            href="{{url_for('general.index')}}"
-                            class="navlink"
-                            title="Return Home"
-                            >Home</a
+                                href="{{ url_for('general.index') }}"
+                                class="navlink"
+                                title="Return Home"
+                        >Home</a
                         >
                     </li>
 
                     <!-- Characters -->
                     <li>
                         <a
-                            href="{{url_for('character.characters')}}"
-                            class="navlink"
-                            title="View The Characters"
-                            >Characters</a
+                                href="{{ url_for('character.characters') }}"
+                                class="navlink"
+                                title="View The Characters"
+                        >Characters</a
                         >
                     </li>
 
                     <!-- Dice Roller -->
                     <li>
                         <a
-                            href="{{url_for('general.roller')}}"
-                            class="navlink"
-                            title="Dice Roller"
-                            >Dice Roller</a
+                                href="{{ url_for('general.roller') }}"
+                                class="navlink"
+                                title="Dice Roller"
+                        >Dice Roller</a
                         >
+                    </li>
+                <!-- Game Rules -->
+                    <li class="nav-item dropdown">
+                        <a
+                                class="navlink dropdown-toggle"
+                                href="#"
+                                id="navbarGeneratorDropdownMenuLink"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Game Rules
+                        </a>
+                        <ul
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a
+                                        class="dropdown-item"
+                                        href="{{ url_for('rules.assencing') }}"
+                                        title="Magic Assencing Table"
+                                >Assencing</a
+                                >
+                            </li>
+                        </ul>
                     </li>
                     <!-- Generators -->
                     <li class="nav-item dropdown">
                         <a
-                            class="navlink dropdown-toggle"
-                            href="#"
-                            id="navbarGeneratorDropdownMenuLink"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                                class="navlink dropdown-toggle"
+                                href="#"
+                                id="navbarGeneratorDropdownMenuLink"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
                             Generators
                         </a>
                         <ul
-                            class="dropdown-menu"
-                            aria-labelledby="navbarDropdownMenuLink">
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdownMenuLink">
                             <li>
                                 <a
-                                    class="dropdown-item"
-                                    href="{{url_for('general.matrixhost')}}"
-                                    title="Matrix Host"
-                                    >Matrix Host</a
+                                        class="dropdown-item"
+                                        href="{{ url_for('general.matrixhost') }}"
+                                        title="Matrix Host"
+                                >Matrix Host</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    class="dropdown-item"
-                                    href="{{url_for('general.matrixsecurity')}}"
-                                    title="Logout User"
-                                    >Matrix Security Sheaf</a
+                                        class="dropdown-item"
+                                        href="{{ url_for('general.matrixsecurity') }}"
+                                        title="Logout User"
+                                >Matrix Security Sheaf</a
                                 >
                             </li>
                         </ul>
                     </li>
-
-                    <!-- User -->
-                    {% if current_user.is_authenticated %}
+                <!-- Calculators -->
                     <li class="nav-item dropdown">
                         <a
-                            class="navlink dropdown-toggle"
-                            href="#"
-                            id="navbarUserDropdownMenuLink"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            {{current_user.username}}
+                                class="navlink dropdown-toggle"
+                                href="#"
+                                id="navbarGeneratorDropdownMenuLink"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Calculators
                         </a>
                         <ul
-                            class="dropdown-menu"
-                            aria-labelledby="navbarDropdownMenuLink">
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdownMenuLink">
                             <li>
                                 <a
-                                    class="dropdown-item"
-                                    href="{{url_for('user.get_edit_user')}}"
-                                    title="Edit User Details"
-                                    >Edit User</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    class="dropdown-item"
-                                    href="{{url_for('auth.logout')}}"
-                                    title="Logout User"
-                                    >Logout</a
+                                        class="dropdown-item"
+                                        href="{{ url_for('calcs.cyberdeck') }}"
+                                        title="Cyberdeck Utilities"
+                                >Cyberdeck Utilities</a
                                 >
                             </li>
                         </ul>
                     </li>
+                    <!-- User -->
+                    {% if current_user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a
+                                    class="navlink dropdown-toggle"
+                                    href="#"
+                                    id="navbarUserDropdownMenuLink"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                {{ current_user.username }}
+                            </a>
+                            <ul
+                                    class="dropdown-menu"
+                                    aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a
+                                            class="dropdown-item"
+                                            href="{{ url_for('user.get_edit_user') }}"
+                                            title="Edit User Details"
+                                    >Edit User</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                            class="dropdown-item"
+                                            href="{{ url_for('auth.logout') }}"
+                                            title="Logout User"
+                                    >Logout</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
                     {% else %}
-                    <li>
-                        <a
-                            onclick="openModal('User Login:', '/login-form/')"
-                            class="navlink"
-                            title="Login User">
-                            Login
-                        </a>
-                    </li>
+                        <li>
+                            <a
+                                    onclick="openModal('User Login:', '/login-form/')"
+                                    class="navlink"
+                                    title="Login User">
+                                Login
+                            </a>
+                        </li>
                     {% endif %}
 
                     <!-- End User -->

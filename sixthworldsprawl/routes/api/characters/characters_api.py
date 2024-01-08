@@ -1,6 +1,7 @@
-from sixthworldsprawl.app import db, Character
-from flask_login import current_user
 from sqlalchemy import func
+
+from sixthworldsprawl.app import db, Character
+
 
 def create_character(character_json):
     """
@@ -27,7 +28,8 @@ def create_character(character_json):
     db.session.add(character)
     db.session.commit()
 
-    return character 
+    return character
+
 
 def get_character(character_id):
     """
@@ -41,8 +43,9 @@ def get_character(character_id):
     """
 
     character = Character.query.filter_by(id=character_id).first()
-    
+
     return character
+
 
 def edit_character(character_id, character_json):
     """
@@ -75,7 +78,8 @@ def edit_character(character_id, character_json):
 
     db.session.commit()
 
-    return character 
+    return character
+
 
 def delete_character(character_id):
     """
@@ -93,6 +97,7 @@ def delete_character(character_id):
     db.session.delete(character)
     db.session.commit()
 
+
 def random_character():
     """
     Gets a random Character from the database
@@ -102,16 +107,18 @@ def random_character():
 
     return Character.query.order_by(func.random()).first()
 
+
 def json_helper(json, key, default):
     try:
         return json[key]
     except KeyError:
         return default
 
+
 def get_bulk(character_limit):
     """
     Creates a multi character object that has x amount of characters in it.
-    Currently starts at the begining of the database;
+    Currently starts at the beginning of the database;
 
     Parameters
     ==========
@@ -121,6 +128,7 @@ def get_bulk(character_limit):
     """
     characters = Character.query.order_by(Character.id.asc).yield_per(character_limit)
     return characters
+
 
 def get_all():
     """

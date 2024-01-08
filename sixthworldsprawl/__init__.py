@@ -1,6 +1,8 @@
 import os
 import sys
+
 from . import app
+
 models = app.models
 db = app.db
 
@@ -10,4 +12,3 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 sys.path.append(basedir)
 
 application = app.application
-

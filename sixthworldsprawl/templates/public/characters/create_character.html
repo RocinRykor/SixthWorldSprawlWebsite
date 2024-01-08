@@ -1,64 +1,63 @@
 <!DOCTYPE html>
 {% extends "public/partials/base.html" %} {% block main %}
 
-<h1>Add to the cast and crew!</h1>
+    <h1>Add to the cast and crew!</h1>
 
-<div class="portrait-selector">
-    <img
-        src="../../../static/img/icons/placeholder.png"
-        class="character-portrait character-portrait-selector"
-        alt="Select Character Portrait"
-        id="selectedCharacterPortrait"
-        onclick="openPortraitModal()" />
-    <p>Click to change character portrait!</p>
-</div>
-<form
-    action="/character/edit"
-    id="character_edit"
-    name="character_edit"
-    method="post">
-    {{form.csrf_token}}
-    <div class="container">
-        <div class="form-group wtform_field row">
-            {{form.name.label(class_="col-1")}}{{form.name(class_="form-control",
-            size=32, maxlength=32)}}
-        </div>
-        <div class="form-group wtform_field row">
-            {{form.race.label(class_="col-1")}}
-            {{form.race(class_="form-control", size=32, maxlength=32)}}
-        </div>
-        <div class="form-group wtform_field row">
-            {{form.gender.label(class_="col-1")}}
-            {{form.gender(class_="form-control", size=32, maxlength=32)}}
-        </div>
-        <div class="form-group wtform_field row">
-            {{form.status.label(class_="col-1")}}
-            {{form.status(class_="form-control", size=64, maxlength=64)}}
-        </div>
-        <div class="form-group wtform_field row">
-            {{form.bio.label(class_="col-1")}} {{form.bio(class_="form-control",
-            rows=10, maxlength=2048)}}
-        </div>
-        <!--
-            Hidden Forms
-        -->
-        <div class="hidden-section visually-hidden">
-            <div class="form-group wtform_field row">
-                {{form.portrait_id.label(class_="col-1")}}
-                {{form.portrait_id(class_="form-control", maxlength=8)}}
-            </div>
-            <div class="form-group wtform_field row">
-                {{form.portrait_filename.label(class_="col-1")}}
-                {{form.portrait_filename(class_="form-control", maxlength=64)}}
-            </div>
-        </div>
+    <div class="portrait-selector">
+        <img
+                src="../../../static/img/icons/placeholder.png"
+                class="character-portrait character-portrait-selector"
+                alt="Select Character Portrait"
+                id="selectedCharacterPortrait"
+                onclick="openPortraitModal()"/>
+        <p>Click to change character portrait!</p>
     </div>
-    <br />
-    <br />
-    {{form.submit}}
-</form>
+    <form
+            action="/character/edit"
+            id="character_edit"
+            name="character_edit"
+            method="post">
+        {{ form.csrf_token }}
+        <div class="container">
+            <div class="form-group wtform_field row">
+                {{ form.name.label(class_="col-1") }}{{ form.name(class_="form-control",
+			size=32, maxlength=32) }}
+            </div>
+            <div class="form-group wtform_field row">
+                {{ form.race.label(class_="col-1") }}
+                {{ form.race(class_="form-control", size=32, maxlength=32) }}
+            </div>
+            <div class="form-group wtform_field row">
+                {{ form.gender.label(class_="col-1") }}
+                {{ form.gender(class_="form-control", size=32, maxlength=32) }}
+            </div>
+            <div class="form-group wtform_field row">
+                {{ form.status.label(class_="col-1") }}
+                {{ form.status(class_="form-control", size=64, maxlength=64) }}
+            </div>
+            <div class="form-group wtform_field row">
+                {{ form.bio.label(class_="col-1") }} {{ form.bio(class_="form-control",
+			rows=10, maxlength=2048) }}
+            </div>
+            <!--
+                Hidden Forms
+            -->
+            <div class="hidden-section visually-hidden">
+                <div class="form-group wtform_field row">
+                    {{ form.portrait_id.label(class_="col-1") }}
+                    {{ form.portrait_id(class_="form-control", maxlength=8) }}
+                </div>
+                <div class="form-group wtform_field row">
+                    {{ form.portrait_filename.label(class_="col-1") }}
+                    {{ form.portrait_filename(class_="form-control", maxlength=64) }}
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        {{ form.submit }}
+    </form>
 
-<script src="{{url_for('static', filename='/js/character_portrait_modal.js')}}"></script>
-{% with portraits=portraits %} {% include
-"public/characters/partials/character_portrait_modal.html" %} {% endwith %}{%
-endblock %}
+    <script src="{{ url_for('static', filename='/js/character_portrait_modal.js') }}"></script>
+    {% with portraits=portraits %} {% include
+"public/characters/partials/character_portrait_modal.html" %} {% endwith %}{% endblock %}

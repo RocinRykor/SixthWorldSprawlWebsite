@@ -1,6 +1,7 @@
-from sixthworldsprawl.app import db, User
-from flask_login import current_user
 from sqlalchemy import func
+
+from sixthworldsprawl.app import db, User
+
 
 def create_user(user_json):
     """
@@ -27,7 +28,8 @@ def create_user(user_json):
     db.session.add(user)
     db.session.commit()
 
-    return user 
+    return user
+
 
 def get_user(user_id):
     """
@@ -41,8 +43,9 @@ def get_user(user_id):
     """
 
     user = User.query.filter_by(id=user_id).first()
-    
+
     return user
+
 
 def edit_user(user_id, user_json):
     """
@@ -75,7 +78,8 @@ def edit_user(user_id, user_json):
 
     db.session.commit()
 
-    return user 
+    return user
+
 
 def delete_user(user_id):
     """
@@ -93,6 +97,7 @@ def delete_user(user_id):
     db.session.delete(user)
     db.session.commit()
 
+
 def random_user():
     """
     Gets a random User from the database
@@ -102,11 +107,13 @@ def random_user():
 
     return User.query.order_by(func.random()).first()
 
+
 def json_helper(json, key, default):
     try:
         return json[key]
     except KeyError:
         return default
+
 
 def get_bulk(user_limit):
     """
@@ -121,6 +128,7 @@ def get_bulk(user_limit):
     """
     users = User.query.order_by(User.id.asc).yield_per(user_limit)
     return users
+
 
 def get_all():
     """

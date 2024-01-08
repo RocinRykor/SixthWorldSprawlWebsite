@@ -1,15 +1,13 @@
-from flask_login import login_user, current_user
-from flask import render_template, redirect, Blueprint, request, session, flash
-from werkzeug.security import check_password_hash
-from sixthworldsprawl.forms import LoginForm, UserForm
-from sixthworldsprawl.app import db
-from sixthworldsprawl import models
-from werkzeug.security import check_password_hash
+from flask import render_template, redirect, Blueprint, request, flash
+from flask_login import current_user
 from flask_login import login_user, logout_user
+from werkzeug.security import check_password_hash
 
+from sixthworldsprawl import models
+from sixthworldsprawl.app import db
+from sixthworldsprawl.forms import LoginForm, UserForm
 
 User = models.User
-
 
 auth = Blueprint("auth", __name__)
 
@@ -20,7 +18,7 @@ def login():
     form = LoginForm(request.form)
     if not form.validate():
         # flash("Invalid form data", "error")
-        flash_form_errors(form, "error")
+        # flash_form_errors(form, "error")
         return render_template("public/users/login.html", title="SixthWorldSprawl Login",
                                form=form)
 
@@ -49,15 +47,16 @@ def login():
 @auth.route("/login/", methods=["GET"])
 def display_login():
     form = LoginForm()
-    return render_template("public/users/login.html", title="SixthWorldSprawl Login", 
-                            form=form)
+    return render_template("public/users/login.html", title="SixthWorldSprawl Login",
+                           form=form)
 
 
 @auth.route("/login-form/", methods=["GET"])
 def display_login_modal():
     form = LoginForm()
-    return render_template("public/users/partials/login_form.html", title="SixthWorldSprawl Login", 
-                            form=form)
+    return render_template("public/users/partials/login_form.html", title="SixthWorldSprawl Login",
+                           form=form)
+
 
 @auth.route("/logout/")
 def logout():
@@ -66,10 +65,12 @@ def logout():
     db.session.commit()
     return redirect("/")
 
+
 @auth.route("/signup/")
 def signup():
     form = UserForm()
     return render_template("public/users/signup.html", form=form)
+
 
 @auth.route("/signup-form/")
 def signup_form():
@@ -87,7 +88,7 @@ def finish_signup():
     if not (password == confirmation):
         flash("Password does not match confirmation", "error")
         return render_template("public/users/signup.html", form=form)
-    
+
     user = User(username=username, is_admin=True)
     user.set_password(password)
 

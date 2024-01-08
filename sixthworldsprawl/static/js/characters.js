@@ -7,6 +7,7 @@ class APIRequest {
         this.response = {};
         this.api_request = this.endpoint_url + api_request;
     }
+
     async get_request() {
         this.response = await fetch(this.api_request, {
             method: 'GET',
@@ -28,8 +29,8 @@ async function character_search(character_id) {
      *
      * Returns a JSON dict containing the character
      */
-    var api_request = `character/${character_id}`;
-    var request = new APIRequest(api_request);
+    const api_request = `character/${character_id}`;
+    const request = new APIRequest(api_request);
     return await request.get_request();
 }
 
