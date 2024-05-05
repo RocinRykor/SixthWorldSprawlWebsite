@@ -1,8 +1,6 @@
 fetch('static/json/matrix_info.json')
     .then((response) => response.json())
-    .then((json) => {
-        return json;
-    });
+    .then((json) => (matrixInformation = json));
 
 function generateEasyHost() {
     generateHost(1, 3, 3, 1, 3, 7);
@@ -18,7 +16,6 @@ function generateHardHost() {
 
 function generateHost(svPool, svSide, svMod, srPool, srSide, srMod) {
     securityValue = rollWithMod(svPool, svSide, svMod);
-
     subsystemAccess = rollWithMod(srPool, srSide, srMod);
     subsystemControl = rollWithMod(srPool, srSide, srMod);
     subsystemIndex = rollWithMod(srPool, srSide, srMod);
@@ -40,8 +37,8 @@ function outputToTable() {
     $('#copyResults').removeClass('visually-hidden');
 }
 
-function rollWithMod(dicePool, diceSide, modifer) {
-    let tmpValue = modifer;
+function rollWithMod(dicePool, diceSide, modifier) {
+    let tmpValue = modifier;
 
     for (let i = 0; i < dicePool; i++) {
         tmpValue += getRandomRange(1, diceSide);
@@ -59,10 +56,10 @@ function getRandomRange(min, max) {
 function copyToClipboard() {
     //Get the currently selected security code (Host Color)
     const securityCode = $(
-        "input[type='radio'][name='radioSecrityCode']:checked"
+        "input[type='radio'][name='radioSecurityCode']:checked"
     ).val();
 
-    standardFormat = `${securityCode}-${securityValue}/${subsystemAccess}/${subsystemControl}/${subsystemIndex}/${subsystemFiles}/${subsystemSlave}`;
+    const standardFormat = `${securityCode}-${securityValue}/${subsystemAccess}/${subsystemControl}/${subsystemIndex}/${subsystemFiles}/${subsystemSlave}`;
 
     if (navigator.clipboard) {
         navigator.clipboard.writeText(standardFormat).then(() => {
@@ -76,15 +73,15 @@ function copyToClipboard() {
 function openBasicModal(title) {
     $('#genericModalTitle').html(title);
 
-    modalBody = $('#genericModalBody');
+    const modalBody = $('#genericModalBody');
     modalBody.empty();
 
     //the content that I am adding to the modal will get added here
-    let bodyText = matrixInformation[title].description;
+    const bodyText = matrixInformation[title].description;
 
     console.log(bodyText);
 
-    formatedText = myFormat(bodyText);
+    const formatedText = myFormat(bodyText);
 
     console.log(formatedText);
 
