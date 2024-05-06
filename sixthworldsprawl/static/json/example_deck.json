@@ -1,0 +1,100 @@
+{
+	"allegiance sigma": {
+		"deck_rating": 3,
+		"hardening": 1,
+		"active_memory": 200,
+		"storage_memory": 500,
+		"io_speed": 100,
+		"response_increase": 0,
+		"cost": 14000,
+		"source": "SR Core Pg. 207",
+		"memory": {
+			"active": {
+				"note": "The utilities in the active memory refers to the index of the utilities in storage memory",
+				"utilities": [0, 1, 3, 4]
+			},
+			"storage": {
+				"utilities": [
+					{
+						"name": "attack (light)",
+						"target_operation": "Personas, IC",
+						"multiplier": 2,
+						"description": "The attack utility, the least subtle offensive program, can be programmed to inflict Light to Deadly damage. It samples the instruction algorithms of the targeted icons and tries to introduce fairly coarse memory faults into the icon\u2019s most frequently accessed code segments. In cybercombat, that translates to a direct attack on the Condition Monitor of the decker\u2019s persona or IC icon.\nThe attack utility affects on-line icons only and has no effect on a decker\u2019s meatbody or cyberdeck. The armor utility reduces the Power of damage done by attack utilities.",
+						"type": "offensive",
+						"source": "SR3E Core p. 221",
+						"rating": 4,
+						"availability_time_frame": "days"
+					},
+					{
+						"name": "browse",
+						"target_operation": "Locate Access Node, Locate File, Locate Slave",
+						"multiplier": 1,
+						"description": "The browse utility reduces the target numbers of Index Tests made to locate specific data values or system addresses.\nUnlike analyze and scanner utilities, which search for Matrix activity, the browse utility works on the contents, or real-world functions, of these data nodes.",
+						"type": "operational",
+						"source": "SR3E Core p. 220",
+						"rating": 6,
+						"availability_time_frame": "days"
+					},
+					{
+						"name": "decrypt",
+						"target_operation": "Decrypt Access, Decrypt File, Decrypt Slave",
+						"multiplier": 1,
+						"description": "The decrypt utility reduces the target numbers of any System Tests made to defeat scramble IC programs.",
+						"type": "operational",
+						"source": "SR3E Core p. 220",
+						"rating": 4,
+						"availability_time_frame": "days"
+					},
+					{
+						"name": "read/write",
+						"target_operation": " Download Data, Edit File, Upload Data",
+						"multiplier": 2,
+						"description": "The read/write utility reduces the decker\u2019s target number for System Tests necessary to transfer files or otherwise access, edit, or create data in the Matrix.",
+						"type": "operational",
+						"source": "SR3E Core p. 220",
+						"rating": 6,
+						"availability_time_frame": "days"
+					},
+					{
+						"name": "deception",
+						"target_operation": "Graceful Logoff, Logon to (LTG, RTG, or Host), Null Operation",
+						"multiplier": 2,
+						"description": "Unless otherwise noted, the deception utility may be used to reduce the target number of all Access Tests.",
+						"type": "operational",
+						"source": "SR3E Core p. 220",
+						"rating": 5,
+						"availability_time_frame": "days"
+					},
+					{
+						"name": "track",
+						"target_operation": "None",
+						"multiplier": 7,
+						"description": "The track utility is a trace program used as a combat program against hostile deckers. After each successful attack, note the number of successes the attacking decker scored. The target decker must make an Evasion (Track Rating) Test. If the Evasion Test fails to yield an equal or greater number of successes, the attacker\u2019s track utility locks onto the target decker\u2019s datatrail and begins its location cycle. Divide 10 by the attacker\u2019s net successes to determine how many turns the track utility needs to locate the target decker\u2019s jackpoint.\nFor the purposes of measuring the location cycle, only count full Combat Turns. If a decker can destroy the utility before the last Initiative Pass of a Combat Turn is completed, that turn is not considered completed.\nThe target decker can try to escape the attacking decker by logging off or jacking out. However, the track utility makes logoff operations more difficult.\nTargeted deckers can use the relocate utility against track programs (see Relocate). Of course, the target decker can always crash the attacking persona, which would stop all its pesky programs.",
+						"type": "special",
+						"source": "SR3E Core p. 221",
+						"rating": 6,
+						"availability_time_frame": "days"
+					}
+				],
+				"data": [
+					{
+						"name": "GX_SEC_REP_2061_03",
+						"type": "paydata",
+						"value": 2500,
+						"description": "This paydata details the security details of GroundX, a tunneling subsidiary of Wuxing. The facility specified in the data is within the UCAS Capital. The data is fragmented and incomplete, leaving many holes in it's value.",
+						"points": 0,
+						"size": 30
+					},
+					{
+						"name": "Oddly Long Contact List",
+						"type": "informational",
+						"value": 0,
+						"description": "This data is a collection of contact information for \"friends and family\". Interestingly, all numbers are known Yakuza brothels, but none of them are named such.",
+						"point": 0,
+						"size": 12
+					}
+				]
+			}
+		}
+	}
+}

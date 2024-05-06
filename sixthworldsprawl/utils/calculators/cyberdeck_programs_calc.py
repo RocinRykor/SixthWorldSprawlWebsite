@@ -1,3 +1,6 @@
+import json
+
+
 def calc_utility_size(program_rating=1, multiplier_value=1) -> int:
     """
     Calculates the size of a Cyberdeck Utility Program.
@@ -32,3 +35,23 @@ def calc_utility_cost(program_rating=1, program_size=1) -> int:
     else:
         cost = program_size * 1000
     return cost
+
+
+def total_size_of_utilities_list(util_list):
+    print(util_list)
+    total_size = 0
+    for util in util_list:
+        # print(util['name'], ": ", util["rating"], " x ", util['multiplier'])
+        total_size += calc_utility_size(util["rating"], util["multiplier"])
+        print(total_size)
+
+    return total_size
+
+
+def total_size_of_data_list(data_list):
+    print(data_list)
+    total_size = 0
+    for data in data_list:
+        total_size += data['size']
+        print(total_size)
+    return total_size

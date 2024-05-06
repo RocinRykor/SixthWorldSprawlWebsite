@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<div class='cyberdeck-utility-card {{ utility['type']|lower }} active-{{ is_active }}'>
+    <div class="icons">
+        <div class='icon'><img
+                src={{ url_for('static', filename='img/svg/' ~ value.type.title() ~ ".svg") }} alt='{{ value.type }}'>
+        </div>
+    </div>
+    {% if is_active %}
+        <div class="name">*ACTIVE* - {{ utility['name'].title() }}</div>
+    {% else %}
+        <div class="name">{{ utility['name'].title() }}</div>
+    {% endif %}
+    <div class="info">
+        Type: {{ utility['type'].title() }}
+        Multiplier: {{ utility['multiplier'] }}
+    </div>
+</div>

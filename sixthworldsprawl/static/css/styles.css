@@ -276,34 +276,38 @@ a:hover {
 
 .cyberdeck-utility-card {
   position: relative;
-  width: 200px;
-  height: 100px;
-  padding: 15px;
-  margin: 15px;
+  width: 225px;
+  height: 200px;
+  padding: 10px;
+  margin: 10px;
   border-radius: var(--default-border-radius);
   overflow: hidden;
+  background: darkgray;
+  box-shadow: 0 0 0 5px black; /* Larger black outline */
 }
 
 .cyberdeck-utility-card.offensive {
-  background-color: rgba(255, 0, 0, 0.25);
+  border: 2px solid rgba(255, 0, 0, 1);
 }
 
 .cyberdeck-utility-card.defensive {
-  background-color: rgba(0, 0, 255, 0.25);
+  outline: 2px solid rgba(0, 0, 255, 1);
 }
 
 .cyberdeck-utility-card.operational {
-  background-color: rgba(0, 128, 0, 0.25);
+  outline: 2px solid rgba(0, 255, 0, 1);
 }
 
 .cyberdeck-utility-card.special {
-  background-color: rgba(255, 255, 0, 0.25);
+  outline: 2px solid rgba(255, 255, 0, 1);
 }
 
-.cyberdeck-utility-card:hover {
-  background-color: var(--light);
-  color: black;
-  transition: 5s;
+.cyberdeck-utility-card.paydata {
+  outline: 2px solid rgb(110, 0, 255);
+}
+
+.cyberdeck-utility-card.informational {
+  outline: 2px solid rgb(255, 110, 0);
 }
 
 .cyberdeck-utility-card:hover .name,
