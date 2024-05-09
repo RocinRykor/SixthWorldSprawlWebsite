@@ -82,15 +82,15 @@
 						"type": "paydata",
 						"value": 2500,
 						"description": "This paydata details the security details of GroundX, a tunneling subsidiary of Wuxing. The facility specified in the data is within the UCAS Capital. The data is fragmented and incomplete, leaving many holes in it's value.",
-						"points": 0,
+						"points": 1,
 						"size": 30
 					},
 					{
 						"name": "Oddly Long Contact List",
-						"type": "informational",
+						"type": "generic",
 						"value": 0,
 						"description": "This data is a collection of contact information for \"friends and family\". Interestingly, all numbers are known Yakuza brothels, but none of them are named such.",
-						"point": 0,
+						"points": 0,
 						"size": 12
 					}
 				]

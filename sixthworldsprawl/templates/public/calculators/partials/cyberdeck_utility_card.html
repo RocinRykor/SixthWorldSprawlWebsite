@@ -1,12 +1,61 @@
-<!DOCTYPE html>
-
-<div class='cyberdeck-utility-card {{ value.type|lower }}'>
-    <div class="icons">
-        <div class='icon'><img src={{ url_for('static', filename='img/svg/' ~ value.type.title() ~ ".svg") }} alt='{{ value.type }}'></div>
-    </div>
-    <div class="name">{{ key.title() }}, x{{ value.multiplier }}</div>
-    <div class="info">
-        Type: {{ value.type.title() }}
-        Multiplier: {{ value.multiplier}}
+<div class="cyberdeck-utility-card {{ utility['type']|lower }} active-{{ is_active }}">
+    <div class="card-content">
+        <div class="top">
+            <p>{{ utility['type'].title() }}</p>
+            <div class="color color-{{ utility['type']|lower }}"></div>
+        </div>
+        <div class="middle">
+            <div>
+                <p>
+                    {% if is_active %}
+                        Active
+                    {% else %}
+                        Inactive
+                    {% endif %}
+                </p>
+                <p>{{ name.title() }}</p>
+            </div>
+            {#            <div name="icon">#}
+            {#                <img src={{ url_for('static', filename='img/svg/' ~ value.type.title() ~ ".svg") }} alt='{{ value.type }}'/>#}
+            {#            </div>#}
+        </div>
+        <div class="bottom">
+            <div>
+                {% if utility['type'] == "paydata" or utility['type'] == "generic" %}
+                    <p>Points</p>
+                    <p>{{ utility['points'] }}</p>
+                {% else %}
+                    <p>Rating</p>
+                    <p>{{ utility['rating'] }}</p>
+                {% endif %}
+            </div>
+            <div>
+                <p>Size</p>
+                {% if utility['type'] == "paydata" or utility['type'] == "generic" %}
+                    <p>{{ utility['size'] }} MP</p>
+                {% else %}
+                    <p>{{ (utility['rating'] * utility['rating']) * utility['multiplier'] }} MP</p>
+                {% endif %}
+            </div>
+        </div>
     </div>
 </div>
+
+{#<div class='cyberdeck-utility-card {{ utility['type']|lower }} active-{{ is_active }}'>#}
+{#    <div class="icons">#}
+{#        <div class='icon'><img#}
+{#                src={{ url_for('static', filename='img/svg/' ~ value.type.title() ~ ".svg") }} alt='{{ value.type }}' alt="">#}
+{#        </div>#}
+{#    </div>#}
+{#    {% if is_active %}#}
+{#        <div class="name">*ACTIVE* - {{ utility['name'].title() }}</div>#}
+{#    {% else %}#}
+{#        <div class="name">{{ utility['name'].title() }}</div>#}
+{#    {% endif %}#}
+{#    <div class="info">#}
+{#        Type: {{ utility['type'].title() }}#}
+{#        Multiplier: {{ utility['multiplier'] }}#}
+{#    </div>#}
+{#</div>#}
+
+

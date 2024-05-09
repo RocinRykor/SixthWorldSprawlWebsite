@@ -1,5 +1,12 @@
-<!DOCTYPE html>
-{% extends "public/partials/base.html" %} {% block main %}
+{% extends "public/partials/base.html" %}
+
+{% block styles %}
+    <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/cyberdeck.css') }}"/>
+{% endblock %}
+
+{% block main %}
 
     <h1>{{ deck_name.title() }}</h1>
 
@@ -8,21 +15,22 @@
     <h3>I/O Speed: {{ deck_data["io_speed"] }}</h3>
     <h3>Response Increase: {{ deck_data["response_increase"] }}</h3>
 
-    <h3> Storage Memory: {{ storage_size }}/{{ deck_data['storage_memory'] }} | Active Memory: {{ active_size }}/{{ deck_data['active_memory'] }} MP  </h3>
+    <h3> Storage Memory: {{ storage_size }}/{{ deck_data['storage_memory'] }} | Active
+        Memory: {{ active_size }}/{{ deck_data['active_memory'] }} MP </h3>
     <div class="utility-list grid">
         {% for value in active %}
-            {% with utility=value, is_active=true %} {% include
-	"public/calculators/partials/example_deck_utility.html" %} {% endwith %}
+            {% with name=value['name'], utility=value, is_active=true %} {% include
+	"public/calculators/partials/cyberdeck_utility_card.html" %} {% endwith %}
         {% endfor %}
     </div>
 
-    <h3>  </h3>
+    <h3></h3>
     <div class="utility-list grid">
         {% for key in storage %}
             {% for value in storage[key] %}
                 {% if value not in active %}
-                    {% with utility=value %} {% include
-	"public/calculators/partials/example_deck_utility.html" %} {% endwith %}
+                    {% with name=value['name'], utility=value %} {% include
+	"public/calculators/partials/cyberdeck_utility_card.html" %} {% endwith %}
                 {% endif %}
             {% endfor %}
         {% endfor %}

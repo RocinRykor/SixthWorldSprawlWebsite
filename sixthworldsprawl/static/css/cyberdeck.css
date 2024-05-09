@@ -1,0 +1,173 @@
+:root {
+  /* Colors */
+  --dark: #091833;
+  --medium: #133e7c;
+  --light: #0abdc6;
+  --primary-accent: #ea00d9;
+  --secondary-accent: #711c91;
+  --default-border-radius: 25px;
+}
+
+.cyberdeck-utility-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 250px;
+  padding: 7px;
+  margin: 7px;
+  background: linear-gradient(#959fb6, #686b75);
+  box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+  border-radius: var(--default-border-radius);
+}
+
+.color {
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: orange;
+  }
+
+.color-offensive {
+  background-color: red;
+}
+
+.color-defensive {
+  background-color: blue;
+}
+
+.color-operational {
+  background-color: green;
+}
+
+.color-special {
+  background-color: darkgoldenrod;
+}
+
+.color-paydata {
+  background-color: purple;
+}
+
+.color-generic{
+  background-color: saddlebrown;
+}
+
+.cyberdeck-utility-card:hover .name,
+.cyberdeck-utility-card:hover .icon {
+  display: none;
+}
+
+.cyberdeck-utility-card:hover .info {
+  display: block;
+}
+
+.icons {
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 10px;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.25;
+}
+
+.name, .info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.info {
+  display: none;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+  width: 95%;
+  border-radius: 8px;
+  background-color: white;
+  color: black;
+}
+
+.card-content > .top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 20%;
+  background-color: white;
+  border-radius: 8px;
+
+  p {
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+}
+
+.card-content > .middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40%;
+  background: linear-gradient(#959fb6, #686b75 75%);
+  padding-left: 15px;
+  padding-right: 15px;
+
+  img {
+    width: 60%;
+  }
+
+  div > p:first-child {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  div > p:last-child {
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+.card-content > .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40%;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p:first-child {
+      font-weight: bold;
+    }
+  }
+}
