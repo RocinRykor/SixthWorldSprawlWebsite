@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="sixthworldsprawl@localhost">
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.52">
+    <root id="1">
+      <DefaultCasing>exact</DefaultCasing>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <ServerVersion>11.3.2</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="information_schema">
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </schema>
+    <schema id="3" parent="1" name="sixthworldsprawl">
+      <Current>1</Current>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </schema>
+  </database-model>
+</dataSource>

@@ -7,16 +7,12 @@
 {% endblock %}
 {% block main %}
 
-    <div class="container">
-        <div class="centered">
-            <h2>Select the Program:</h2>
-            <div class="utility-list grid">
-                {% for key, value in util_data.items() %}
-                    {% with name=key, utility=value %} {% include
+    <h1>Select the Program:</h1>
+    <div class="utility-list grid">
+        {% for key, value in util_data.items() %}
+            {% with name=key, utility=value %} {% include
 	"public/calculators/partials/cyberdeck_utility_card.html" %} {% endwith %}
-                {% endfor %}
-            </div>
-        </div>
+        {% endfor %}
     </div>
 
 {% endblock %}

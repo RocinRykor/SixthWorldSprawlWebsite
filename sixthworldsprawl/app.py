@@ -1,24 +1,26 @@
 from flask import Flask, redirect
 from flask_login import LoginManager
 from flask_migrate import Migrate
+from .models.db import data_base as db
 
-from . import models
+from .models import users
+from .models import characters
+from .models import matrix_hosts
+
 from .config import Config
 
-# from .routes.general import general
-# from .routes.admin import admin
-# from .routes.auth import auth
-# from flask_statistics import Statistics
-
-
-db = models.db
-
 # Create any items that will be used in the app
-User = models.User
-Character = models.Character
-Portrait = models.Portrait
-Tag = models.Tag
-PortraitTagLinker = models.PortraitTagLinker
+User = users.User
+
+Character = characters.Character
+Portrait = characters.Portrait
+Tag = characters.Tag
+PortraitTagLinker = characters.PortraitTagLinker
+
+Hosts = matrix_hosts.Hosts
+Data = matrix_hosts.Data
+Nodes = matrix_hosts.Nodes
+
 
 migrate = Migrate()
 login_manager = LoginManager()
@@ -29,7 +31,7 @@ login_manager = LoginManager()
 
 @login_manager.user_loader
 def load_user(user_id):
-    return models.User.query.filter_by(id=user_id).first()
+    return User.query.filter_by(id=user_id).first()
 
 
 @login_manager.unauthorized_handler

@@ -3,11 +3,11 @@ from flask_login import current_user
 from flask_login import login_user, logout_user
 from werkzeug.security import check_password_hash
 
-from sixthworldsprawl import models
+from sixthworldsprawl.models import users
 from sixthworldsprawl.app import db
 from sixthworldsprawl.forms import LoginForm, UserForm
 
-User = models.User
+User = users.User
 
 auth = Blueprint("auth", __name__)
 

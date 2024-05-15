@@ -22,10 +22,7 @@
             {% with name=value['name'], utility=value, is_active=true %} {% include
 	"public/calculators/partials/cyberdeck_utility_card.html" %} {% endwith %}
         {% endfor %}
-    </div>
 
-    <h3></h3>
-    <div class="utility-list grid">
         {% for key in storage %}
             {% for value in storage[key] %}
                 {% if value not in active %}

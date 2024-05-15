@@ -3,7 +3,6 @@ import sys
 
 from . import app
 
-models = app.models
 db = app.db
 
 # This site was started on 2021-03-17
