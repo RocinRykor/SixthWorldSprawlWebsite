@@ -14,6 +14,7 @@ class Hosts(db.Model):
     file_rating = db.Column(db.Integer, nullable=False)
     index_rating = db.Column(db.Integer, nullable=False)
     slave_rating = db.Column(db.Integer, nullable=False)
+    paydata_points = db.Column(db.Integer, nullable=False)
 
     def jsonify(self):
         return {
@@ -28,7 +29,8 @@ class Hosts(db.Model):
             "control_rating": self.control_rating,
             "file_rating": self.file_rating,
             "index_rating": self.index_rating,
-            "slave_rating": self.slave_rating
+            "slave_rating": self.slave_rating,
+            "paydata_points": self.paydata_points
         }
 
 
@@ -38,6 +40,7 @@ class Data(db.Model):
     is_paydata = db.Column(db.Boolean, nullable=False, default=False)
     points = db.Column(db.Integer, nullable=False, default=0)
     value = db.Column(db.Integer, nullable=False, default=0)
+    host_id = db.Column(db.Integer, db.ForeignKey('hosts.id'), nullable=False)
 
     def jsonify(self):
         return {
@@ -45,18 +48,21 @@ class Data(db.Model):
             "description": self.description,
             "is_paydata": self.is_paydata,
             "points": self.points,
-            "value": self.value
+            "value": self.value,
+            "host_id": self.host_id
         }
 
 
 class Nodes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), nullable=False)
-    data = db.relationship('Data', backref='nodes', lazy='dynamic')
+    host_id = db.Column(db.Integer, db.ForeignKey('hosts.id'), nullable=False)
+    data_id = db.Column(db.Integer, db.ForeignKey('data.id'), nullable=False)
 
     def jsonify(self):
         return {
             "id": self.id,
             "name": self.name,
-            "data": self.data
+            "host_id": self.host_id,
+            "data_id": self.data_id
         }

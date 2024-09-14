@@ -24,7 +24,7 @@
         This is the table that describes rolling for your custom host. Select an
         option below to auto generate a host of that difficulty
     </p>
-    <table class="table table-dark">
+    <table class="table table-dark w-25">
         <thead>
         <tr>
             <th scope="col">Difficulty</th>
@@ -63,7 +63,7 @@
         Click on a subsystem to learn more or select the generated results to
         copy the host information to clipboard
     </p>
-    <table id="resultsTable" class="table table-dark">
+    <table id="resultsTable" class="table table-dark w-25">
         <tr>
             <th onclick="openBasicModal('Security Codes')" class="table-option">
                 Security Code
@@ -152,4 +152,42 @@
             </td>
         </tr>
     </table>
+
+    <h1>Add Host</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.hostname.label }} {{ form.hostname }}
+        </div>
+        <div>
+            {{ form.provider.label }} {{ form.provider }}
+        </div>
+        <div>
+            {{ form.security_code.label }} {{ form.security_code }}
+        </div>
+        <div>
+            {{ form.system_rating.label }} {{ form.system_rating }}
+        </div>
+        <div>
+            {{ form.access_rating.label }} {{ form.access_rating }}
+        </div>
+        <div>
+            {{ form.control_rating.label }} {{ form.control_rating }}
+        </div>
+        <div>
+            {{ form.file_rating.label }} {{ form.file_rating }}
+        </div>
+        <div>
+            {{ form.index_rating.label }} {{ form.index_rating }}
+        </div>
+        <div>
+            {{ form.slave_rating.label }} {{ form.slave_rating }}
+        </div>
+        <div>
+            {{ form.paydata_points.label }} {{ form.paydata_points }}
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+
 {% endblock %}
