@@ -1,7 +1,16 @@
+###
+# Security Sheaf
+# Core Rulebook p.210
+# Matrix p.115
+# Description: As the Decker performs illegitimate actions on a host, the host system will begin to rack up a security tally
+# At predetermined levels in the tally, or Trigger Steps, the host security will respond with IC or various alert stages.
+###
+
 from typing import Dict
 
-from sixthworldsprawl.utils.constants import matrix_constants as matrix
 from sixthworldsprawl.utils.rollers.dice_roller import basic_roll
+from sixthworldsprawl.utils.constants import matrix_constants as matrix
+from sixthworldsprawl.utils.generators.matrix.sheaf_generator.ic_program import ICProgram
 
 
 def roll_trigger_step(system_security_level: int) -> int:
@@ -78,9 +87,9 @@ class AlertContainer:
             1) The current alert level of the system (0, 1, or 2). This determines what type of IC can be generated
             2) The number of steps since the last alert was generated for this system. This value is added to any roll results and then compared against a list of possible results that can occur when rolling an Alert Table in SR5 (see matrix_constants file).
             3) A boolean to indicate whether the steps_since_last_alert will be added to the roll, if it is not added, triggering an alert step is not possible and IC will be generated
-
+    
             If the final results are high enough to trigger an alert step, no IC is generated at the time.
-
+    
         :param system_alert_level:int: Determine which alert level to use for the current step
         :param steps_since_last_alert:int: Track the number of steps since the last alert was triggered
         :param limit_to_ic_generation:bool: Limit the alert table to only those that are used for generating IC

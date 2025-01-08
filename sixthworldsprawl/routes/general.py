@@ -3,6 +3,7 @@ from sixthworldsprawl.forms import MatrixHostForm
 from sixthworldsprawl.app import db, Hosts
 
 # from sixthworldsprawl.app import db, User, Character
+from sixthworldsprawl.utils.generators.matrix.sheaf_generator.security_sheaf import generate_sheaf
 
 general = Blueprint("general", __name__)
 
@@ -30,6 +31,7 @@ def matrixhost():
     return render_template("public/generators/matrixhost.html", title="Matrix Host Generator",
                            form=form)
 
+
 @general.route("/matrixhost", methods=["POST"])
 def finish_matrixhost():
     form = MatrixHostForm(request.form)
@@ -47,7 +49,7 @@ def finish_matrixhost():
 
     host = Hosts(hostname=hostname, provider=provider, security_code=security_code,
                  system_rating=system_rating, access_rating=access_rating,
-                 control_rating=control_rating,file_rating=file_rating,
+                 control_rating=control_rating, file_rating=file_rating,
                  index_rating=index_rating, slave_rating=slave_rating,
                  paydata_points=paydata_points)
 
@@ -60,4 +62,21 @@ def finish_matrixhost():
 
 @general.route("/matrixsecurity")
 def matrixsecurity():
-    return render_template("public/generators/matrixsecurity.html", title="Matrix Security Sheaf Generator")
+    sheaf = generate_sheaf(1, 6)  # Generates raw sheaf data as a list of SheafEvent objects
+
+    # Format the sheaf data for clean and human-readable HTML output
+    formatted_sheaf = []
+    for event in sheaf:
+        if event.title:  # Alert level changes
+            formatted_sheaf.append(f"Current Step: {event.current_step}<br>Alert Status: {event.title}")
+        elif event.ic_list:  # IC program activation
+            for ic in event.ic_list:
+                formatted_sheaf.append(f"Current Step: {event.current_step}<br>{ic}")
+        else:  # Catch-all (potentially unused depending on generation logic)
+            formatted_sheaf.append(f"Current Step: {event.current_step}")
+
+    return render_template(
+        "public/generators/matrixsecurity.html",
+        title="Matrix Security Sheaf Generator",
+        sheaf="<br>".join(formatted_sheaf)  # Join the clean format strings into an HTML-safe structure
+    )
